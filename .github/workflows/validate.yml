@@ -9,8 +9,8 @@ jobs:
   catalog:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: '20'
       # No install step - the repo has zero dependencies on purpose.
@@ -37,8 +37,8 @@ jobs:
     # Network-dependent, so it reports rather than blocks a PR on a flaky host.
     continue-on-error: true
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: '20'
       - name: Check every agent entrypoint still resolves

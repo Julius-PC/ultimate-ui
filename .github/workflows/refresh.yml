@@ -18,8 +18,8 @@ jobs:
   refresh:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: '20'
 
@@ -36,7 +36,7 @@ jobs:
         run: node scripts/check-links.mjs | tee -a refresh-report.txt
 
       - name: Open a pull request if anything changed
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v7
         with:
           commit-message: 'chore: refresh upstream freshness data'
           branch: automated/refresh-upstream
