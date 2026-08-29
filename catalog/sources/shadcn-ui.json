@@ -1,0 +1,91 @@
+{
+  "id": "shadcn-ui",
+  "name": "shadcn/ui",
+  "repo": "https://github.com/shadcn-ui/ui",
+  "homepage": "https://ui.shadcn.com",
+  "author": {
+    "name": "shadcn-ui",
+    "url": "https://github.com/shadcn-ui",
+    "credit_note": "Created by shadcn (https://github.com/shadcn)."
+  },
+  "license": "MIT",
+  "license_url": "https://github.com/shadcn-ui/ui/blob/main/LICENSE.md",
+  "summary": "A set of beautifully-designed, accessible components and a code distribution platform. Works with your favorite frameworks. Open Source. Open Code.",
+  "kind": "component-library",
+  "capabilities": [
+    "components",
+    "primitives",
+    "theming",
+    "design-tokens",
+    "accessibility",
+    "color"
+  ],
+  "stacks": [
+    "react",
+    "next",
+    "vite",
+    "remix",
+    "laravel",
+    "tailwind"
+  ],
+  "style_tags": [
+    "neutral",
+    "minimal",
+    "dark-first",
+    "data-dense"
+  ],
+  "agent_entrypoints": [
+    {
+      "type": "llms_txt",
+      "url": "https://ui.shadcn.com/llms.txt",
+      "what": "Agent-oriented map of the docs. Start here to learn install flow, conventions, and what exists.",
+      "verified": "2026-08-28"
+    },
+    {
+      "type": "registry_json",
+      "url": "https://ui.shadcn.com/r/index.json",
+      "what": "Machine-readable list of every registry item with per-item docs, API and example links. Use it to answer 'does a component for X exist' without guessing.",
+      "verified": "2026-08-28"
+    },
+    {
+      "type": "registry_json",
+      "url": "https://ui.shadcn.com/r/styles/{style}/{component}.json",
+      "what": "The actual source of one component for one style, e.g. .../new-york-v4/button.json. Returns the files you would copy in.",
+      "verified": "2026-08-28"
+    },
+    {
+      "type": "registry_json",
+      "url": "https://ui.shadcn.com/r/colors/index.json",
+      "what": "The full color scale set. Use for building a theme rather than inventing hex values.",
+      "verified": "2026-08-28"
+    },
+    {
+      "type": "cli",
+      "url": "npx shadcn@latest add {component}",
+      "what": "Installs a component into the user's project. Prefer this over pasting code you generated.",
+      "verified": "2026-08-28"
+    }
+  ],
+  "use_when": [
+    "The project is React-flavoured and uses Tailwind, and you need real components fast.",
+    "You want to own the component source rather than depend on a black-box package.",
+    "You need an accessible primitive (dialog, combobox, popover) and hand-rolling one would be a mistake.",
+    "You need a coherent theme and want token values that already work in light and dark."
+  ],
+  "avoid_when": [
+    "The project is not React-based - the registry assumes React component files.",
+    "The team wants a batteries-included library it never has to maintain; here the code becomes yours."
+  ],
+  "metrics": {
+    "stars": 122447,
+    "checked": "2026-08-29"
+  },
+  "upstream": {
+    "last_commit": "2026-08-26T06:28:13Z",
+    "default_branch": "main",
+    "archived": false,
+    "open_issues": 2237,
+    "checked": "2026-08-29"
+  },
+  "added": "2026-08-28"
+}

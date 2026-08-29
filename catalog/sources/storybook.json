@@ -1,0 +1,80 @@
+{
+  "id": "storybook",
+  "name": "Storybook",
+  "repo": "https://github.com/storybookjs/storybook",
+  "homepage": "https://storybook.js.org",
+  "author": {
+    "name": "Storybook",
+    "url": "https://github.com/storybookjs"
+  },
+  "license": "MIT",
+  "license_url": "https://github.com/storybookjs/storybook/blob/next/LICENSE",
+  "summary": "Storybook is the industry standard workshop for building, documenting, and testing UI components in isolation.",
+  "kind": "workshop-tool",
+  "capabilities": [
+    "component-workshop",
+    "documentation",
+    "visual-testing",
+    "accessibility",
+    "prototyping"
+  ],
+  "stacks": [
+    "react",
+    "next",
+    "vue",
+    "nuxt",
+    "svelte",
+    "angular",
+    "astro",
+    "solid",
+    "vite",
+    "react-native",
+    "web-components",
+    "html"
+  ],
+  "style_tags": [
+    "neutral"
+  ],
+  "agent_entrypoints": [
+    {
+      "type": "llms_txt",
+      "url": "https://storybook.js.org/llms.txt",
+      "what": "Agent-oriented docs map: setup per framework, writing stories, testing, addons.",
+      "verified": "2026-08-28"
+    },
+    {
+      "type": "cli",
+      "url": "npx storybook@latest init",
+      "what": "Adds Storybook to an existing project, detecting the framework.",
+      "verified": "2026-08-28"
+    },
+    {
+      "type": "docs_url",
+      "url": "https://storybook.js.org/docs",
+      "what": "Full documentation when llms.txt is not specific enough.",
+      "verified": "2026-08-28"
+    }
+  ],
+  "use_when": [
+    "You generated several components and the user needs to actually see and compare them.",
+    "You want states (loading, empty, error, long text) to be reviewable without clicking through the whole app.",
+    "You need a durable home for a design system's documentation.",
+    "You want visual or accessibility regressions caught automatically."
+  ],
+  "avoid_when": [
+    "It is a one-off prototype that will be deleted this week - the setup cost will not pay back.",
+    "The user asked for a static mockup with no build step."
+  ],
+  "metrics": {
+    "stars": 90958,
+    "checked": "2026-08-29"
+  },
+  "upstream": {
+    "last_commit": "2026-08-28T21:09:18Z",
+    "default_branch": "next",
+    "archived": false,
+    "open_issues": 1774,
+    "checked": "2026-08-29"
+  },
+  "added": "2026-08-28"
+}

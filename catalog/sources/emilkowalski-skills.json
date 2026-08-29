@@ -1,0 +1,118 @@
+{
+  "id": "emilkowalski-skills",
+  "name": "Skills For Designers and Engineers",
+  "repo": "https://github.com/emilkowalski/skills",
+  "homepage": "https://emilkowal.ski/skill",
+  "author": {
+    "name": "Emil Kowalski",
+    "url": "https://github.com/emilkowalski"
+  },
+  "license": "MIT",
+  "license_url": "https://github.com/emilkowalski/skills/blob/main/LICENSE",
+  "summary": "Skills for designers and engineers to help them build better user interfaces, focused on animation and interface craft, drawn from the author's experience at companies like Vercel and Linear.",
+  "kind": "agent-skills",
+  "capabilities": [
+    "motion",
+    "agent-guidance",
+    "code-review",
+    "prototyping",
+    "components",
+    "design-language"
+  ],
+  "stacks": [
+    "react",
+    "react-native",
+    "expo",
+    "swiftui",
+    "css",
+    "stack-agnostic"
+  ],
+  "style_tags": [
+    "minimal",
+    "neutral"
+  ],
+  "agent_entrypoints": [
+    {
+      "type": "raw_path",
+      "url": "https://raw.githubusercontent.com/emilkowalski/skills/main/skills/{skill}/SKILL.md",
+      "what": "The full text of one skill. Read the whole thing before applying it - the value is in the specific rules, not the summary.",
+      "verified": "2026-08-28"
+    },
+    {
+      "type": "cli",
+      "url": "npx skills@latest add emilkowalski/skills",
+      "what": "Installs the skill set into the user's own agent setup. Offer this when the user wants them permanently, rather than reading them ad hoc.",
+      "verified": "2026-08-28"
+    }
+  ],
+  "use_when": [
+    "Anything is going to move. Read the animation skills before writing a transition, not after.",
+    "You need to choose between UI libraries and want a taste-informed answer instead of a download count.",
+    "You are reviewing UI that technically works but feels wrong."
+  ],
+  "avoid_when": [
+    "You need broad component coverage - this is craft guidance, not a component library."
+  ],
+  "provides": [
+    {
+      "name": "emil-design-eng",
+      "note": "The main skill: mostly animation, plus general design advice."
+    },
+    {
+      "name": "animate",
+      "note": "Builds an animation from scratch, choosing curve, duration and properties deliberately."
+    },
+    {
+      "name": "animate-expo",
+      "note": "The same bar for React Native and Expo: gestures, sheets, haptics, motion off the JS thread."
+    },
+    {
+      "name": "review-animations",
+      "note": "Strict review of existing animations."
+    },
+    {
+      "name": "improve-animations",
+      "note": "Codebase-wide animation audit producing prioritized, self-contained plans."
+    },
+    {
+      "name": "find-animation-opportunities",
+      "note": "Finds places motion would genuinely help - and says what not to animate."
+    },
+    {
+      "name": "animation-vocabulary",
+      "note": "The right words to describe motion so an agent produces what you meant."
+    },
+    {
+      "name": "apple-design",
+      "note": "Apple's interface and motion principles distilled from WWDC design talks, translated for the web."
+    },
+    {
+      "name": "write-swift",
+      "note": "Modern Swift: value types, Swift 6 concurrency, generics, performance, Swift Testing."
+    },
+    {
+      "name": "pick-ui-library",
+      "note": "Picks a trusted library instead of hand-rolling a toast or installing an abandoned package."
+    },
+    {
+      "name": "prototype",
+      "note": "Builds several versions of a UI piece and gives you a switcher to compare them."
+    },
+    {
+      "name": "ask-sonner",
+      "note": "Working with Sonner, the author's toast library: setup, styling, recipes, fixes."
+    }
+  ],
+  "metrics": {
+    "stars": 33282,
+    "checked": "2026-08-29"
+  },
+  "upstream": {
+    "last_commit": "2026-08-21T09:32:33Z",
+    "default_branch": "main",
+    "archived": false,
+    "open_issues": 0,
+    "checked": "2026-08-29"
+  },
+  "added": "2026-08-28"
+}

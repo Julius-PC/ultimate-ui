@@ -1,0 +1,45 @@
+name: validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  catalog:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      # No install step - the repo has zero dependencies on purpose.
+      - name: Validate catalog against schema and taxonomy
+        run: node scripts/validate.mjs
+      - name: Check generated files are up to date
+        run: node scripts/build.mjs --check
+      - name: Check skill frontmatter
+        run: |
+          fail=0
+          for dir in skills/*/; do
+            name=$(basename "$dir")
+            f="$dir/SKILL.md"
+            [ -f "$f" ] || { echo "::error::$dir has no SKILL.md"; fail=1; continue; }
+            head -1 "$f" | grep -q '^---$' || { echo "::error::$f missing frontmatter"; fail=1; }
+            grep -q "^name: $name$" "$f" || { echo "::error::$f frontmatter name must equal '$name'"; fail=1; }
+            grep -q '^description:' "$f" || { echo "::error::$f missing description"; fail=1; }
+            grep -q '^## Credits' "$f" || { echo "::error::$f missing a Credits section"; fail=1; }
+          done
+          exit $fail
+
+  links:
+    runs-on: ubuntu-latest
+    # Network-dependent, so it reports rather than blocks a PR on a flaky host.
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Check every agent entrypoint still resolves
+        run: node scripts/check-links.mjs

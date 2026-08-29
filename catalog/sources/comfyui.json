@@ -1,0 +1,68 @@
+{
+  "id": "comfyui",
+  "name": "ComfyUI",
+  "repo": "https://github.com/Comfy-Org/ComfyUI",
+  "homepage": "https://www.comfy.org/",
+  "author": {
+    "name": "Comfy Org",
+    "url": "https://github.com/Comfy-Org",
+    "credit_note": "Created by comfyanonymous (https://github.com/comfyanonymous)."
+  },
+  "license": "GPL-3.0",
+  "license_url": "https://github.com/Comfy-Org/ComfyUI/blob/master/LICENSE",
+  "summary": "The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface.",
+  "kind": "generative-tool",
+  "capabilities": [
+    "image-generation",
+    "asset-sourcing",
+    "prototyping"
+  ],
+  "stacks": [
+    "python"
+  ],
+  "style_tags": [
+    "neutral"
+  ],
+  "agent_entrypoints": [
+    {
+      "type": "docs_url",
+      "url": "https://docs.comfy.org/",
+      "what": "Installation, node reference, and the workflow model."
+    },
+    {
+      "type": "api",
+      "url": "http://127.0.0.1:8188/prompt",
+      "what": "Local HTTP API of a running ComfyUI instance. POST a workflow graph as JSON to generate images programmatically; poll /history/{prompt_id} for results.",
+      "verified": null
+    },
+    {
+      "type": "raw_path",
+      "url": "https://raw.githubusercontent.com/Comfy-Org/ComfyUI/master/README.md",
+      "what": "Install matrix, hardware requirements, supported model families.",
+      "verified": "2026-08-28"
+    }
+  ],
+  "use_when": [
+    "A layout needs real imagery - hero art, textures, avatars, empty-state illustrations - and stock photos will not fit.",
+    "You want image generation running locally with reproducible, versionable workflow graphs.",
+    "You are producing many variants of the same asset and need a pipeline rather than one-off prompting."
+  ],
+  "avoid_when": [
+    "You need UI components or design guidance. This is an image-generation backend, not a UI toolkit - it is indexed for the asset half of building an interface.",
+    "The user has no GPU and no hosted instance; setup cost is real.",
+    "The output would ship in a context where the GPL-3.0 license or the licenses of individual models are a problem. Model weights carry their own terms, separate from ComfyUI's."
+  ],
+  "metrics": {
+    "stars": 130493,
+    "checked": "2026-08-29"
+  },
+  "upstream": {
+    "last_commit": "2026-08-29T00:43:25Z",
+    "default_branch": "master",
+    "archived": false,
+    "open_issues": 4731,
+    "checked": "2026-08-29"
+  },
+  "added": "2026-08-28",
+  "notes": "Category outlier. ComfyUI is indexed as a visual-asset generator that feeds interface work, not as a UI library. It is also the only GPL-3.0 source in the catalog - relevant if anyone considers embedding rather than calling it."
+}

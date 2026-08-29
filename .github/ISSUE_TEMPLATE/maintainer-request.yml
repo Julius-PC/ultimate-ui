@@ -1,0 +1,26 @@
+name: Maintainer request
+description: You maintain an indexed project and want the entry changed or removed
+title: "[maintainer] "
+labels: ["maintainer-request", "priority"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        We act on these without debate. If you want your project removed, it gets removed.
+  - type: input
+    id: source
+    attributes:
+      label: Which entry?
+      placeholder: catalog id or project name
+    validations: { required: true }
+  - type: dropdown
+    id: action
+    attributes:
+      label: What would you like?
+      options: ["Correct something", "Change how it is described", "Remove the entry entirely"]
+    validations: { required: true }
+  - type: textarea
+    id: detail
+    attributes:
+      label: Details
+    validations: { required: true }

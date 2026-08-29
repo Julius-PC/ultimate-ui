@@ -1,0 +1,51 @@
+name: refresh upstream data
+
+# Keeps the catalog honest about how alive each indexed project is.
+# Runs weekly, refreshes the `upstream` block in every source file, and opens a
+# pull request if anything changed. A human reviews it - an archived repo, a
+# license change, or a project going quiet are judgement calls, not things a
+# script should quietly paper over.
+on:
+  schedule:
+    - cron: '0 6 * * 1'   # Mondays, 06:00 UTC
+  workflow_dispatch:       # and on demand from the Actions tab
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Refresh upstream freshness from the GitHub API
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}   # lifts the 60/hr rate limit
+        run: node scripts/refresh.mjs | tee refresh-report.txt
+
+      - name: Regenerate derived files
+        run: node scripts/validate.mjs && node scripts/build.mjs
+
+      - name: Check every agent entrypoint still resolves
+        continue-on-error: true
+        run: node scripts/check-links.mjs | tee -a refresh-report.txt
+
+      - name: Open a pull request if anything changed
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: 'chore: refresh upstream freshness data'
+          branch: automated/refresh-upstream
+          delete-branch: true
+          title: 'chore: refresh upstream freshness data'
+          body-path: refresh-report.txt
+          add-paths: |
+            catalog/sources/*.json
+            catalog/index.json
+            CREDITS.md
+            README.md
+          labels: automated

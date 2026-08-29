@@ -1,0 +1,105 @@
+{
+  "id": "ui-ux-pro-max",
+  "name": "UI UX Pro Max",
+  "repo": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+  "homepage": "https://www.uupm.cc/",
+  "author": {
+    "name": "nextlevelbuilder",
+    "url": "https://github.com/nextlevelbuilder"
+  },
+  "license": "MIT",
+  "license_url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/main/LICENSE",
+  "summary": "An AI skill that provides design intelligence for building professional UI/UX across multiple platforms, including a design-system generator, a searchable style taxonomy, and per-stack component catalogs.",
+  "kind": "agent-skills",
+  "capabilities": [
+    "design-language",
+    "design-tokens",
+    "theming",
+    "brand",
+    "layout",
+    "typography",
+    "color",
+    "iconography",
+    "motion",
+    "agent-guidance",
+    "components"
+  ],
+  "stacks": [
+    "react",
+    "next",
+    "nuxt",
+    "vue",
+    "svelte",
+    "angular",
+    "astro",
+    "laravel",
+    "react-native",
+    "flutter",
+    "swiftui",
+    "jetpack-compose",
+    "tailwind",
+    "html",
+    "python"
+  ],
+  "style_tags": [
+    "marketing",
+    "corporate",
+    "playful",
+    "minimal",
+    "data-dense",
+    "luxury"
+  ],
+  "agent_entrypoints": [
+    {
+      "type": "raw_path",
+      "url": "https://raw.githubusercontent.com/nextlevelbuilder/ui-ux-pro-max-skill/main/.claude/skills/{skill}/SKILL.md",
+      "what": "One skill's instructions. Skills present at last index: banner-design, brand, design-system, design, slides, ui-styling, ui-ux-pro-max.",
+      "verified": "2026-08-28"
+    },
+    {
+      "type": "raw_path",
+      "url": "https://raw.githubusercontent.com/nextlevelbuilder/ui-ux-pro-max-skill/main/cli/assets/data/styles.csv",
+      "what": "The searchable style taxonomy as CSV. Useful for mapping a loose aesthetic brief onto named styles.",
+      "verified": "2026-08-28"
+    },
+    {
+      "type": "raw_path",
+      "url": "https://raw.githubusercontent.com/nextlevelbuilder/ui-ux-pro-max-skill/main/cli/assets/data/stacks/{stack}.csv",
+      "what": "Per-stack component and library catalog, e.g. stacks/nextjs.csv, stacks/shadcn.csv, stacks/flutter.csv, stacks/swiftui.csv.",
+      "verified": "2026-08-28"
+    },
+    {
+      "type": "raw_path",
+      "url": "https://raw.githubusercontent.com/nextlevelbuilder/ui-ux-pro-max-skill/main/cli/assets/data/{topic}.csv",
+      "what": "Topic datasets: colors, google-fonts, icons, landing, motion, charts, products, app-interface, react-performance.",
+      "verified": "2026-08-28"
+    },
+    {
+      "type": "cli",
+      "url": "npx ui-ux-pro-max-cli",
+      "what": "The project's own installer and design-system commands.",
+      "verified": "2026-08-28"
+    }
+  ],
+  "use_when": [
+    "You need a full design system proposed from a project brief rather than assembled by hand.",
+    "The target stack is outside the React/Tailwind mainstream and you need stack-appropriate component suggestions.",
+    "You want a named, searchable style rather than an improvised aesthetic."
+  ],
+  "avoid_when": [
+    "You only need one component - reaching for a whole design-system generator is overkill."
+  ],
+  "metrics": {
+    "stars": 122611,
+    "checked": "2026-08-29"
+  },
+  "upstream": {
+    "last_commit": "2026-08-27T09:15:37Z",
+    "default_branch": "main",
+    "archived": false,
+    "open_issues": 90,
+    "checked": "2026-08-29"
+  },
+  "added": "2026-08-28",
+  "notes": "The repository is the free tier of a project that also sells a premium version. Everything indexed here is from the MIT-licensed open repository."
+}

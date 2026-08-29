@@ -1,0 +1,74 @@
+{
+  "id": "ant-design",
+  "name": "Ant Design",
+  "repo": "https://github.com/ant-design/ant-design",
+  "homepage": "https://ant.design",
+  "author": {
+    "name": "Ant Design",
+    "url": "https://github.com/ant-design"
+  },
+  "license": "MIT",
+  "license_url": "https://github.com/ant-design/ant-design/blob/master/LICENSE",
+  "summary": "An enterprise-class UI design language and React UI library.",
+  "kind": "component-library",
+  "capabilities": [
+    "components",
+    "theming",
+    "design-tokens",
+    "design-language",
+    "accessibility",
+    "layout",
+    "typography",
+    "iconography"
+  ],
+  "stacks": [
+    "react",
+    "next",
+    "vite"
+  ],
+  "style_tags": [
+    "corporate",
+    "data-dense",
+    "flat",
+    "neutral"
+  ],
+  "agent_entrypoints": [
+    {
+      "type": "llms_txt",
+      "url": "https://ant.design/llms.txt",
+      "what": "Agent-oriented docs map covering components, the design language, and the token system.",
+      "verified": "2026-08-28"
+    },
+    {
+      "type": "docs_url",
+      "url": "https://ant.design/components/{component}",
+      "what": "Per-component docs and API, e.g. /components/table, /components/form."
+    },
+    {
+      "type": "docs_url",
+      "url": "https://ant.design/docs/react/customize-theme",
+      "what": "Design-token based theming. Ant Design's tokens are the supported way to restyle it."
+    }
+  ],
+  "use_when": [
+    "You are building an admin panel, console, or data-heavy internal tool.",
+    "You need forms and tables with serious built-in behaviour rather than primitives to assemble.",
+    "The product has a Chinese-market or enterprise audience where Ant Design is the familiar idiom."
+  ],
+  "avoid_when": [
+    "The surface is a marketing or consumer page - Ant Design is tuned for application chrome, not expressive layouts.",
+    "Bundle size on a small public site is a hard constraint."
+  ],
+  "metrics": {
+    "stars": 99255,
+    "checked": "2026-08-29"
+  },
+  "upstream": {
+    "last_commit": "2026-08-28T15:21:33Z",
+    "default_branch": "master",
+    "archived": false,
+    "open_issues": 1105,
+    "checked": "2026-08-29"
+  },
+  "added": "2026-08-28"
+}

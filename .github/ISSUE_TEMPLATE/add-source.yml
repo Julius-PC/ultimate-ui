@@ -1,0 +1,48 @@
+name: Suggest a source
+description: Propose a project to add to the catalog
+title: "[source] "
+labels: ["source"]
+body:
+  - type: input
+    id: repo
+    attributes:
+      label: Repository URL
+      placeholder: https://github.com/owner/repo
+    validations: { required: true }
+  - type: textarea
+    id: why
+    attributes:
+      label: Why should an agent building UI know about this?
+      description: What can someone do with it that no currently indexed source covers?
+    validations: { required: true }
+  - type: textarea
+    id: entrypoints
+    attributes:
+      label: How does an agent pull real data from it?
+      description: |
+        The most important field. An llms.txt, a registry JSON, raw markdown in the repo,
+        a documented API, a CLI. Paste the URLs you have checked return 200.
+    validations: { required: true }
+  - type: textarea
+    id: avoid
+    attributes:
+      label: When is this the wrong tool?
+      description: Every real project has limits. An entry without them reads as advertising.
+    validations: { required: true }
+  - type: input
+    id: license
+    attributes:
+      label: License
+      placeholder: MIT
+    validations: { required: true }
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: It is open source with a clearly stated license.
+          required: true
+        - label: It is maintained, or it is a finished thing that does not need commits.
+          required: true
+        - label: I checked the catalog and nothing already covers this.
+          required: true

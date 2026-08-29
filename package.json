@@ -1,0 +1,16 @@
+{
+  "name": "ultimate-ui",
+  "version": "0.1.0",
+  "description": "An open catalog of the best open-source UI resources, plus agent skills that use them.",
+  "license": "MIT",
+  "type": "module",
+  "private": true,
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "validate": "node scripts/validate.mjs",
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/validate.mjs && node scripts/build.mjs --check",
+    "search": "node scripts/search.mjs",
+    "add": "node scripts/add-source.mjs"
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "id": "awesome-design-md",
+  "name": "Awesome DESIGN.md",
+  "repo": "https://github.com/voltagent/awesome-design-md",
+  "homepage": "https://getdesign.md/",
+  "author": {
+    "name": "VoltAgent",
+    "url": "https://github.com/VoltAgent"
+  },
+  "license": "MIT",
+  "license_url": "https://github.com/VoltAgent/awesome-design-md/blob/main/LICENSE",
+  "summary": "A collection of DESIGN.md files analysing popular brand design systems. Drop one into your project and let coding agents generate a matching UI.",
+  "kind": "design-language",
+  "capabilities": [
+    "design-language",
+    "design-tokens",
+    "color",
+    "typography",
+    "layout",
+    "agent-guidance",
+    "inspiration"
+  ],
+  "stacks": [
+    "stack-agnostic"
+  ],
+  "style_tags": [
+    "minimal",
+    "editorial",
+    "dark-first",
+    "terminal",
+    "luxury",
+    "corporate",
+    "retro",
+    "marketing",
+    "gradient-heavy"
+  ],
+  "agent_entrypoints": [
+    {
+      "type": "raw_path",
+      "url": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/{brand}/DESIGN.md",
+      "what": "The full design-language document for one brand: palette, type scale, spacing, component rules. This is the payload - read it before writing any UI.",
+      "verified": "2026-08-28"
+    },
+    {
+      "type": "raw_path",
+      "url": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/{brand}/README.md",
+      "what": "Short human summary of that brand's design language.",
+      "verified": "2026-08-28"
+    },
+    {
+      "type": "raw_path",
+      "url": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/README.md",
+      "what": "The categorised index of every available brand. Read it to resolve a vague style request to a concrete brand slug.",
+      "verified": "2026-08-28"
+    },
+    {
+      "type": "api",
+      "url": "https://api.github.com/repos/VoltAgent/awesome-design-md/git/trees/main?recursive=1",
+      "what": "Authoritative list of brand slugs currently in the repo - more reliable than the README when it lags.",
+      "verified": "2026-08-28"
+    }
+  ],
+  "use_when": [
+    "Someone describes the look they want by naming a company ('make it feel like Linear').",
+    "You need a written design language before generating screens, so output stays consistent across a session.",
+    "You are seeding a new project and want a defensible starting palette and type scale."
+  ],
+  "avoid_when": [
+    "You need runnable components - these are documents, not code.",
+    "The work is a public-facing product that would be mistaken for the analysed brand. Borrow the system, not the identity."
+  ],
+  "provides": [
+    {
+      "name": "74 brand DESIGN.md profiles",
+      "note": "Slugs observed 2026-08-28: airbnb, airtable, apple, binance, bmw, bmw-m, bugatti, cal, claude, clay, clickhouse, cohere, coinbase, composio, cursor, dell-1996, elevenlabs, expo, ferrari, figma, framer, hashicorp, hp, ibm, intercom, kraken, lamborghini, linear.app, lovable, mastercard, meta, minimax, mintlify, miro, mistral.ai, mongodb, nike, nintendo-2001, notion, nvidia, ollama, opencode.ai, pinterest, playstation, posthog, raycast, renault, replicate, resend, revolut, runwayml, sanity, sentry, shopify, slack, spacex, spotify, starbucks, stripe, supabase, superhuman, tesla, theverge, together.ai, uber, vercel, vodafone, voltagent, warp, webflow, wired, wise, x.ai, zapier. Re-read the tree rather than trusting this list."
+    }
+  ],
+  "metrics": {
+    "stars": 111111,
+    "checked": "2026-08-29"
+  },
+  "upstream": {
+    "last_commit": "2026-07-31T12:32:42Z",
+    "default_branch": "main",
+    "archived": false,
+    "open_issues": 320,
+    "checked": "2026-08-29"
+  },
+  "added": "2026-08-28",
+  "notes": "The DESIGN.md files describe real companies' visual systems. Use them as craft references and starting points. Do not reproduce another company's logo, wordmark, or trade dress in shipped work."
+}
