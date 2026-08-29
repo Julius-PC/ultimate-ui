@@ -36,6 +36,7 @@ jobs:
     runs-on: ubuntu-latest
     # Network-dependent, so it reports rather than blocks a PR on a flaky host.
     continue-on-error: true
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5

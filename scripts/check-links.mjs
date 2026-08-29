@@ -10,6 +10,7 @@
 import { loadSources } from './lib.mjs';
 
 const only = process.argv[2];
+const TIMEOUT_MS = Number(process.env.LINK_TIMEOUT_MS || 20000);
 const skipTypes = new Set(['cli', 'mcp']);
 const rows = [];
 
@@ -19,11 +20,18 @@ for (const { data: s } of loadSources()) {
     if (skipTypes.has(ep.type)) continue;
     if (ep.url.includes('{')) { rows.push([s.id, 'skip', 'pattern', ep.url]); continue; }
     if (/127\.0\.0\.1|localhost/.test(ep.url)) { rows.push([s.id, 'skip', 'local', ep.url]); continue; }
+    // Without a timeout one unresponsive host hangs the whole run - and in CI
+    // that burns the job's full budget rather than reporting a dead link.
     try {
-      const res = await fetch(ep.url, { redirect: 'follow', headers: { 'User-Agent': 'ultimate-ui-catalog' } });
+      const res = await fetch(ep.url, {
+        redirect: 'follow',
+        headers: { 'User-Agent': 'ultimate-ui-catalog' },
+        signal: AbortSignal.timeout(TIMEOUT_MS),
+      });
       rows.push([s.id, res.ok ? 'ok' : 'FAIL', String(res.status), ep.url]);
     } catch (e) {
-      rows.push([s.id, 'FAIL', 'error', `${ep.url} (${e.message})`]);
+      const why = e.name === 'TimeoutError' ? `no response in ${TIMEOUT_MS / 1000}s` : e.message;
+      rows.push([s.id, 'FAIL', 'error', `${ep.url} (${why})`]);
     }
   }
 }
