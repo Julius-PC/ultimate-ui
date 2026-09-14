@@ -142,15 +142,15 @@ still current.
 <!-- freshness-table:start -->
 | Source | Last upstream commit | Age when checked | Stars | Checked |
 | --- | --- | --- | --- | --- |
-| [ComfyUI](https://github.com/Comfy-Org/ComfyUI) | 2026-08-29 | same day | 130,493 | 2026-08-29 |
-| [Storybook](https://github.com/storybookjs/storybook) | 2026-08-28 | same day | 90,958 | 2026-08-29 |
-| [Ant Design](https://github.com/ant-design/ant-design) | 2026-08-28 | same day | 99,255 | 2026-08-29 |
-| [Material UI](https://github.com/mui/material-ui) | 2026-08-28 | 1 day | 98,958 | 2026-08-29 |
-| [UI UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) | 2026-08-27 | 2 days | 122,611 | 2026-08-29 |
-| [shadcn/ui](https://github.com/shadcn-ui/ui) | 2026-08-26 | 3 days | 122,447 | 2026-08-29 |
-| [Skills For Designers and Engineers](https://github.com/emilkowalski/skills) | 2026-08-21 | 8 days | 33,282 | 2026-08-29 |
-| [Awesome DESIGN.md](https://github.com/voltagent/awesome-design-md) | 2026-07-31 | 28 days | 111,111 | 2026-08-29 |
-| [Design Resources For Developers](https://github.com/bradtraversy/design-resources-for-developers) | 2026-05-24 | 97 days | 66,770 | 2026-08-29 |
+| [Storybook](https://github.com/storybookjs/storybook) | 2026-09-14 | same day | 91,054 | 2026-09-14 |
+| [ComfyUI](https://github.com/Comfy-Org/ComfyUI) | 2026-09-14 | same day | 133,028 | 2026-09-14 |
+| [Material UI](https://github.com/mui/material-ui) | 2026-09-14 | same day | 99,039 | 2026-09-14 |
+| [Ant Design](https://github.com/ant-design/ant-design) | 2026-09-14 | same day | 99,506 | 2026-09-14 |
+| [shadcn/ui](https://github.com/shadcn-ui/ui) | 2026-09-12 | 1 day | 123,719 | 2026-09-14 |
+| [UI UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) | 2026-09-10 | 4 days | 127,509 | 2026-09-14 |
+| [Skills For Designers and Engineers](https://github.com/emilkowalski/skills) | 2026-08-21 | 24 days | 37,564 | 2026-09-14 |
+| [Awesome DESIGN.md](https://github.com/voltagent/awesome-design-md) | 2026-07-31 | 44 days | 115,794 | 2026-09-14 |
+| [Design Resources For Developers](https://github.com/bradtraversy/design-resources-for-developers) | 2026-05-24 | 113 days | 66,937 | 2026-09-14 |
 <!-- freshness-table:end -->
 
 Refresh it yourself — this rewrites the `upstream` block in every source file:

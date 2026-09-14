@@ -403,15 +403,15 @@
         "Bundle size on a small public site is a hard constraint."
       ],
       "metrics": {
-        "stars": 99255,
-        "checked": "2026-08-29"
+        "stars": 99506,
+        "checked": "2026-09-14"
       },
       "upstream": {
-        "last_commit": "2026-08-28T15:21:33Z",
+        "last_commit": "2026-09-14T08:29:53Z",
         "default_branch": "master",
         "archived": false,
-        "open_issues": 1105,
-        "checked": "2026-08-29"
+        "open_issues": 1072,
+        "checked": "2026-09-14"
       },
       "added": "2026-08-28"
     },
@@ -493,15 +493,15 @@
         }
       ],
       "metrics": {
-        "stars": 111111,
-        "checked": "2026-08-29"
+        "stars": 115794,
+        "checked": "2026-09-14"
       },
       "upstream": {
         "last_commit": "2026-07-31T12:32:42Z",
         "default_branch": "main",
         "archived": false,
-        "open_issues": 320,
-        "checked": "2026-08-29"
+        "open_issues": 310,
+        "checked": "2026-09-14"
       },
       "added": "2026-08-28",
       "notes": "The DESIGN.md files describe real companies' visual systems. Use them as craft references and starting points. Do not reproduce another company's logo, wordmark, or trade dress in shipped work."
@@ -561,15 +561,15 @@
         "The output would ship in a context where the GPL-3.0 license or the licenses of individual models are a problem. Model weights carry their own terms, separate from ComfyUI's."
       ],
       "metrics": {
-        "stars": 130493,
-        "checked": "2026-08-29"
+        "stars": 133028,
+        "checked": "2026-09-14"
       },
       "upstream": {
-        "last_commit": "2026-08-29T00:43:25Z",
+        "last_commit": "2026-09-14T11:51:58Z",
         "default_branch": "master",
         "archived": false,
-        "open_issues": 4731,
-        "checked": "2026-08-29"
+        "open_issues": 4871,
+        "checked": "2026-09-14"
       },
       "added": "2026-08-28",
       "notes": "Category outlier. ComfyUI is indexed as a visual-asset generator that feeds interface work, not as a UI library. It is also the only GPL-3.0 source in the catalog - relevant if anyone considers embedding rather than calling it."
@@ -634,15 +634,15 @@
         }
       ],
       "metrics": {
-        "stars": 66770,
-        "checked": "2026-08-29"
+        "stars": 66937,
+        "checked": "2026-09-14"
       },
       "upstream": {
         "last_commit": "2026-05-24T10:07:48Z",
         "default_branch": "master",
         "archived": false,
-        "open_issues": 103,
-        "checked": "2026-08-29"
+        "open_issues": 125,
+        "checked": "2026-09-14"
       },
       "added": "2026-08-28",
       "notes": "Links point to third-party sites with their own licenses and terms. The MIT license covers this list, not the resources it links to."
@@ -753,15 +753,15 @@
         }
       ],
       "metrics": {
-        "stars": 33282,
-        "checked": "2026-08-29"
+        "stars": 37564,
+        "checked": "2026-09-14"
       },
       "upstream": {
         "last_commit": "2026-08-21T09:32:33Z",
         "default_branch": "main",
         "archived": false,
-        "open_issues": 0,
-        "checked": "2026-08-29"
+        "open_issues": 1,
+        "checked": "2026-09-14"
       },
       "added": "2026-08-28"
     },
@@ -829,15 +829,15 @@
         "The project is already on Tailwind plus a copy-in component set; mixing the two styling models causes more pain than it solves."
       ],
       "metrics": {
-        "stars": 98958,
-        "checked": "2026-08-29"
+        "stars": 99039,
+        "checked": "2026-09-14"
       },
       "upstream": {
-        "last_commit": "2026-08-28T02:03:40Z",
+        "last_commit": "2026-09-14T10:37:33Z",
         "default_branch": "master",
         "archived": false,
-        "open_issues": 1488,
-        "checked": "2026-08-29"
+        "open_issues": 1478,
+        "checked": "2026-09-14"
       },
       "added": "2026-08-28"
     },
@@ -920,15 +920,15 @@
         "The team wants a batteries-included library it never has to maintain; here the code becomes yours."
       ],
       "metrics": {
-        "stars": 122447,
-        "checked": "2026-08-29"
+        "stars": 123719,
+        "checked": "2026-09-14"
       },
       "upstream": {
-        "last_commit": "2026-08-26T06:28:13Z",
+        "last_commit": "2026-09-12T13:26:36Z",
         "default_branch": "main",
         "archived": false,
-        "open_issues": 2237,
-        "checked": "2026-08-29"
+        "open_issues": 1843,
+        "checked": "2026-09-14"
       },
       "added": "2026-08-28"
     },
@@ -1000,15 +1000,15 @@
         "The user asked for a static mockup with no build step."
       ],
       "metrics": {
-        "stars": 90958,
-        "checked": "2026-08-29"
+        "stars": 91054,
+        "checked": "2026-09-14"
       },
       "upstream": {
-        "last_commit": "2026-08-28T21:09:18Z",
+        "last_commit": "2026-09-14T11:53:58Z",
         "default_branch": "next",
         "archived": false,
-        "open_issues": 1774,
-        "checked": "2026-08-29"
+        "open_issues": 1829,
+        "checked": "2026-09-14"
       },
       "added": "2026-08-28"
     },
@@ -1104,15 +1104,15 @@
         "You only need one component - reaching for a whole design-system generator is overkill."
       ],
       "metrics": {
-        "stars": 122611,
-        "checked": "2026-08-29"
+        "stars": 127509,
+        "checked": "2026-09-14"
       },
       "upstream": {
-        "last_commit": "2026-08-27T09:15:37Z",
+        "last_commit": "2026-09-10T06:53:40Z",
         "default_branch": "main",
         "archived": false,
-        "open_issues": 90,
-        "checked": "2026-08-29"
+        "open_issues": 85,
+        "checked": "2026-09-14"
       },
       "added": "2026-08-28",
       "notes": "The repository is the free tier of a project that also sells a premium version. Everything indexed here is from the MIT-licensed open repository."

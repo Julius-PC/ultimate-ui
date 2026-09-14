@@ -76,15 +76,15 @@
     }
   ],
   "metrics": {
-    "stars": 111111,
-    "checked": "2026-08-29"
+    "stars": 115794,
+    "checked": "2026-09-14"
   },
   "upstream": {
     "last_commit": "2026-07-31T12:32:42Z",
     "default_branch": "main",
     "archived": false,
-    "open_issues": 320,
-    "checked": "2026-08-29"
+    "open_issues": 310,
+    "checked": "2026-09-14"
   },
   "added": "2026-08-28",
   "notes": "The DESIGN.md files describe real companies' visual systems. Use them as craft references and starting points. Do not reproduce another company's logo, wordmark, or trade dress in shipped work."

@@ -104,15 +104,15 @@
     }
   ],
   "metrics": {
-    "stars": 33282,
-    "checked": "2026-08-29"
+    "stars": 37564,
+    "checked": "2026-09-14"
   },
   "upstream": {
     "last_commit": "2026-08-21T09:32:33Z",
     "default_branch": "main",
     "archived": false,
-    "open_issues": 0,
-    "checked": "2026-08-29"
+    "open_issues": 1,
+    "checked": "2026-09-14"
   },
   "added": "2026-08-28"
 }
