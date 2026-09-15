@@ -503,7 +503,7 @@
         }
       ],
       "metrics": {
-        "stars": 115982,
+        "stars": 115983,
         "checked": "2026-09-15"
       },
       "upstream": {
@@ -1331,7 +1331,7 @@
         "You only need one component - reaching for a whole design-system generator is overkill."
       ],
       "metrics": {
-        "stars": 127842,
+        "stars": 127843,
         "checked": "2026-09-15"
       },
       "upstream": {

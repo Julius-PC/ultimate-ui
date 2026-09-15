@@ -149,9 +149,9 @@ Last checked 2026-09-15. ⚠️ marks an upstream with no commits in a year, or 
 | [Skills For Designers and Engineers](https://github.com/emilkowalski/skills) | 2026-09-15 | same day | — | 2026-08-28 | 37,928 |
 | [Material UI](https://github.com/mui/material-ui) | 2026-09-15 | same day | `v9.4.0` | 2026-08-28 | 99,046 |
 | [Ant Design](https://github.com/ant-design/ant-design) | 2026-09-15 | same day | `6.6.4` | 2026-08-28 | 99,512 |
-| [UI UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) | 2026-09-15 | same day | `v2.15.0` | 2026-08-28 | 127,842 |
+| [UI UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) | 2026-09-15 | same day | `v2.15.0` | 2026-08-28 | 127,843 |
 | [shadcn/ui](https://github.com/shadcn-ui/ui) | 2026-09-12 | 2 days | `shadcn@4.21.0` | 2026-08-28 | 123,860 |
-| [Awesome DESIGN.md](https://github.com/voltagent/awesome-design-md) | 2026-07-31 | 45 days | — | 2026-08-28 | 115,982 |
+| [Awesome DESIGN.md](https://github.com/voltagent/awesome-design-md) | 2026-07-31 | 45 days | — | 2026-08-28 | 115,983 |
 | [Design Resources For Developers](https://github.com/bradtraversy/design-resources-for-developers) | 2026-05-24 | 114 days | — | 2026-08-28 | 66,946 |
 <!-- freshness-table:end -->
 
