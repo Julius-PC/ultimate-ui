@@ -150,10 +150,10 @@ it was committed to, flagging anything that needs a decision: an archived
 upstream, a license that changed under us, a repo that moved, or a project with
 no pushes in over a year.
 
-A weekly GitHub Action (`.github/workflows/refresh.yml`) runs this and opens a
-pull request when the data changes. **Review it rather than merging it blind** —
-the whole point of routing it through a human is that the flags are judgement
-calls:
+A weekly GitHub Action (`.github/workflows/refresh.yml`) runs this and commits
+the refreshed data to main. Whenever something is flagged, it opens an Issue titled
+*Catalog: upstream changes need review*, or comments on the one already open.
+Routine data needs no review. The flags do, because they are judgement calls:
 
 | Flag | What to actually do |
 | --- | --- |

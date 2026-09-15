@@ -1,18 +1,28 @@
 name: refresh upstream data
 
 # Keeps the catalog honest about how alive each indexed project is.
-# Runs weekly, refreshes the `upstream` block in every source file, and opens a
-# pull request if anything changed. A human reviews it - an archived repo, a
-# license change, or a project going quiet are judgement calls, not things a
-# script should quietly paper over.
+#
+# Runs weekly and splits the result in two:
+#   - Facts (stars, last commit, archived flag) are committed straight to main.
+#     They change every week, and a weekly PR of star counts trains people to
+#     approve without reading.
+#   - Judgement calls (archived repo, license change, moved repo, dead agent
+#     entrypoint) open an Issue, so a human decides what to do about them.
+#
+# Commits pushed with the workflow token do not trigger other workflows, so
+# this cannot loop. It runs validate + build itself before committing.
 on:
   schedule:
     - cron: '0 6 * * 1'   # Mondays, 06:00 UTC
   workflow_dispatch:       # and on demand from the Actions tab
 
 permissions:
-  contents: write
-  pull-requests: write
+  contents: write   # commit refreshed data to main
+  issues: write     # open an Issue when something needs a human
+
+concurrency:
+  group: refresh-upstream
+  cancel-in-progress: false
 
 jobs:
   refresh:
@@ -25,27 +35,68 @@ jobs:
 
       - name: Refresh upstream freshness from the GitHub API
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}   # lifts the 60/hr rate limit
-        run: node scripts/refresh.mjs | tee refresh-report.txt
+          GITHUB_TOKEN: ${{ github.token }}   # lifts the 60/hr rate limit
+        run: node scripts/refresh.mjs --flags-out flags.md
 
       - name: Regenerate derived files
         run: node scripts/validate.mjs && node scripts/build.mjs
 
       - name: Check every agent entrypoint still resolves
         continue-on-error: true
-        run: node scripts/check-links.mjs | tee -a refresh-report.txt
+        shell: bash   # explicit bash enables pipefail, so a dead link still fails this step
+        run: node scripts/check-links.mjs | tee links.txt
 
-      - name: Open a pull request if anything changed
-        uses: peter-evans/create-pull-request@v7
-        with:
-          commit-message: 'chore: refresh upstream freshness data'
-          branch: automated/refresh-upstream
-          delete-branch: true
-          title: 'chore: refresh upstream freshness data'
-          body-path: refresh-report.txt
-          add-paths: |
-            catalog/sources/*.json
-            catalog/index.json
-            CREDITS.md
-            README.md
-          labels: automated
+      - name: Commit refreshed data to main
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add catalog/sources/*.json catalog/index.json CREDITS.md README.md
+          if git diff --cached --quiet; then
+            echo "No data changes this week."
+            exit 0
+          fi
+          git commit -m 'chore: refresh upstream freshness data'
+          git pull --rebase origin main   # main may have moved while this ran
+          git push origin HEAD:main
+
+      - name: Collect anything that needs a human
+        id: flags
+        shell: bash
+        run: |
+          touch flags.md
+          if grep -q '^FAIL' links.txt 2>/dev/null; then
+            grep '^FAIL' links.txt | tr -s ' ' | sed 's/^FAIL /- dead entrypoint: HTTP /' >> flags.md
+          fi
+          if [ -s flags.md ]; then
+            echo "found=true" >> "$GITHUB_OUTPUT"
+            cat flags.md
+          else
+            echo "found=false" >> "$GITHUB_OUTPUT"
+            echo "Nothing needs a human this week."
+          fi
+
+      - name: Open or update an Issue
+        if: steps.flags.outputs.found == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          title='Catalog: upstream changes need review'
+          {
+            echo 'The weekly refresh found things a script should not decide on its own.'
+            echo
+            cat flags.md
+            echo
+            echo "What to do about each: ${{ github.server_url }}/${{ github.repository }}/blob/main/skills/catalog-curator/SKILL.md#auditing-existing-entries"
+            echo
+            echo "Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          } > issue.md
+          # One open Issue at a time: later weeks comment on it instead of piling up.
+          existing=$(gh issue list --state open --limit 100 --json number,title \
+            --jq ".[] | select(.title == \"$title\") | .number" | head -1)
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --body-file issue.md
+          else
+            gh issue create --title "$title" --body-file issue.md
+          fi

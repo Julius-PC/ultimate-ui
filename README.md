@@ -171,11 +171,11 @@ Verify every agent entrypoint still resolves:
 node scripts/check-links.mjs
 ```
 
-**Automated.** A [scheduled workflow](.github/workflows/refresh.yml) runs weekly,
-refreshes the upstream data, and opens a pull request when anything changed. A
-human still reviews it — an archived repo, a license change, or a project going
-quiet are judgement calls, not things a script should quietly paper over.
-`scripts/refresh.mjs --strict` exits non-zero when something needs that judgement.
+**Automated.** A [scheduled workflow](.github/workflows/refresh.yml) runs every
+Monday. Routine data (stars, last commit) is committed straight to main, so this
+table stays current without a weekly PR to approve. Anything that needs a
+judgement call opens an Issue instead: an archived repo, a license change, a moved
+repo, or a dead agent entrypoint. A script shouldn't quietly paper over those.
 
 ---
 

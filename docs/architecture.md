@@ -74,10 +74,14 @@ it might be. Every entry carries a generated `upstream` block — last commit,
 default branch, archived flag, and the date checked — written by
 `scripts/refresh.mjs` from the GitHub API and surfaced in the README.
 
-A weekly Action refreshes it and opens a pull request. It deliberately does not
-auto-merge: a license change, an archived upstream, or a repo that moved are
-judgement calls. `refresh.mjs --strict` exits non-zero when one of those appears,
-so the signal is machine-readable without the response being automated.
+A weekly Action refreshes it and splits the result in two. The facts - star
+counts, commit dates, the archived flag - are committed straight to main, because
+they change every week and a weekly pull request of star counts trains people to
+approve without reading. The judgement calls - a license change, an archived
+upstream, a repo that moved, a dead agent entrypoint - open an Issue instead. The
+data records what happened; the Issue asks a person what to do about it.
+`refresh.mjs --flags-out` writes those flags to a file, which is how the workflow
+decides whether an Issue is needed.
 
 The separation matters. `refresh.mjs` only ever writes the generated fields —
 `upstream` and `metrics`. It never touches `use_when`, `avoid_when`, or anything

@@ -6,6 +6,7 @@
 //   node scripts/refresh.mjs shadcn-ui    # just one
 //   node scripts/refresh.mjs --report     # read-only: print freshness, change nothing
 //   node scripts/refresh.mjs --strict     # exit 1 if anything needs human attention
+//   node scripts/refresh.mjs --flags-out flags.md   # also write flagged items as a markdown list
 //
 // Writes an `upstream` block into each source file: last commit, default branch,
 // archived flag, and the date checked. Also refreshes metrics.stars and flags a
@@ -19,7 +20,10 @@ import { SOURCES_DIR, loadSources } from './lib.mjs';
 const args = process.argv.slice(2);
 const reportOnly = args.includes('--report');
 const strict = args.includes('--strict');
-const only = args.find((a) => !a.startsWith('--'));
+// The weekly workflow reads this file to decide whether to open an Issue.
+const flagsOutIdx = args.indexOf('--flags-out');
+const flagsOut = flagsOutIdx === -1 ? null : args[flagsOutIdx + 1];
+const only = args.find((a, i) => !a.startsWith('--') && (flagsOutIdx === -1 || i !== flagsOutIdx + 1));
 
 const headers = { 'User-Agent': 'ultimate-ui-catalog', Accept: 'application/vnd.github+json' };
 if (process.env.GITHUB_TOKEN) headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
@@ -105,5 +109,6 @@ if (attention.length) {
   console.log('\nNothing needs attention.');
 }
 
+if (flagsOut) writeFileSync(flagsOut, attention.map((a) => `- ${a}`).join('\n') + (attention.length ? '\n' : ''));
 if (!reportOnly) console.log('\nSource files updated. Now run: node scripts/build.mjs');
 if (strict && attention.length) process.exit(1);
