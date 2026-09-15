@@ -58,15 +58,15 @@
     }
   ],
   "metrics": {
-    "stars": 66937,
-    "checked": "2026-09-14"
+    "stars": 66943,
+    "checked": "2026-09-15"
   },
   "upstream": {
     "last_commit": "2026-05-24T10:07:48Z",
     "default_branch": "master",
     "archived": false,
-    "open_issues": 125,
-    "checked": "2026-09-14"
+    "open_issues": 126,
+    "checked": "2026-09-15"
   },
   "added": "2026-08-28",
   "notes": "Links point to third-party sites with their own licenses and terms. The MIT license covers this list, not the resources it links to."

@@ -62,15 +62,15 @@
     "The project is already on Tailwind plus a copy-in component set; mixing the two styling models causes more pain than it solves."
   ],
   "metrics": {
-    "stars": 99039,
-    "checked": "2026-09-14"
+    "stars": 99048,
+    "checked": "2026-09-15"
   },
   "upstream": {
-    "last_commit": "2026-09-14T10:37:33Z",
+    "last_commit": "2026-09-15T13:23:08Z",
     "default_branch": "master",
     "archived": false,
-    "open_issues": 1478,
-    "checked": "2026-09-14"
+    "open_issues": 1476,
+    "checked": "2026-09-15"
   },
   "added": "2026-08-28"
 }

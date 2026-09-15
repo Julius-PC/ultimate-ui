@@ -77,15 +77,15 @@
     "The team wants a batteries-included library it never has to maintain; here the code becomes yours."
   ],
   "metrics": {
-    "stars": 123719,
-    "checked": "2026-09-14"
+    "stars": 123831,
+    "checked": "2026-09-15"
   },
   "upstream": {
     "last_commit": "2026-09-12T13:26:36Z",
     "default_branch": "main",
     "archived": false,
-    "open_issues": 1843,
-    "checked": "2026-09-14"
+    "open_issues": 1847,
+    "checked": "2026-09-15"
   },
   "added": "2026-08-28"
 }

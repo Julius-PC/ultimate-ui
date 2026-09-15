@@ -90,15 +90,15 @@
     "You only need one component - reaching for a whole design-system generator is overkill."
   ],
   "metrics": {
-    "stars": 127509,
-    "checked": "2026-09-14"
+    "stars": 127785,
+    "checked": "2026-09-15"
   },
   "upstream": {
-    "last_commit": "2026-09-10T06:53:40Z",
+    "last_commit": "2026-09-15T09:29:30Z",
     "default_branch": "main",
     "archived": false,
     "open_issues": 85,
-    "checked": "2026-09-14"
+    "checked": "2026-09-15"
   },
   "added": "2026-08-28",
   "notes": "The repository is the free tier of a project that also sells a premium version. Everything indexed here is from the MIT-licensed open repository."

@@ -53,15 +53,15 @@
     "The output would ship in a context where the GPL-3.0 license or the licenses of individual models are a problem. Model weights carry their own terms, separate from ComfyUI's."
   ],
   "metrics": {
-    "stars": 133028,
-    "checked": "2026-09-14"
+    "stars": 133307,
+    "checked": "2026-09-15"
   },
   "upstream": {
-    "last_commit": "2026-09-14T11:51:58Z",
+    "last_commit": "2026-09-15T12:31:28Z",
     "default_branch": "master",
     "archived": false,
-    "open_issues": 4871,
-    "checked": "2026-09-14"
+    "open_issues": 4869,
+    "checked": "2026-09-15"
   },
   "added": "2026-08-28",
   "notes": "Category outlier. ComfyUI is indexed as a visual-asset generator that feeds interface work, not as a UI library. It is also the only GPL-3.0 source in the catalog - relevant if anyone considers embedding rather than calling it."
