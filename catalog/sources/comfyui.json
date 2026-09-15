@@ -63,6 +63,15 @@
     "open_issues": 4869,
     "checked": "2026-09-15"
   },
+  "review": {
+    "date": "2026-08-28",
+    "baseline": {
+      "description": "The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface.",
+      "homepage": "https://www.comfy.org/",
+      "watched": {},
+      "release_major": "0"
+    }
+  },
   "added": "2026-08-28",
   "notes": "Category outlier. ComfyUI is indexed as a visual-asset generator that feeds interface work, not as a UI library. It is also the only GPL-3.0 source in the catalog - relevant if anyone considers embedding rather than calling it."
 }

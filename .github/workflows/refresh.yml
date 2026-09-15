@@ -1,13 +1,21 @@
 name: refresh upstream data
 
-# Keeps the catalog honest about how alive each indexed project is.
+# Keeps the catalog honest about how alive each indexed project is, and tells a
+# person when an entry needs re-checking.
 #
 # Runs weekly and splits the result in two:
-#   - Facts (stars, last commit, archived flag) are committed straight to main.
-#     They change every week, and a weekly PR of star counts trains people to
-#     approve without reading.
-#   - Judgement calls (archived repo, license change, moved repo, dead agent
-#     entrypoint) open an Issue, so a human decides what to do about them.
+#   - Facts (stars, last commit, latest release, archived flag) are committed
+#     straight to main. They change every week, and a weekly PR of star counts
+#     trains people to approve without reading.
+#   - Things a person must decide are kept in ONE Issue, which this job keeps
+#     current: health problems (archived, license changed, moved, dead agent
+#     entrypoint) and review flags (new items in watched folders, a new major
+#     version, a reworded description, no review in 6 months).
+#
+# The Issue body is rewritten each week to the current list. A comment is added
+# only when something new appears, so you are not re-notified about the same
+# thing. When the list empties - because entries were fixed and reviewed with
+# scripts/review.mjs - the Issue closes itself.
 #
 # Commits pushed with the workflow token do not trigger other workflows, so
 # this cannot loop. It runs validate + build itself before committing.
@@ -18,7 +26,7 @@ on:
 
 permissions:
   contents: write   # commit refreshed data to main
-  issues: write     # open an Issue when something needs a human
+  issues: write     # keep the review Issue current
 
 concurrency:
   group: refresh-upstream
@@ -33,7 +41,7 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Refresh upstream freshness from the GitHub API
+      - name: Refresh upstream data from the GitHub API
         env:
           GITHUB_TOKEN: ${{ github.token }}   # lifts the 60/hr rate limit
         run: node scripts/refresh.mjs --flags-out flags.md
@@ -61,42 +69,63 @@ jobs:
           git push origin HEAD:main
 
       - name: Collect anything that needs a human
-        id: flags
         shell: bash
         run: |
           touch flags.md
           if grep -q '^FAIL' links.txt 2>/dev/null; then
             grep '^FAIL' links.txt | tr -s ' ' | sed 's/^FAIL /- dead entrypoint: HTTP /' >> flags.md
           fi
-          if [ -s flags.md ]; then
-            echo "found=true" >> "$GITHUB_OUTPUT"
-            cat flags.md
-          else
-            echo "found=false" >> "$GITHUB_OUTPUT"
-            echo "Nothing needs a human this week."
-          fi
+          if [ -s flags.md ]; then cat flags.md; else echo "Nothing needs a human this week."; fi
 
-      - name: Open or update an Issue
-        if: steps.flags.outputs.found == 'true'
+      - name: Open, update, or close the review Issue
         env:
           GH_TOKEN: ${{ github.token }}
         shell: bash
         run: |
           title='Catalog: upstream changes need review'
+          run_url="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          existing=$(gh issue list --state open --limit 100 --json number,title \
+            --jq ".[] | select(.title == \"$title\") | .number" | head -1)
+
+          if [ ! -s flags.md ]; then
+            if [ -n "$existing" ]; then
+              gh issue comment "$existing" --body "Everything listed here has been resolved as of $run_url. Closing."
+              gh issue close "$existing"
+            fi
+            exit 0
+          fi
+
           {
-            echo 'The weekly refresh found things a script should not decide on its own.'
+            echo 'The weekly refresh found catalog entries that need a person. This list is rewritten every Monday; items disappear once they are resolved.'
             echo
             cat flags.md
             echo
-            echo "What to do about each: ${{ github.server_url }}/${{ github.repository }}/blob/main/skills/catalog-curator/SKILL.md#auditing-existing-entries"
+            echo '### How to resolve'
             echo
-            echo "Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+            echo '1. For each entry, read what changed upstream and update the entry: `provides`, `use_when`, `avoid_when`, `summary`, tags. The `catalog-curator` skill walks through this.'
+            echo '2. Record the review: `node scripts/review.mjs <id>`'
+            echo '3. Commit with `node scripts/validate.mjs && node scripts/build.mjs`.'
+            echo
+            echo 'Health flags (archived, license, moved, dead entrypoint) clear when the entry itself is fixed, not by reviewing.'
+            echo
+            echo "Details: ${{ github.server_url }}/${{ github.repository }}/blob/main/skills/catalog-curator/SKILL.md#auditing-existing-entries"
+            echo
+            echo "Last updated by: $run_url"
           } > issue.md
-          # One open Issue at a time: later weeks comment on it instead of piling up.
-          existing=$(gh issue list --state open --limit 100 --json number,title \
-            --jq ".[] | select(.title == \"$title\") | .number" | head -1)
-          if [ -n "$existing" ]; then
-            gh issue comment "$existing" --body-file issue.md
-          else
+
+          if [ -z "$existing" ]; then
             gh issue create --title "$title" --body-file issue.md
+            exit 0
+          fi
+
+          # Notify only about lines that were not already in the Issue.
+          # GitHub stores bodies with CRLF line endings, so strip them before comparing.
+          gh issue view "$existing" --json body -q .body | tr -d '\r' > old-body.md
+          grep '^- ' old-body.md | sort > old.txt || true
+          sort flags.md > new.txt
+          comm -13 old.txt new.txt > added.txt
+          gh issue edit "$existing" --body-file issue.md
+          if [ -s added.txt ]; then
+            { echo 'New this week:'; echo; cat added.txt; } > comment.md
+            gh issue comment "$existing" --body-file comment.md
           fi

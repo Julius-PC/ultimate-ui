@@ -72,5 +72,14 @@
     "open_issues": 1476,
     "checked": "2026-09-15"
   },
+  "review": {
+    "date": "2026-08-28",
+    "baseline": {
+      "description": "Material UI: Comprehensive React component library that implements Google's Material Design. Free forever.",
+      "homepage": "https://mui.com/material-ui/",
+      "watched": {},
+      "release_major": "9"
+    }
+  },
   "added": "2026-08-28"
 }

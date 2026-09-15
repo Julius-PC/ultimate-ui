@@ -68,6 +68,60 @@
     "open_issues": 126,
     "checked": "2026-09-15"
   },
+  "watch": {
+    "headings": [
+      {
+        "file": "readme.md",
+        "level": 2
+      }
+    ]
+  },
+  "review": {
+    "date": "2026-08-28",
+    "baseline": {
+      "description": "Curated list of design and UI resources from stock photos, web templates, CSS frameworks, UI libraries, tools and much more",
+      "homepage": null,
+      "watched": {
+        "readme.md#h2": [
+          "AI Graphic Design Tools",
+          "Angular UI Libraries",
+          "CSS Animations",
+          "CSS Frameworks",
+          "CSS Methodologies",
+          "Chrome Extensions",
+          "Colors",
+          "Design Inspiration",
+          "Design Systems & Style Guides",
+          "Downloadable Design Software",
+          "Favicons",
+          "Firefox Extensions",
+          "Fonts",
+          "HTML & CSS Templates",
+          "Icon Fonts",
+          "Icons",
+          "Image Compression",
+          "Javascript Animation Libraries",
+          "Javascript Chart Libraries",
+          "Logos",
+          "Online Design Tools",
+          "Others",
+          "Product & Image Mockups",
+          "React Native UI Libraries",
+          "React UI Libraries",
+          "Stock Music & Sound Effects",
+          "Stock Photos",
+          "Stock Videos",
+          "Svelte UI Libraries",
+          "Table of Contents",
+          "UI Components & Kits",
+          "UI Graphics",
+          "Vectors & Clip Art",
+          "Vue UI Libraries"
+        ]
+      },
+      "release_major": null
+    }
+  },
   "added": "2026-08-28",
   "notes": "Links point to third-party sites with their own licenses and terms. The MIT license covers this list, not the resources it links to."
 }

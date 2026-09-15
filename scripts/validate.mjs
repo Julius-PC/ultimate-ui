@@ -16,6 +16,7 @@ const seenIds = new Map();
 
 const isUrl = (v) => typeof v === 'string' && /^https?:\/\/\S+$/.test(v);
 const isDate = (v) => typeof v === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(v);
+const today = new Date().toISOString().slice(0, 10);
 
 for (const { file, data } of loadSources()) {
   const err = (msg) => problems.push(`${file}: ${msg}`);
@@ -93,6 +94,36 @@ for (const { file, data } of loadSources()) {
   if (data.metrics) {
     if (data.metrics.checked != null && !isDate(data.metrics.checked)) err('metrics.checked must be YYYY-MM-DD');
     if (data.metrics.stars != null && !Number.isInteger(data.metrics.stars)) err('metrics.stars must be an integer');
+  }
+
+  // A review date is required: it is what tells a reader, and the weekly
+  // refresh, whether the judgement fields have been checked recently.
+  if (!data.review || !isDate(data.review.date)) {
+    err(`review.date is required - once the entry is right, run: node scripts/review.mjs ${data.id}`);
+  } else {
+    if (data.review.date > today) err('review.date is in the future');
+    for (const k of Object.keys(data.review)) if (!['date', 'baseline'].includes(k)) err(`unknown review field "${k}"`);
+    if (data.review.baseline !== undefined && (typeof data.review.baseline !== 'object' || Array.isArray(data.review.baseline))) {
+      err('review.baseline must be an object - regenerate it with scripts/review.mjs');
+    }
+  }
+
+  if (data.watch !== undefined) {
+    const w = data.watch;
+    if (typeof w !== 'object' || Array.isArray(w)) err('watch must be an object');
+    else {
+      for (const k of Object.keys(w)) if (!['paths', 'headings'].includes(k)) err(`unknown watch field "${k}"`);
+      if (w.paths !== undefined && (!Array.isArray(w.paths) || w.paths.some((p) => typeof p !== 'string' || !p))) {
+        err('watch.paths must be an array of path patterns');
+      }
+      if (w.headings !== undefined) {
+        if (!Array.isArray(w.headings)) err('watch.headings must be an array');
+        else w.headings.forEach((h, i) => {
+          if (typeof h?.file !== 'string' || !h.file) err(`watch.headings[${i}].file is required`);
+          if (!Number.isInteger(h?.level) || h.level < 1 || h.level > 6) err(`watch.headings[${i}].level must be 1-6`);
+        });
+      }
+    }
   }
 }
 

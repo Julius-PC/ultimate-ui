@@ -97,6 +97,9 @@ These are the ones a human has to get right:
   wrong tool? An entry with no `avoid_when` reads as advertising, and agents
   reading the catalog will over-recommend it. Every real tool has limits; find them.
 - **`summary`** — prefer the maintainers' own framing. They know what they built.
+- **`watch`** — if the entry lists things upstream will add more of (skills,
+  brand profiles, sections of a list), watch them, so a new one flags a review
+  instead of silently making `provides` wrong. See `docs/adding-a-source.md`.
 
 ### 5. Attribution
 
@@ -113,7 +116,14 @@ Non-negotiable. See `docs/attribution-policy.md`.
 Never copy substantial content from the upstream repo into this one. We index and
 link. That is the whole licensing posture, and it is what keeps this simple.
 
-### 6. Validate, build, verify
+### 6. Record the review, validate, build, verify
+
+Once every field is right, record the review. It snapshots upstream so future
+drift can be detected:
+
+```bash
+node scripts/review.mjs <new-id>
+```
 
 ```bash
 node scripts/validate.mjs
@@ -150,17 +160,44 @@ it was committed to, flagging anything that needs a decision: an archived
 upstream, a license that changed under us, a repo that moved, or a project with
 no pushes in over a year.
 
-A weekly GitHub Action (`.github/workflows/refresh.yml`) runs this and commits
-the refreshed data to main. Whenever something is flagged, it opens an Issue titled
-*Catalog: upstream changes need review*, or comments on the one already open.
-Routine data needs no review. The flags do, because they are judgement calls:
+A weekly GitHub Action (`.github/workflows/refresh.yml`) runs this, commits the
+refreshed data to main, and keeps one Issue - *Catalog: upstream changes need
+review* - listing everything that needs a person. It comments when something new
+appears and closes the Issue once the list is empty.
+
+There are two kinds of flag, and they clear differently.
+
+**Health flags clear when you fix the entry:**
 
 | Flag | What to actually do |
 | --- | --- |
-| `LICENSE CHANGED` | Read the new license. Update the entry, and add a `notes` line if it now constrains use. |
-| `ARCHIVED` | Usually remove, unless it is a finished thing that needs no commits. Say which in `notes`. |
-| `no pushes in N days` | Judgement. A curated list can be quiet and fine; a framework going quiet is a signal. |
+| `LICENSE CHANGED` | Read the new license. Update `license`, and add a `notes` line if it now constrains use. |
+| `upstream is ARCHIVED` | Usually remove, unless it is a finished thing that needs no commits. Say which in `notes`. |
+| `no pushes since DATE` | Judgement. A curated list can be quiet and fine; a framework going quiet is a signal. |
 | `repo moved to X` | Update `repo`, `author`, and every `raw_path` entrypoint that embeds the old owner. |
+| `dead entrypoint` | Find the new URL or drop the entrypoint, and refresh its `verified` date. |
+
+**Review flags clear when you re-check the entry and run `review.mjs`:**
+
+| Flag | What to actually do |
+| --- | --- |
+| `N new in <watched> since review` | Read the new items. Add them to `provides`, and reconsider `use_when` if they widen what the project is for. |
+| `N removed from <watched>` | Remove them from `provides`, and from any skill that routes to them by name. |
+| `new major version` | Skim the release notes. Major versions are where `avoid_when` goes wrong - an old limit fixed, or a new one introduced. |
+| `description changed` / `homepage changed` | The project may have reframed itself. Re-read `summary` and `kind`. |
+| `review overdue` | Nothing specific flagged it, so re-read the entry against the project anyway. That is the point of the backstop. |
+| `never reviewed` / `no review baseline yet` | Check the entry, then record the review. |
+
+Then record the review. It prints what you are acknowledging, so you can confirm
+nothing was skipped:
+
+```bash
+node scripts/review.mjs <id>
+```
+
+Reviewing an entry and changing nothing is a legitimate outcome. Running
+`review.mjs` without reading the project is not: it silences the flags and hides
+exactly the drift they were raised to surface.
 
 Then confirm the entrypoints still resolve, and refresh their `verified` dates:
 
@@ -187,6 +224,7 @@ If a maintainer asks for their project to be removed, remove it. No debate.
 Checklist:
 
 - [ ] `node scripts/validate.mjs` passes.
+- [ ] `review` was recorded with `scripts/review.mjs` after the entry was finished.
 - [ ] Generated files are current (`node scripts/build.mjs --check`).
 - [ ] Every `agent_entrypoints` URL returns 200, and `verified` is set.
 - [ ] `avoid_when` is present and honest, not a humblebrag.

@@ -70,5 +70,14 @@
     "open_issues": 1073,
     "checked": "2026-09-15"
   },
+  "review": {
+    "date": "2026-08-28",
+    "baseline": {
+      "description": "An enterprise-class UI design language and React UI library",
+      "homepage": "https://ant.design",
+      "watched": {},
+      "release_major": "6"
+    }
+  },
   "added": "2026-08-28"
 }

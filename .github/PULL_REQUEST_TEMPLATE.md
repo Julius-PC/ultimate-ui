@@ -21,6 +21,7 @@ node scripts/validate.mjs && node scripts/build.mjs
 ### If this touches `catalog/sources/`
 
 - [ ] Every `agent_entrypoints` URL returns 200, with `verified` set to today (`node scripts/check-links.mjs <id>`).
+- [ ] Ran `node scripts/review.mjs <id>` after finishing the entry, and added `watch` if it lists things upstream will add more of.
 - [ ] `avoid_when` is present and honest.
 - [ ] License matches the upstream repository right now.
 - [ ] Attribution complete, including `author.credit_note` where a person created something now under an org.

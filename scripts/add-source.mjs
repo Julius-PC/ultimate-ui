@@ -92,7 +92,10 @@ Now fill in by hand:
   6. avoid_when    - where it is the wrong tool. Be honest; this is the most useful field in the file.
   7. agent_entrypoints - the how-to-actually-fetch-it part. Verify every URL before opening the PR.
   8. author.credit_note - if the repo moved to an org, credit the original creator here.
+  9. watch         - optional: folders or README sections where new items should trigger a
+                     review, e.g. { "paths": ["skills/*"] }. See docs/adding-a-source.md.
 
-Then:
+Then, once the entry is right:
+  node scripts/review.mjs ${id}     # records the review and snapshots upstream
   node scripts/validate.mjs && node scripts/build.mjs
 `);

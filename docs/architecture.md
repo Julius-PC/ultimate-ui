@@ -6,6 +6,7 @@ Two layers, one rule between them.
 catalog/sources/*.json   ← hand-written. One file per indexed project.
         │
         │  scripts/refresh.mjs    writes back the `upstream` freshness block
+        │  scripts/review.mjs     records a person's review and an upstream baseline
         │  scripts/validate.mjs   enforces schema + taxonomy
         │  scripts/build.mjs      aggregates
         ▼
@@ -75,17 +76,49 @@ default branch, archived flag, and the date checked — written by
 `scripts/refresh.mjs` from the GitHub API and surfaced in the README.
 
 A weekly Action refreshes it and splits the result in two. The facts - star
-counts, commit dates, the archived flag - are committed straight to main, because
-they change every week and a weekly pull request of star counts trains people to
-approve without reading. The judgement calls - a license change, an archived
-upstream, a repo that moved, a dead agent entrypoint - open an Issue instead. The
-data records what happened; the Issue asks a person what to do about it.
-`refresh.mjs --flags-out` writes those flags to a file, which is how the workflow
-decides whether an Issue is needed.
+counts, commit dates, releases, the archived flag - are committed straight to
+main, because they change every week and a weekly pull request of star counts
+trains people to approve without reading. Everything that needs a person goes
+into one Issue the workflow keeps current: it rewrites the body to the live list
+each week, comments only when something new appears, and closes the Issue when
+the list empties.
 
 The separation matters. `refresh.mjs` only ever writes the generated fields —
-`upstream` and `metrics`. It never touches `use_when`, `avoid_when`, or anything
-else a person decided.
+`upstream` and `metrics`. It never touches `use_when`, `avoid_when`, `review`, or anything else a person
+decided.
+
+## Judgement goes stale too, so entries carry a review date
+
+A script can refresh facts. It cannot refresh judgement - `use_when`,
+`avoid_when`, `provides`, the summary - but it can notice when those have
+probably gone stale.
+
+Every entry carries a `review` block: the date a person last re-read the
+project, and a `baseline` snapshot of upstream at that moment - description,
+homepage, major version, and the contents of anything listed in `watch`.
+`scripts/review.mjs` writes both, and nothing else does.
+
+Each week `refresh.mjs` compares upstream against that baseline and flags:
+
+| Drift | Why it matters |
+| --- | --- |
+| Items added to or removed from a watched folder or section | `provides` is probably out of date |
+| A new major version | `use_when` and `avoid_when` may describe the old version |
+| A reworded description or new homepage | the project may have changed what it is |
+| No review in 180 days | a backstop for changes no signal catches |
+
+`watch` is opt-in and hand-written, because only a curator knows which parts of a
+repository the entry actually describes. Pre-1.0 projects don't flag on minor
+versions, since they bump them routinely.
+
+Two rules keep this usable:
+
+- **Flags persist until resolved.** They compare against the review baseline,
+  not last week's data, so an ignored flag does not quietly disappear.
+- **Flag text is stable week to week** - "no pushes since 2025-06-01", never
+  "no pushes in 367 days". The workflow diffs flag lines to decide whether
+  anything is new enough to notify about, so text that drifts on its own would
+  notify every week.
 
 ## The skills catalog is generated too
 

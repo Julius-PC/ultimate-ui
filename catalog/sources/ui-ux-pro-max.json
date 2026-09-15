@@ -100,6 +100,68 @@
     "open_issues": 85,
     "checked": "2026-09-15"
   },
+  "watch": {
+    "paths": [
+      ".claude/skills/*",
+      "cli/assets/data/stacks/*.csv",
+      "cli/assets/data/*.csv"
+    ]
+  },
+  "review": {
+    "date": "2026-08-28",
+    "baseline": {
+      "description": "An AI skill that provides design intelligence for building professional UI/UX across multiple platforms.",
+      "homepage": "https://www.uupm.cc/",
+      "watched": {
+        ".claude/skills/*": [
+          "banner-design",
+          "brand",
+          "design",
+          "design-system",
+          "slides",
+          "ui-styling",
+          "ui-ux-pro-max"
+        ],
+        "cli/assets/data/stacks/*.csv": [
+          "angular",
+          "astro",
+          "avalonia",
+          "flutter",
+          "html-tailwind",
+          "javafx",
+          "jetpack-compose",
+          "laravel",
+          "nextjs",
+          "nuxt-ui",
+          "nuxtjs",
+          "react",
+          "react-native",
+          "shadcn",
+          "svelte",
+          "swiftui",
+          "threejs",
+          "uno",
+          "uwp",
+          "vue",
+          "winui",
+          "wpf"
+        ],
+        "cli/assets/data/*.csv": [
+          "app-interface",
+          "charts",
+          "colors",
+          "google-fonts",
+          "icons",
+          "landing",
+          "motion",
+          "products",
+          "react-performance",
+          "styles"
+        ]
+      },
+      "release_major": "2"
+    }
+  },
   "added": "2026-08-28",
   "notes": "The repository is the free tier of a project that also sells a premium version. Everything indexed here is from the MIT-licensed open repository."
 }

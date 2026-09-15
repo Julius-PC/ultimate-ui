@@ -135,22 +135,24 @@ node scripts/search.mjs --id shadcn-ui --json
 
 ## Freshness
 
-Upstream projects move. The catalog records how recent each project's last
-commit was at the time we checked, so nobody has to guess whether an entry is
-still current.
+Upstream projects move, and entries written about them go stale. The catalog
+tracks both halves: how recently each project was committed to, and when a
+person last checked that the entry still describes it accurately.
 
 <!-- freshness-table:start -->
-| Source | Last upstream commit | Age when checked | Stars | Checked |
-| --- | --- | --- | --- | --- |
-| [Material UI](https://github.com/mui/material-ui) | 2026-09-15 | same day | 99,048 | 2026-09-15 |
-| [Skills For Designers and Engineers](https://github.com/emilkowalski/skills) | 2026-09-15 | same day | 37,880 | 2026-09-15 |
-| [ComfyUI](https://github.com/Comfy-Org/ComfyUI) | 2026-09-15 | same day | 133,307 | 2026-09-15 |
-| [Ant Design](https://github.com/ant-design/ant-design) | 2026-09-15 | same day | 99,510 | 2026-09-15 |
-| [Storybook](https://github.com/storybookjs/storybook) | 2026-09-15 | same day | 91,053 | 2026-09-15 |
-| [UI UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) | 2026-09-15 | same day | 127,785 | 2026-09-15 |
-| [shadcn/ui](https://github.com/shadcn-ui/ui) | 2026-09-12 | 2 days | 123,831 | 2026-09-15 |
-| [Awesome DESIGN.md](https://github.com/voltagent/awesome-design-md) | 2026-07-31 | 45 days | 115,956 | 2026-09-15 |
-| [Design Resources For Developers](https://github.com/bradtraversy/design-resources-for-developers) | 2026-05-24 | 114 days | 66,943 | 2026-09-15 |
+Last checked 2026-09-15. ⚠️ marks an upstream with no commits in a year, or an entry not reviewed in 180 days.
+
+| Source | Last upstream commit | Age when checked | Latest release | Last reviewed | Stars |
+| --- | --- | --- | --- | --- | --- |
+| [Material UI](https://github.com/mui/material-ui) | 2026-09-15 | same day | — | 2026-08-28 | 99,048 |
+| [Skills For Designers and Engineers](https://github.com/emilkowalski/skills) | 2026-09-15 | same day | — | 2026-08-28 | 37,880 |
+| [ComfyUI](https://github.com/Comfy-Org/ComfyUI) | 2026-09-15 | same day | — | 2026-08-28 | 133,307 |
+| [Ant Design](https://github.com/ant-design/ant-design) | 2026-09-15 | same day | — | 2026-08-28 | 99,510 |
+| [Storybook](https://github.com/storybookjs/storybook) | 2026-09-15 | same day | — | 2026-08-28 | 91,053 |
+| [UI UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) | 2026-09-15 | same day | — | 2026-08-28 | 127,785 |
+| [shadcn/ui](https://github.com/shadcn-ui/ui) | 2026-09-12 | 2 days | — | 2026-08-28 | 123,831 |
+| [Awesome DESIGN.md](https://github.com/voltagent/awesome-design-md) | 2026-07-31 | 45 days | — | 2026-08-28 | 115,956 |
+| [Design Resources For Developers](https://github.com/bradtraversy/design-resources-for-developers) | 2026-05-24 | 114 days | — | 2026-08-28 | 66,943 |
 <!-- freshness-table:end -->
 
 Refresh it yourself — this rewrites the `upstream` block in every source file:
@@ -172,10 +174,26 @@ node scripts/check-links.mjs
 ```
 
 **Automated.** A [scheduled workflow](.github/workflows/refresh.yml) runs every
-Monday. Routine data (stars, last commit) is committed straight to main, so this
-table stays current without a weekly PR to approve. Anything that needs a
-judgement call opens an Issue instead: an archived repo, a license change, a moved
-repo, or a dead agent entrypoint. A script shouldn't quietly paper over those.
+Monday. Routine data (stars, last commit, latest release) is committed straight
+to main, so this table stays current without a weekly PR to approve.
+
+Anything a person needs to decide goes into a single Issue, *Catalog: upstream
+changes need review*, which the workflow keeps current:
+
+- **Health:** an archived repo, a license change, a moved repo, a dead agent
+  entrypoint.
+- **Drift since the last review:** new items in a watched folder or section (a
+  new skill, a new brand), a new major version, a reworded project description,
+  or no review in 6 months.
+
+You're notified when something new lands on the list, not every week. When
+everything is resolved, the Issue closes itself.
+
+Resolving a drift flag means updating the entry, then recording the review:
+
+```bash
+node scripts/review.mjs emilkowalski-skills
+```
 
 ---
 
@@ -187,6 +205,7 @@ repo, or a dead agent entrypoint. A script shouldn't quietly paper over those.
 | `node scripts/search.mjs` | Query the source catalog |
 | `node scripts/add-source.mjs <url>` | Scaffold a new catalog entry from a GitHub URL |
 | `node scripts/refresh.mjs` | Update upstream freshness from the GitHub API |
+| `node scripts/review.mjs <id>` | Record that an entry was re-checked against its upstream project |
 | `node scripts/check-links.mjs` | Verify every agent entrypoint still resolves |
 | `node scripts/validate.mjs` | Check the catalog against schema and taxonomy |
 | `node scripts/build.mjs` | Regenerate `catalog/index.json`, `skills/index.json`, `CREDITS.md`, this README |
@@ -200,6 +219,7 @@ Also available as `npm run search`, `npm run build`, and so on.
 ```
 catalog/sources/*.json   ← hand-written, one file per project
         │  refresh.mjs   → upstream freshness from the GitHub API
+        │  review.mjs    → a person's review + upstream baseline
         │  validate.mjs  → schema + controlled vocabulary
         │  build.mjs     → aggregate
         ▼

@@ -16,7 +16,8 @@
     "capabilities",
     "agent_entrypoints",
     "use_when",
-    "added"
+    "added",
+    "review"
   ],
   "properties": {
     "id": {
@@ -245,10 +246,72 @@
             "null"
           ]
         },
+        "latest_release": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Tag of the latest non-prerelease GitHub release, or null if the project publishes none."
+        },
         "checked": {
           "type": "string",
           "format": "date",
           "description": "When refresh.mjs last confirmed these values."
+        }
+      }
+    },
+    "watch": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Hand-written, optional. Where new content appears upstream, so the weekly refresh can flag a review when it does - e.g. a new skill folder or a new section in a curated list. Only watch things the entry actually describes (usually `provides`).",
+      "properties": {
+        "paths": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": "Repository path patterns. `*` matches within one path segment and its match is the item name: `skills/*` yields one item per skill folder."
+        },
+        "headings": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "file",
+              "level"
+            ],
+            "properties": {
+              "file": {
+                "type": "string"
+              },
+              "level": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 6
+              }
+            }
+          },
+          "description": "Markdown headings to watch in a repository file, e.g. the sections of a curated list."
+        }
+      }
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "date"
+      ],
+      "description": "When a person last re-read the upstream project and confirmed the judgement fields. Written by scripts/review.mjs, never by hand. The weekly refresh flags the entry when upstream drifts from `baseline` or the review is over 6 months old.",
+      "properties": {
+        "date": {
+          "type": "string",
+          "format": "date"
+        },
+        "baseline": {
+          "type": "object",
+          "description": "Upstream snapshot at review time: description, homepage, release_major, watched. Generated."
         }
       }
     },

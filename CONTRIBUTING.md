@@ -62,6 +62,7 @@ open an issue. We will act on it, without debate.
 ## Before you open the PR
 
 ```bash
+node scripts/review.mjs <your-id>  # record that you checked the entry against upstream
 node scripts/validate.mjs        # schema + vocabulary
 node scripts/build.mjs           # regenerate index.json, CREDITS.md, README table
 node scripts/search.mjs --id <your-id>
@@ -71,6 +72,7 @@ Commit the regenerated files. CI runs `build.mjs --check` and fails the PR if
 they are stale.
 
 - [ ] Validation passes.
+- [ ] For a source: `review` recorded with `scripts/review.mjs` after the entry was finished.
 - [ ] Generated files committed.
 - [ ] Every URL you added returns 200, with `verified` set to today.
 - [ ] Attribution complete, including the original creator where a repo sits under an org.

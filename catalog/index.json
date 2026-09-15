@@ -413,6 +413,15 @@
         "open_issues": 1073,
         "checked": "2026-09-15"
       },
+      "review": {
+        "date": "2026-08-28",
+        "baseline": {
+          "description": "An enterprise-class UI design language and React UI library",
+          "homepage": "https://ant.design",
+          "watched": {},
+          "release_major": "6"
+        }
+      },
       "added": "2026-08-28"
     },
     {
@@ -503,6 +512,97 @@
         "open_issues": 310,
         "checked": "2026-09-15"
       },
+      "watch": {
+        "paths": [
+          "design-md/*"
+        ]
+      },
+      "review": {
+        "date": "2026-08-28",
+        "baseline": {
+          "description": "A collection of DESIGN.md files analysis by popular brand design systems. Drop one into your project and let coding agents generate a matching UI.",
+          "homepage": "https://getdesign.md/",
+          "watched": {
+            "design-md/*": [
+              "airbnb",
+              "airtable",
+              "apple",
+              "binance",
+              "bmw",
+              "bmw-m",
+              "bugatti",
+              "cal",
+              "claude",
+              "clay",
+              "clickhouse",
+              "cohere",
+              "coinbase",
+              "composio",
+              "cursor",
+              "dell-1996",
+              "elevenlabs",
+              "expo",
+              "ferrari",
+              "figma",
+              "framer",
+              "hashicorp",
+              "hp",
+              "ibm",
+              "intercom",
+              "kraken",
+              "lamborghini",
+              "linear.app",
+              "lovable",
+              "mastercard",
+              "meta",
+              "minimax",
+              "mintlify",
+              "miro",
+              "mistral.ai",
+              "mongodb",
+              "nike",
+              "nintendo-2001",
+              "notion",
+              "nvidia",
+              "ollama",
+              "opencode.ai",
+              "pinterest",
+              "playstation",
+              "posthog",
+              "raycast",
+              "renault",
+              "replicate",
+              "resend",
+              "revolut",
+              "runwayml",
+              "sanity",
+              "sentry",
+              "shopify",
+              "slack",
+              "spacex",
+              "spotify",
+              "starbucks",
+              "stripe",
+              "supabase",
+              "superhuman",
+              "tesla",
+              "theverge",
+              "together.ai",
+              "uber",
+              "vercel",
+              "vodafone",
+              "voltagent",
+              "warp",
+              "webflow",
+              "wired",
+              "wise",
+              "x.ai",
+              "zapier"
+            ]
+          },
+          "release_major": null
+        }
+      },
       "added": "2026-08-28",
       "notes": "The DESIGN.md files describe real companies' visual systems. Use them as craft references and starting points. Do not reproduce another company's logo, wordmark, or trade dress in shipped work."
     },
@@ -570,6 +670,15 @@
         "archived": false,
         "open_issues": 4869,
         "checked": "2026-09-15"
+      },
+      "review": {
+        "date": "2026-08-28",
+        "baseline": {
+          "description": "The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface.",
+          "homepage": "https://www.comfy.org/",
+          "watched": {},
+          "release_major": "0"
+        }
       },
       "added": "2026-08-28",
       "notes": "Category outlier. ComfyUI is indexed as a visual-asset generator that feeds interface work, not as a UI library. It is also the only GPL-3.0 source in the catalog - relevant if anyone considers embedding rather than calling it."
@@ -643,6 +752,60 @@
         "archived": false,
         "open_issues": 126,
         "checked": "2026-09-15"
+      },
+      "watch": {
+        "headings": [
+          {
+            "file": "readme.md",
+            "level": 2
+          }
+        ]
+      },
+      "review": {
+        "date": "2026-08-28",
+        "baseline": {
+          "description": "Curated list of design and UI resources from stock photos, web templates, CSS frameworks, UI libraries, tools and much more",
+          "homepage": null,
+          "watched": {
+            "readme.md#h2": [
+              "AI Graphic Design Tools",
+              "Angular UI Libraries",
+              "CSS Animations",
+              "CSS Frameworks",
+              "CSS Methodologies",
+              "Chrome Extensions",
+              "Colors",
+              "Design Inspiration",
+              "Design Systems & Style Guides",
+              "Downloadable Design Software",
+              "Favicons",
+              "Firefox Extensions",
+              "Fonts",
+              "HTML & CSS Templates",
+              "Icon Fonts",
+              "Icons",
+              "Image Compression",
+              "Javascript Animation Libraries",
+              "Javascript Chart Libraries",
+              "Logos",
+              "Online Design Tools",
+              "Others",
+              "Product & Image Mockups",
+              "React Native UI Libraries",
+              "React UI Libraries",
+              "Stock Music & Sound Effects",
+              "Stock Photos",
+              "Stock Videos",
+              "Svelte UI Libraries",
+              "Table of Contents",
+              "UI Components & Kits",
+              "UI Graphics",
+              "Vectors & Clip Art",
+              "Vue UI Libraries"
+            ]
+          },
+          "release_major": null
+        }
       },
       "added": "2026-08-28",
       "notes": "Links point to third-party sites with their own licenses and terms. The MIT license covers this list, not the resources it links to."
@@ -763,6 +926,35 @@
         "open_issues": 1,
         "checked": "2026-09-15"
       },
+      "watch": {
+        "paths": [
+          "skills/*"
+        ]
+      },
+      "review": {
+        "date": "2026-08-28",
+        "baseline": {
+          "description": "Skills for Designers and Engineers.",
+          "homepage": "https://emilkowal.ski/skill",
+          "watched": {
+            "skills/*": [
+              "animate",
+              "animate-expo",
+              "animation-vocabulary",
+              "apple-design",
+              "ask-sonner",
+              "emil-design-eng",
+              "find-animation-opportunities",
+              "improve-animations",
+              "pick-ui-library",
+              "prototype",
+              "review-animations",
+              "write-swift"
+            ]
+          },
+          "release_major": null
+        }
+      },
       "added": "2026-08-28"
     },
     {
@@ -838,6 +1030,15 @@
         "archived": false,
         "open_issues": 1476,
         "checked": "2026-09-15"
+      },
+      "review": {
+        "date": "2026-08-28",
+        "baseline": {
+          "description": "Material UI: Comprehensive React component library that implements Google's Material Design. Free forever.",
+          "homepage": "https://mui.com/material-ui/",
+          "watched": {},
+          "release_major": "9"
+        }
       },
       "added": "2026-08-28"
     },
@@ -930,6 +1131,15 @@
         "open_issues": 1847,
         "checked": "2026-09-15"
       },
+      "review": {
+        "date": "2026-08-28",
+        "baseline": {
+          "description": "A set of beautifully-designed, accessible components and a code distribution platform. Works with your favorite frameworks. Open Source. Open Code.",
+          "homepage": "https://ui.shadcn.com",
+          "watched": {},
+          "release_major": "4"
+        }
+      },
       "added": "2026-08-28"
     },
     {
@@ -1009,6 +1219,15 @@
         "archived": false,
         "open_issues": 1845,
         "checked": "2026-09-15"
+      },
+      "review": {
+        "date": "2026-08-28",
+        "baseline": {
+          "description": "Storybook is the industry standard workshop for building, documenting, and testing UI components in isolation",
+          "homepage": "https://storybook.js.org",
+          "watched": {},
+          "release_major": "10"
+        }
       },
       "added": "2026-08-28"
     },
@@ -1113,6 +1332,68 @@
         "archived": false,
         "open_issues": 85,
         "checked": "2026-09-15"
+      },
+      "watch": {
+        "paths": [
+          ".claude/skills/*",
+          "cli/assets/data/stacks/*.csv",
+          "cli/assets/data/*.csv"
+        ]
+      },
+      "review": {
+        "date": "2026-08-28",
+        "baseline": {
+          "description": "An AI skill that provides design intelligence for building professional UI/UX across multiple platforms.",
+          "homepage": "https://www.uupm.cc/",
+          "watched": {
+            ".claude/skills/*": [
+              "banner-design",
+              "brand",
+              "design",
+              "design-system",
+              "slides",
+              "ui-styling",
+              "ui-ux-pro-max"
+            ],
+            "cli/assets/data/stacks/*.csv": [
+              "angular",
+              "astro",
+              "avalonia",
+              "flutter",
+              "html-tailwind",
+              "javafx",
+              "jetpack-compose",
+              "laravel",
+              "nextjs",
+              "nuxt-ui",
+              "nuxtjs",
+              "react",
+              "react-native",
+              "shadcn",
+              "svelte",
+              "swiftui",
+              "threejs",
+              "uno",
+              "uwp",
+              "vue",
+              "winui",
+              "wpf"
+            ],
+            "cli/assets/data/*.csv": [
+              "app-interface",
+              "charts",
+              "colors",
+              "google-fonts",
+              "icons",
+              "landing",
+              "motion",
+              "products",
+              "react-performance",
+              "styles"
+            ]
+          },
+          "release_major": "2"
+        }
       },
       "added": "2026-08-28",
       "notes": "The repository is the free tier of a project that also sells a premium version. Everything indexed here is from the MIT-licensed open repository."

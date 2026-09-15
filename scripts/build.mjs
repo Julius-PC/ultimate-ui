@@ -11,6 +11,7 @@
 import { writeFileSync, readFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { ROOT, loadSources, loadSkills, taxonomy, replaceBlock } from './lib.mjs';
+import { daysBetween, REVIEW_MAX_DAYS, STALE_DAYS } from './upstream.mjs';
 
 const check = process.argv.includes('--check');
 const sources = loadSources().map((s) => s.data);
@@ -124,15 +125,27 @@ for (const s of sources) {
   const caps = (s.capabilities || []).slice(0, 3).join(', ');
   rows.push(`| [${s.name}](${s.repo}) | [${s.author.name}](${s.author.url}) | ${KIND_LABEL[s.kind] || s.kind} | ${caps} | ${s.license} |`);
 }
-// Freshness table - how recent each upstream's last commit was when we last checked.
-const fresh = ['| Source | Last upstream commit | Age when checked | Stars | Checked |', '| --- | --- | --- | --- | --- |'];
+// Freshness table - how recent each upstream is, and when a person last
+// reviewed the entry. Ages are measured against each entry's own `checked`
+// date, never the clock, so `build.mjs --check` gives the same answer any day.
+const lastChecked = sources.map((s) => s.upstream?.checked).filter(Boolean).sort().pop();
+const fresh = [];
+if (lastChecked) {
+  fresh.push(`Last checked ${lastChecked}. ⚠️ marks an upstream with no commits in a year, or an entry not reviewed in ${REVIEW_MAX_DAYS} days.`, '');
+}
+fresh.push('| Source | Last upstream commit | Age when checked | Latest release | Last reviewed | Stars |', '| --- | --- | --- | --- | --- | --- |');
 for (const s of [...sources].sort((a, b) => (b.upstream?.last_commit || '').localeCompare(a.upstream?.last_commit || ''))) {
   const u = s.upstream || {};
-  if (!u.last_commit) { fresh.push(`| [${s.name}](${s.repo}) | not checked yet | — | ${s.metrics?.stars?.toLocaleString('en-US') ?? '—'} | — |`); continue; }
-  const d = Math.round((Date.parse(u.checked) - Date.parse(u.last_commit)) / 86400000);
-  const age = d <= 0 ? 'same day' : d === 1 ? '1 day' : `${d} days`;
-  const flag = u.archived ? ' **archived**' : d > 365 ? ' ⚠️' : '';
-  fresh.push(`| [${s.name}](${s.repo}) | ${u.last_commit.slice(0, 10)}${flag} | ${age} | ${s.metrics?.stars?.toLocaleString('en-US') ?? '—'} | ${u.checked} |`);
+  const stars = s.metrics?.stars?.toLocaleString('en-US') ?? '—';
+  const release = u.latest_release ? `\`${u.latest_release}\`` : '—';
+  const reviewedOn = s.review?.date;
+  const reviewed = !reviewedOn ? 'never ⚠️'
+    : u.checked && daysBetween(reviewedOn, u.checked) > REVIEW_MAX_DAYS ? `${reviewedOn} ⚠️` : reviewedOn;
+  if (!u.last_commit) { fresh.push(`| [${s.name}](${s.repo}) | not checked yet | — | ${release} | ${reviewed} | ${stars} |`); continue; }
+  const d = Math.max(0, daysBetween(u.last_commit, u.checked));
+  const age = d === 0 ? 'same day' : d === 1 ? '1 day' : `${d} days`;
+  const flag = u.archived ? ' **archived**' : d > STALE_DAYS ? ' ⚠️' : '';
+  fresh.push(`| [${s.name}](${s.repo}) | ${u.last_commit.slice(0, 10)}${flag} | ${age} | ${release} | ${reviewed} | ${stars} |`);
 }
 
 // Skills table, generated from frontmatter.

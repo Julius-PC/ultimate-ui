@@ -1,6 +1,6 @@
 // Shared helpers. No dependencies on purpose: `node scripts/build.mjs` must work
 // on a clean checkout with nothing installed.
-import { readFileSync, readdirSync } from 'node:fs';
+import { readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -18,6 +18,14 @@ export function loadSources() {
     .sort()
     .map((file) => ({ file, data: readJson(join(SOURCES_DIR, file)) }))
     .sort((a, b) => a.data.id.localeCompare(b.data.id));
+}
+
+/** Write a source file with keys in schema order, so generated diffs stay readable. */
+export function writeSource(file, data) {
+  const ordered = {};
+  for (const key of Object.keys(schema().properties)) if (data[key] !== undefined) ordered[key] = data[key];
+  for (const key of Object.keys(data)) if (ordered[key] === undefined) ordered[key] = data[key];
+  writeFileSync(join(SOURCES_DIR, file), JSON.stringify(ordered, null, 2) + '\n');
 }
 
 /** Replace the block between <!-- name:start --> and <!-- name:end --> markers. */

@@ -5,6 +5,7 @@ The short version:
 ```bash
 node scripts/add-source.mjs https://github.com/owner/repo
 $EDITOR catalog/sources/<id>.json     # fill in the TODOs
+node scripts/review.mjs <id>              # record that you checked it against upstream
 node scripts/validate.mjs && node scripts/build.mjs
 ```
 
@@ -47,6 +48,9 @@ Star count is not a criterion.
 | `avoid_when` | | See below. Effectively required in review. |
 | `provides` | | Named units: skills, brand profiles, sections. |
 | `metrics` | | Point-in-time star count. Never used for ranking. |
+| `upstream` | | Generated weekly by `scripts/refresh.mjs`. Never hand-edit. |
+| `watch` | | Optional. Where new content appears upstream - see below. |
+| `review` | yes | Written by `scripts/review.mjs` once you have checked the entry. Never hand-edit. |
 | `added` | yes | `YYYY-MM-DD`. |
 | `notes` | | Licensing quirks, category mismatches, anything a user should know first. |
 
@@ -91,6 +95,42 @@ over-recommend it. Every real tool has limits. Examples from the current catalog
 > "You need licensing certainty for a linked asset. Always check the destination's
 > own terms before shipping anything from it."
 
+## `watch`
+
+Optional, and worth adding whenever the entry lists things the upstream project
+will add more of - skills, brand profiles, sections of a curated list. The weekly
+refresh flags the entry for review when a watched list changes, which is how
+`provides` stays accurate.
+
+```json
+"watch": {
+  "paths": ["skills/*"],
+  "headings": [{ "file": "readme.md", "level": 2 }]
+}
+```
+
+- **`paths`** match repository paths. `*` matches within one path segment, and
+  the matched part becomes the item name: `skills/*` yields one item per skill
+  folder, `data/*.csv` one per CSV file. It never matches deeper paths.
+- **`headings`** watch the section titles of a markdown file, which suits curated
+  lists.
+
+Only watch what the entry actually describes. Watching a busy `src/` folder
+would flag every week and teach people to ignore the review Issue.
+
+## `review`
+
+Required, and never written by hand. Once the entry is right, run:
+
+```bash
+node scripts/review.mjs <id>
+```
+
+It records today's date and a snapshot of upstream - description, homepage,
+major version, and every watched list. The weekly refresh compares against that
+snapshot, flags the entry when upstream drifts from it, and flags it anyway after
+6 months without a review.
+
 ## Taxonomy terms
 
 `capabilities`, `stacks` and `style_tags` are closed vocabularies defined in
@@ -108,6 +148,7 @@ node scripts/search.mjs --list   # see the current vocabulary
 ## Before opening the pull request
 
 ```bash
+node scripts/review.mjs <your-id>
 node scripts/validate.mjs
 node scripts/build.mjs
 node scripts/search.mjs --id <your-id>

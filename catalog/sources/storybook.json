@@ -76,5 +76,14 @@
     "open_issues": 1845,
     "checked": "2026-09-15"
   },
+  "review": {
+    "date": "2026-08-28",
+    "baseline": {
+      "description": "Storybook is the industry standard workshop for building, documenting, and testing UI components in isolation",
+      "homepage": "https://storybook.js.org",
+      "watched": {},
+      "release_major": "10"
+    }
+  },
   "added": "2026-08-28"
 }
