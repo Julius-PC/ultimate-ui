@@ -58,7 +58,7 @@
     }
   ],
   "metrics": {
-    "stars": 66943,
+    "stars": 66946,
     "checked": "2026-09-15"
   },
   "upstream": {
@@ -66,6 +66,7 @@
     "default_branch": "master",
     "archived": false,
     "open_issues": 126,
+    "latest_release": null,
     "checked": "2026-09-15"
   },
   "watch": {

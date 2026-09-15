@@ -60,7 +60,7 @@
     "Bundle size on a small public site is a hard constraint."
   ],
   "metrics": {
-    "stars": 99510,
+    "stars": 99512,
     "checked": "2026-09-15"
   },
   "upstream": {
@@ -68,6 +68,7 @@
     "default_branch": "master",
     "archived": false,
     "open_issues": 1073,
+    "latest_release": "6.6.4",
     "checked": "2026-09-15"
   },
   "review": {

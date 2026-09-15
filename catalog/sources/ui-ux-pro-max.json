@@ -90,7 +90,7 @@
     "You only need one component - reaching for a whole design-system generator is overkill."
   ],
   "metrics": {
-    "stars": 127785,
+    "stars": 127842,
     "checked": "2026-09-15"
   },
   "upstream": {
@@ -98,6 +98,7 @@
     "default_branch": "main",
     "archived": false,
     "open_issues": 85,
+    "latest_release": "v2.15.0",
     "checked": "2026-09-15"
   },
   "watch": {

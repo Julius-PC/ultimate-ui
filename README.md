@@ -144,15 +144,15 @@ Last checked 2026-09-15. ⚠️ marks an upstream with no commits in a year, or 
 
 | Source | Last upstream commit | Age when checked | Latest release | Last reviewed | Stars |
 | --- | --- | --- | --- | --- | --- |
-| [Material UI](https://github.com/mui/material-ui) | 2026-09-15 | same day | — | 2026-08-28 | 99,048 |
-| [Skills For Designers and Engineers](https://github.com/emilkowalski/skills) | 2026-09-15 | same day | — | 2026-08-28 | 37,880 |
-| [ComfyUI](https://github.com/Comfy-Org/ComfyUI) | 2026-09-15 | same day | — | 2026-08-28 | 133,307 |
-| [Ant Design](https://github.com/ant-design/ant-design) | 2026-09-15 | same day | — | 2026-08-28 | 99,510 |
-| [Storybook](https://github.com/storybookjs/storybook) | 2026-09-15 | same day | — | 2026-08-28 | 91,053 |
-| [UI UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) | 2026-09-15 | same day | — | 2026-08-28 | 127,785 |
-| [shadcn/ui](https://github.com/shadcn-ui/ui) | 2026-09-12 | 2 days | — | 2026-08-28 | 123,831 |
-| [Awesome DESIGN.md](https://github.com/voltagent/awesome-design-md) | 2026-07-31 | 45 days | — | 2026-08-28 | 115,956 |
-| [Design Resources For Developers](https://github.com/bradtraversy/design-resources-for-developers) | 2026-05-24 | 114 days | — | 2026-08-28 | 66,943 |
+| [ComfyUI](https://github.com/Comfy-Org/ComfyUI) | 2026-09-15 | same day | `v0.35.0` | 2026-08-28 | 133,342 |
+| [Storybook](https://github.com/storybookjs/storybook) | 2026-09-15 | same day | `v10.6.0` | 2026-08-28 | 91,056 |
+| [Skills For Designers and Engineers](https://github.com/emilkowalski/skills) | 2026-09-15 | same day | — | 2026-08-28 | 37,928 |
+| [Material UI](https://github.com/mui/material-ui) | 2026-09-15 | same day | `v9.4.0` | 2026-08-28 | 99,046 |
+| [Ant Design](https://github.com/ant-design/ant-design) | 2026-09-15 | same day | `6.6.4` | 2026-08-28 | 99,512 |
+| [UI UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) | 2026-09-15 | same day | `v2.15.0` | 2026-08-28 | 127,842 |
+| [shadcn/ui](https://github.com/shadcn-ui/ui) | 2026-09-12 | 2 days | `shadcn@4.21.0` | 2026-08-28 | 123,860 |
+| [Awesome DESIGN.md](https://github.com/voltagent/awesome-design-md) | 2026-07-31 | 45 days | — | 2026-08-28 | 115,982 |
+| [Design Resources For Developers](https://github.com/bradtraversy/design-resources-for-developers) | 2026-05-24 | 114 days | — | 2026-08-28 | 66,946 |
 <!-- freshness-table:end -->
 
 Refresh it yourself — this rewrites the `upstream` block in every source file:

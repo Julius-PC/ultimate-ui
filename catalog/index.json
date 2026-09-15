@@ -403,7 +403,7 @@
         "Bundle size on a small public site is a hard constraint."
       ],
       "metrics": {
-        "stars": 99510,
+        "stars": 99512,
         "checked": "2026-09-15"
       },
       "upstream": {
@@ -411,6 +411,7 @@
         "default_branch": "master",
         "archived": false,
         "open_issues": 1073,
+        "latest_release": "6.6.4",
         "checked": "2026-09-15"
       },
       "review": {
@@ -502,7 +503,7 @@
         }
       ],
       "metrics": {
-        "stars": 115956,
+        "stars": 115982,
         "checked": "2026-09-15"
       },
       "upstream": {
@@ -510,6 +511,7 @@
         "default_branch": "main",
         "archived": false,
         "open_issues": 310,
+        "latest_release": null,
         "checked": "2026-09-15"
       },
       "watch": {
@@ -661,14 +663,15 @@
         "The output would ship in a context where the GPL-3.0 license or the licenses of individual models are a problem. Model weights carry their own terms, separate from ComfyUI's."
       ],
       "metrics": {
-        "stars": 133307,
+        "stars": 133342,
         "checked": "2026-09-15"
       },
       "upstream": {
-        "last_commit": "2026-09-15T12:31:28Z",
+        "last_commit": "2026-09-15T17:18:18Z",
         "default_branch": "master",
         "archived": false,
-        "open_issues": 4869,
+        "open_issues": 4874,
+        "latest_release": "v0.35.0",
         "checked": "2026-09-15"
       },
       "review": {
@@ -743,7 +746,7 @@
         }
       ],
       "metrics": {
-        "stars": 66943,
+        "stars": 66946,
         "checked": "2026-09-15"
       },
       "upstream": {
@@ -751,6 +754,7 @@
         "default_branch": "master",
         "archived": false,
         "open_issues": 126,
+        "latest_release": null,
         "checked": "2026-09-15"
       },
       "watch": {
@@ -916,14 +920,15 @@
         }
       ],
       "metrics": {
-        "stars": 37880,
+        "stars": 37928,
         "checked": "2026-09-15"
       },
       "upstream": {
-        "last_commit": "2026-09-15T13:08:13Z",
+        "last_commit": "2026-09-15T15:52:14Z",
         "default_branch": "main",
         "archived": false,
         "open_issues": 1,
+        "latest_release": null,
         "checked": "2026-09-15"
       },
       "watch": {
@@ -1021,14 +1026,15 @@
         "The project is already on Tailwind plus a copy-in component set; mixing the two styling models causes more pain than it solves."
       ],
       "metrics": {
-        "stars": 99048,
+        "stars": 99046,
         "checked": "2026-09-15"
       },
       "upstream": {
-        "last_commit": "2026-09-15T13:23:08Z",
+        "last_commit": "2026-09-15T14:32:43Z",
         "default_branch": "master",
         "archived": false,
-        "open_issues": 1476,
+        "open_issues": 1474,
+        "latest_release": "v9.4.0",
         "checked": "2026-09-15"
       },
       "review": {
@@ -1121,7 +1127,7 @@
         "The team wants a batteries-included library it never has to maintain; here the code becomes yours."
       ],
       "metrics": {
-        "stars": 123831,
+        "stars": 123860,
         "checked": "2026-09-15"
       },
       "upstream": {
@@ -1129,6 +1135,7 @@
         "default_branch": "main",
         "archived": false,
         "open_issues": 1847,
+        "latest_release": "shadcn@4.21.0",
         "checked": "2026-09-15"
       },
       "review": {
@@ -1210,14 +1217,15 @@
         "The user asked for a static mockup with no build step."
       ],
       "metrics": {
-        "stars": 91053,
+        "stars": 91056,
         "checked": "2026-09-15"
       },
       "upstream": {
-        "last_commit": "2026-09-15T10:10:11Z",
+        "last_commit": "2026-09-15T16:45:12Z",
         "default_branch": "next",
         "archived": false,
-        "open_issues": 1845,
+        "open_issues": 1846,
+        "latest_release": "v10.6.0",
         "checked": "2026-09-15"
       },
       "review": {
@@ -1323,7 +1331,7 @@
         "You only need one component - reaching for a whole design-system generator is overkill."
       ],
       "metrics": {
-        "stars": 127785,
+        "stars": 127842,
         "checked": "2026-09-15"
       },
       "upstream": {
@@ -1331,6 +1339,7 @@
         "default_branch": "main",
         "archived": false,
         "open_issues": 85,
+        "latest_release": "v2.15.0",
         "checked": "2026-09-15"
       },
       "watch": {

@@ -66,14 +66,15 @@
     "The user asked for a static mockup with no build step."
   ],
   "metrics": {
-    "stars": 91053,
+    "stars": 91056,
     "checked": "2026-09-15"
   },
   "upstream": {
-    "last_commit": "2026-09-15T10:10:11Z",
+    "last_commit": "2026-09-15T16:45:12Z",
     "default_branch": "next",
     "archived": false,
-    "open_issues": 1845,
+    "open_issues": 1846,
+    "latest_release": "v10.6.0",
     "checked": "2026-09-15"
   },
   "review": {
