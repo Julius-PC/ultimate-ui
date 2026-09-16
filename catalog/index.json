@@ -405,16 +405,16 @@
         "Bundle size on a small public site is a hard constraint."
       ],
       "metrics": {
-        "stars": 99512,
-        "checked": "2026-09-15"
+        "stars": 99513,
+        "checked": "2026-09-16"
       },
       "upstream": {
-        "last_commit": "2026-09-15T11:43:25Z",
+        "last_commit": "2026-09-16T02:58:45Z",
         "default_branch": "master",
         "archived": false,
         "open_issues": 1073,
         "latest_release": "6.6.4",
-        "checked": "2026-09-15"
+        "checked": "2026-09-16"
       },
       "review": {
         "date": "2026-08-28",
@@ -505,8 +505,8 @@
         }
       ],
       "metrics": {
-        "stars": 115983,
-        "checked": "2026-09-15"
+        "stars": 116040,
+        "checked": "2026-09-16"
       },
       "upstream": {
         "last_commit": "2026-07-31T12:32:42Z",
@@ -514,7 +514,7 @@
         "archived": false,
         "open_issues": 310,
         "latest_release": null,
-        "checked": "2026-09-15"
+        "checked": "2026-09-16"
       },
       "watch": {
         "paths": [
@@ -665,16 +665,16 @@
         "The output would ship in a context where the GPL-3.0 license or the licenses of individual models are a problem. Model weights carry their own terms, separate from ComfyUI's."
       ],
       "metrics": {
-        "stars": 133342,
-        "checked": "2026-09-15"
+        "stars": 133427,
+        "checked": "2026-09-16"
       },
       "upstream": {
-        "last_commit": "2026-09-15T17:18:18Z",
+        "last_commit": "2026-09-16T04:04:22Z",
         "default_branch": "master",
         "archived": false,
-        "open_issues": 4874,
-        "latest_release": "v0.35.0",
-        "checked": "2026-09-15"
+        "open_issues": 4878,
+        "latest_release": "v0.36.0",
+        "checked": "2026-09-16"
       },
       "review": {
         "date": "2026-08-28",
@@ -748,8 +748,8 @@
         }
       ],
       "metrics": {
-        "stars": 66946,
-        "checked": "2026-09-15"
+        "stars": 66947,
+        "checked": "2026-09-16"
       },
       "upstream": {
         "last_commit": "2026-05-24T10:07:48Z",
@@ -757,7 +757,7 @@
         "archived": false,
         "open_issues": 126,
         "latest_release": null,
-        "checked": "2026-09-15"
+        "checked": "2026-09-16"
       },
       "watch": {
         "headings": [
@@ -927,8 +927,8 @@
         }
       ],
       "metrics": {
-        "stars": 37928,
-        "checked": "2026-09-15"
+        "stars": 38072,
+        "checked": "2026-09-16"
       },
       "upstream": {
         "last_commit": "2026-09-15T15:52:14Z",
@@ -936,7 +936,7 @@
         "archived": false,
         "open_issues": 1,
         "latest_release": null,
-        "checked": "2026-09-15"
+        "checked": "2026-09-16"
       },
       "watch": {
         "paths": [
@@ -1034,16 +1034,16 @@
         "The project is already on Tailwind plus a copy-in component set; mixing the two styling models causes more pain than it solves."
       ],
       "metrics": {
-        "stars": 99046,
-        "checked": "2026-09-15"
+        "stars": 99048,
+        "checked": "2026-09-16"
       },
       "upstream": {
-        "last_commit": "2026-09-15T14:32:43Z",
+        "last_commit": "2026-09-15T22:21:06Z",
         "default_branch": "master",
         "archived": false,
-        "open_issues": 1474,
+        "open_issues": 1475,
         "latest_release": "v9.4.0",
-        "checked": "2026-09-15"
+        "checked": "2026-09-16"
       },
       "review": {
         "date": "2026-08-28",
@@ -1149,16 +1149,16 @@
         "The team wants a batteries-included library it never has to maintain; here the code becomes yours."
       ],
       "metrics": {
-        "stars": 123860,
-        "checked": "2026-09-15"
+        "stars": 123907,
+        "checked": "2026-09-16"
       },
       "upstream": {
         "last_commit": "2026-09-12T13:26:36Z",
         "default_branch": "main",
         "archived": false,
-        "open_issues": 1847,
+        "open_issues": 1848,
         "latest_release": "shadcn@4.21.0",
-        "checked": "2026-09-15"
+        "checked": "2026-09-16"
       },
       "review": {
         "date": "2026-09-16",
@@ -1239,16 +1239,16 @@
         "The user asked for a static mockup with no build step."
       ],
       "metrics": {
-        "stars": 91056,
-        "checked": "2026-09-15"
+        "stars": 91067,
+        "checked": "2026-09-16"
       },
       "upstream": {
-        "last_commit": "2026-09-15T16:45:12Z",
+        "last_commit": "2026-09-16T02:55:47Z",
         "default_branch": "next",
         "archived": false,
-        "open_issues": 1846,
+        "open_issues": 1849,
         "latest_release": "v10.6.0",
-        "checked": "2026-09-15"
+        "checked": "2026-09-16"
       },
       "review": {
         "date": "2026-08-28",
@@ -1369,8 +1369,8 @@
         }
       ],
       "metrics": {
-        "stars": 127843,
-        "checked": "2026-09-15"
+        "stars": 127972,
+        "checked": "2026-09-16"
       },
       "upstream": {
         "last_commit": "2026-09-15T09:29:30Z",
@@ -1378,7 +1378,7 @@
         "archived": false,
         "open_issues": 85,
         "latest_release": "v2.15.0",
-        "checked": "2026-09-15"
+        "checked": "2026-09-16"
       },
       "watch": {
         "paths": [
