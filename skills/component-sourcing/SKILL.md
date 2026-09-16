@@ -130,7 +130,9 @@ what stops the same question being reopened next week.
 ## Credits
 
 - **[shadcn/ui](https://github.com/shadcn-ui/ui)** by [shadcn-ui](https://github.com/shadcn-ui) (MIT) —
-  registry index, per-component source, color scales, CLI.
+  registry index, per-component source, color scales, CLI. Its
+  [registry directory](https://ui.shadcn.com/docs/directory) lists community registries
+  built into the CLI, so check there before concluding something does not exist.
 - **[Material UI](https://github.com/mui/material-ui)** by [MUI](https://github.com/mui) (MIT) —
   comprehensive React components; the heavy ones (data grid, pickers) are its strength.
 - **[Ant Design](https://github.com/ant-design/ant-design)** by [Ant Design](https://github.com/ant-design) (MIT) —

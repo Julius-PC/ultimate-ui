@@ -91,7 +91,7 @@ Indexed sources: **9**
 - **Kind:** Component library
 - **Catalog id:** `shadcn-ui`
 
-> A set of beautifully-designed, accessible components and a code distribution platform. Works with your favorite frameworks. Open Source. Open Code.
+> Composable, accessible components with thoughtful defaults. Build your own component library with code you can customize, extend, and make your own.
 
 ## Storybook
 

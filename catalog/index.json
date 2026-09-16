@@ -91,7 +91,8 @@
       "ui-ux-pro-max"
     ],
     "code-review": [
-      "emilkowalski-skills"
+      "emilkowalski-skills",
+      "ui-ux-pro-max"
     ],
     "color": [
       "awesome-design-md",
@@ -183,6 +184,7 @@
       "ui-ux-pro-max"
     ],
     "astro": [
+      "shadcn-ui",
       "storybook",
       "ui-ux-pro-max"
     ],
@@ -864,7 +866,8 @@
       "use_when": [
         "Anything is going to move. Read the animation skills before writing a transition, not after.",
         "You need to choose between UI libraries and want a taste-informed answer instead of a download count.",
-        "You are reviewing UI that technically works but feels wrong."
+        "You are reviewing UI that technically works but feels wrong.",
+        "A web app is being built or reviewed on a phone and feels like a website rather than something installed."
       ],
       "avoid_when": [
         "You need broad component coverage - this is craft guidance, not a component library."
@@ -915,6 +918,10 @@
           "note": "Builds several versions of a UI piece and gives you a switcher to compare them."
         },
         {
+          "name": "mobile-native",
+          "note": "Makes a web app feel native on a phone: sticky hover, tap-highlight flashes, the 100vh bug, inputs that zoom, tap delay, safe areas and pull-to-refresh. Platform-layer CSS and meta tags, not motion - and not React Native, which is animate-expo."
+        },
+        {
           "name": "ask-sonner",
           "note": "Working with Sonner, the author's toast library: setup, styling, recipes, fixes."
         }
@@ -937,7 +944,7 @@
         ]
       },
       "review": {
-        "date": "2026-08-28",
+        "date": "2026-09-16",
         "baseline": {
           "description": "Skills for Designers and Engineers.",
           "homepage": "https://emilkowal.ski/skill",
@@ -951,6 +958,7 @@
               "emil-design-eng",
               "find-animation-opportunities",
               "improve-animations",
+              "mobile-native",
               "pick-ui-library",
               "prototype",
               "review-animations",
@@ -1060,7 +1068,7 @@
       },
       "license": "MIT",
       "license_url": "https://github.com/shadcn-ui/ui/blob/main/LICENSE.md",
-      "summary": "A set of beautifully-designed, accessible components and a code distribution platform. Works with your favorite frameworks. Open Source. Open Code.",
+      "summary": "Composable, accessible components with thoughtful defaults. Build your own component library with code you can customize, extend, and make your own.",
       "kind": "component-library",
       "capabilities": [
         "components",
@@ -1075,6 +1083,7 @@
         "next",
         "vite",
         "remix",
+        "astro",
         "laravel",
         "tailwind"
       ],
@@ -1110,6 +1119,18 @@
           "verified": "2026-08-28"
         },
         {
+          "type": "docs_url",
+          "url": "https://ui.shadcn.com/docs/skills",
+          "what": "shadcn/ui's own skill for AI assistants. It reads the project's components.json and supplies the framework, aliases, installed components, icon and base library, so generated code matches the project. Install it with the skills CLI when the user wants it permanently.",
+          "verified": "2026-09-16"
+        },
+        {
+          "type": "docs_url",
+          "url": "https://ui.shadcn.com/docs/directory",
+          "what": "Community registries built into the CLI. Check here before concluding a component does not exist - the core registry is not the whole ecosystem.",
+          "verified": "2026-09-16"
+        },
+        {
           "type": "cli",
           "url": "npx shadcn@latest add {component}",
           "what": "Installs a component into the user's project. Prefer this over pasting code you generated.",
@@ -1120,7 +1141,8 @@
         "The project is React-flavoured and uses Tailwind, and you need real components fast.",
         "You want to own the component source rather than depend on a black-box package.",
         "You need an accessible primitive (dialog, combobox, popover) and hand-rolling one would be a mistake.",
-        "You need a coherent theme and want token values that already work in light and dark."
+        "You need a coherent theme and want token values that already work in light and dark.",
+        "You are building your own component library or internal registry, not just consuming components."
       ],
       "avoid_when": [
         "The project is not React-based - the registry assumes React component files.",
@@ -1139,9 +1161,9 @@
         "checked": "2026-09-15"
       },
       "review": {
-        "date": "2026-08-28",
+        "date": "2026-09-16",
         "baseline": {
-          "description": "A set of beautifully-designed, accessible components and a code distribution platform. Works with your favorite frameworks. Open Source. Open Code.",
+          "description": "Composable, accessible components with thoughtful defaults. Build your own component library with code you can customize, extend, and make your own.",
           "homepage": "https://ui.shadcn.com",
           "watched": {},
           "release_major": "4"
@@ -1263,7 +1285,8 @@
         "iconography",
         "motion",
         "agent-guidance",
-        "components"
+        "components",
+        "code-review"
       ],
       "stacks": [
         "react",
@@ -1312,8 +1335,8 @@
         {
           "type": "raw_path",
           "url": "https://raw.githubusercontent.com/nextlevelbuilder/ui-ux-pro-max-skill/main/cli/assets/data/{topic}.csv",
-          "what": "Topic datasets: colors, google-fonts, icons, landing, motion, charts, products, app-interface, react-performance.",
-          "verified": "2026-08-28"
+          "what": "Topic datasets: app-interface, charts, colors, google-fonts, icons, landing, motion, products, react-performance, styles, typography (74 font pairings), ui-reasoning (192 per-category UI profiles with anti-patterns), ux-guidelines (119 do/don’t rules with code examples).",
+          "verified": "2026-09-16"
         },
         {
           "type": "cli",
@@ -1325,10 +1348,25 @@
       "use_when": [
         "You need a full design system proposed from a project brief rather than assembled by hand.",
         "The target stack is outside the React/Tailwind mainstream and you need stack-appropriate component suggestions.",
-        "You want a named, searchable style rather than an improvised aesthetic."
+        "You want a named, searchable style rather than an improvised aesthetic.",
+        "You want a font pairing, a UX do/don’t checklist, or a per-category UI pattern rather than a whole design system."
       ],
       "avoid_when": [
         "You only need one component - reaching for a whole design-system generator is overkill."
+      ],
+      "provides": [
+        {
+          "name": "Agent skills",
+          "note": "banner-design, brand, design, design-system, slides, ui-styling, ui-ux-pro-max."
+        },
+        {
+          "name": "Per-stack catalogs",
+          "note": "22 CSVs under cli/assets/data/stacks/: angular, astro, avalonia, flutter, html-tailwind, javafx, jetpack-compose, laravel, nextjs, nuxt-ui, nuxtjs, react, react-native, shadcn, svelte, swiftui, threejs, uno, uwp, vue, winui, wpf."
+        },
+        {
+          "name": "Topic datasets",
+          "note": "13 CSVs under cli/assets/data/, including typography (font pairings with moods and Google Fonts imports), ui-reasoning (recommended pattern, palette and anti-patterns per UI category) and ux-guidelines (do/don’t rules with good and bad code, by severity)."
+        }
       ],
       "metrics": {
         "stars": 127843,
@@ -1350,7 +1388,7 @@
         ]
       },
       "review": {
-        "date": "2026-08-28",
+        "date": "2026-09-16",
         "baseline": {
           "description": "An AI skill that provides design intelligence for building professional UI/UX across multiple platforms.",
           "homepage": "https://www.uupm.cc/",
@@ -1398,7 +1436,10 @@
               "motion",
               "products",
               "react-performance",
-              "styles"
+              "styles",
+              "typography",
+              "ui-reasoning",
+              "ux-guidelines"
             ]
           },
           "release_major": "2"

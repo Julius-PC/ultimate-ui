@@ -136,6 +136,8 @@ the team which patterns to keep, which is information they otherwise lack.
 - **[Skills For Designers and Engineers](https://github.com/emilkowalski/skills)** by
   [Emil Kowalski](https://github.com/emilkowalski) (MIT) — `review-animations`, `improve-animations`
   and `apple-design`. Read the relevant one before writing motion or interaction findings.
+  `mobile-native` covers the phone-specific tells - sticky hover, tap delay, safe areas,
+  inputs that zoom the page - worth checking whenever the surface is reviewed on a phone.
 - **[Storybook](https://github.com/storybookjs/storybook)** by [Storybook](https://github.com/storybookjs) (MIT) —
   state coverage, accessibility addon, visual regression.
 - **[Awesome DESIGN.md](https://github.com/voltagent/awesome-design-md)** by

@@ -48,7 +48,8 @@
   "use_when": [
     "Anything is going to move. Read the animation skills before writing a transition, not after.",
     "You need to choose between UI libraries and want a taste-informed answer instead of a download count.",
-    "You are reviewing UI that technically works but feels wrong."
+    "You are reviewing UI that technically works but feels wrong.",
+    "A web app is being built or reviewed on a phone and feels like a website rather than something installed."
   ],
   "avoid_when": [
     "You need broad component coverage - this is craft guidance, not a component library."
@@ -99,6 +100,10 @@
       "note": "Builds several versions of a UI piece and gives you a switcher to compare them."
     },
     {
+      "name": "mobile-native",
+      "note": "Makes a web app feel native on a phone: sticky hover, tap-highlight flashes, the 100vh bug, inputs that zoom, tap delay, safe areas and pull-to-refresh. Platform-layer CSS and meta tags, not motion - and not React Native, which is animate-expo."
+    },
+    {
       "name": "ask-sonner",
       "note": "Working with Sonner, the author's toast library: setup, styling, recipes, fixes."
     }
@@ -121,7 +126,7 @@
     ]
   },
   "review": {
-    "date": "2026-08-28",
+    "date": "2026-09-16",
     "baseline": {
       "description": "Skills for Designers and Engineers.",
       "homepage": "https://emilkowal.ski/skill",
@@ -135,6 +140,7 @@
           "emil-design-eng",
           "find-animation-opportunities",
           "improve-animations",
+          "mobile-native",
           "pick-ui-library",
           "prototype",
           "review-animations",

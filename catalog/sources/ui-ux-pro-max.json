@@ -22,7 +22,8 @@
     "iconography",
     "motion",
     "agent-guidance",
-    "components"
+    "components",
+    "code-review"
   ],
   "stacks": [
     "react",
@@ -71,8 +72,8 @@
     {
       "type": "raw_path",
       "url": "https://raw.githubusercontent.com/nextlevelbuilder/ui-ux-pro-max-skill/main/cli/assets/data/{topic}.csv",
-      "what": "Topic datasets: colors, google-fonts, icons, landing, motion, charts, products, app-interface, react-performance.",
-      "verified": "2026-08-28"
+      "what": "Topic datasets: app-interface, charts, colors, google-fonts, icons, landing, motion, products, react-performance, styles, typography (74 font pairings), ui-reasoning (192 per-category UI profiles with anti-patterns), ux-guidelines (119 do/don’t rules with code examples).",
+      "verified": "2026-09-16"
     },
     {
       "type": "cli",
@@ -84,10 +85,25 @@
   "use_when": [
     "You need a full design system proposed from a project brief rather than assembled by hand.",
     "The target stack is outside the React/Tailwind mainstream and you need stack-appropriate component suggestions.",
-    "You want a named, searchable style rather than an improvised aesthetic."
+    "You want a named, searchable style rather than an improvised aesthetic.",
+    "You want a font pairing, a UX do/don’t checklist, or a per-category UI pattern rather than a whole design system."
   ],
   "avoid_when": [
     "You only need one component - reaching for a whole design-system generator is overkill."
+  ],
+  "provides": [
+    {
+      "name": "Agent skills",
+      "note": "banner-design, brand, design, design-system, slides, ui-styling, ui-ux-pro-max."
+    },
+    {
+      "name": "Per-stack catalogs",
+      "note": "22 CSVs under cli/assets/data/stacks/: angular, astro, avalonia, flutter, html-tailwind, javafx, jetpack-compose, laravel, nextjs, nuxt-ui, nuxtjs, react, react-native, shadcn, svelte, swiftui, threejs, uno, uwp, vue, winui, wpf."
+    },
+    {
+      "name": "Topic datasets",
+      "note": "13 CSVs under cli/assets/data/, including typography (font pairings with moods and Google Fonts imports), ui-reasoning (recommended pattern, palette and anti-patterns per UI category) and ux-guidelines (do/don’t rules with good and bad code, by severity)."
+    }
   ],
   "metrics": {
     "stars": 127843,
@@ -109,7 +125,7 @@
     ]
   },
   "review": {
-    "date": "2026-08-28",
+    "date": "2026-09-16",
     "baseline": {
       "description": "An AI skill that provides design intelligence for building professional UI/UX across multiple platforms.",
       "homepage": "https://www.uupm.cc/",
@@ -157,7 +173,10 @@
           "motion",
           "products",
           "react-performance",
-          "styles"
+          "styles",
+          "typography",
+          "ui-reasoning",
+          "ux-guidelines"
         ]
       },
       "release_major": "2"
