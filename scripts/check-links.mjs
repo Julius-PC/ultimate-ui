@@ -11,6 +11,30 @@ import { loadSources } from './lib.mjs';
 
 const only = process.argv[2];
 const TIMEOUT_MS = Number(process.env.LINK_TIMEOUT_MS || 20000);
+// One flaky request should not raise a review flag. A 4xx is a real answer and
+// is taken at face value; timeouts, network errors and 5xx/429 get one retry.
+const ATTEMPTS = Number(process.env.LINK_ATTEMPTS || 2);
+const RETRY_MS = Number(process.env.LINK_RETRY_MS || 2000);
+
+async function probe(url) {
+  let last;
+  for (let attempt = 1; attempt <= ATTEMPTS; attempt++) {
+    try {
+      const res = await fetch(url, {
+        redirect: 'follow',
+        headers: { 'User-Agent': 'ultimate-ui-catalog' },
+        signal: AbortSignal.timeout(TIMEOUT_MS),
+      });
+      if (res.ok) return { ok: true, code: String(res.status) };
+      if (res.status < 500 && res.status !== 429) return { ok: false, code: String(res.status) };
+      last = { ok: false, code: String(res.status) };
+    } catch (e) {
+      last = { ok: false, code: 'error', why: e.name === 'TimeoutError' ? `no response in ${TIMEOUT_MS / 1000}s` : e.message };
+    }
+    if (attempt < ATTEMPTS) await new Promise((r) => setTimeout(r, RETRY_MS));
+  }
+  return last;
+}
 const skipTypes = new Set(['cli', 'mcp']);
 const rows = [];
 
@@ -20,19 +44,8 @@ for (const { data: s } of loadSources()) {
     if (skipTypes.has(ep.type)) continue;
     if (ep.url.includes('{')) { rows.push([s.id, 'skip', 'pattern', ep.url]); continue; }
     if (/127\.0\.0\.1|localhost/.test(ep.url)) { rows.push([s.id, 'skip', 'local', ep.url]); continue; }
-    // Without a timeout one unresponsive host hangs the whole run - and in CI
-    // that burns the job's full budget rather than reporting a dead link.
-    try {
-      const res = await fetch(ep.url, {
-        redirect: 'follow',
-        headers: { 'User-Agent': 'ultimate-ui-catalog' },
-        signal: AbortSignal.timeout(TIMEOUT_MS),
-      });
-      rows.push([s.id, res.ok ? 'ok' : 'FAIL', String(res.status), ep.url]);
-    } catch (e) {
-      const why = e.name === 'TimeoutError' ? `no response in ${TIMEOUT_MS / 1000}s` : e.message;
-      rows.push([s.id, 'FAIL', 'error', `${ep.url} (${why})`]);
-    }
+    const r = await probe(ep.url);
+    rows.push([s.id, r.ok ? 'ok' : 'FAIL', r.code, r.why ? `${ep.url} (${r.why})` : ep.url]);
   }
 }
 

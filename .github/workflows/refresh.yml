@@ -73,7 +73,9 @@ jobs:
         run: |
           touch flags.md
           if grep -q '^FAIL' links.txt 2>/dev/null; then
-            grep '^FAIL' links.txt | tr -s ' ' | sed 's/^FAIL /- dead entrypoint: HTTP /' >> flags.md
+            # Drop the trailing "(reason)" so the same dead link reads the same
+            # every week - the Issue diff treats changed text as something new.
+            grep '^FAIL' links.txt | tr -s ' ' | sed -E 's/^FAIL /- dead entrypoint: HTTP /; s/ \([^)]*\)$//' >> flags.md
           fi
           if [ -s flags.md ]; then cat flags.md; else echo "Nothing needs a human this week."; fi
 
