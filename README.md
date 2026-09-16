@@ -144,8 +144,8 @@ Last checked 2026-09-16. ⚠️ marks an upstream with no commits in a year, or 
 
 | Source | Last upstream commit | Age when checked | Latest release | Last reviewed | Stars |
 | --- | --- | --- | --- | --- | --- |
-| [ComfyUI](https://github.com/Comfy-Org/ComfyUI) | 2026-09-16 | same day | `v0.36.0` | 2026-08-28 | 133,427 |
 | [Ant Design](https://github.com/ant-design/ant-design) | 2026-09-16 | same day | `6.6.4` | 2026-08-28 | 99,513 |
+| [ComfyUI](https://github.com/Comfy-Org/ComfyUI) | 2026-09-16 | same day | `v0.36.0` | 2026-08-28 | 133,427 |
 | [Storybook](https://github.com/storybookjs/storybook) | 2026-09-16 | same day | `v10.6.0` | 2026-08-28 | 91,067 |
 | [Material UI](https://github.com/mui/material-ui) | 2026-09-15 | same day | `v9.4.0` | 2026-08-28 | 99,048 |
 | [Skills For Designers and Engineers](https://github.com/emilkowalski/skills) | 2026-09-15 | same day | — | 2026-09-16 | 38,072 |

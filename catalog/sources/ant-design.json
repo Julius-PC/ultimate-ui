@@ -64,10 +64,10 @@
     "checked": "2026-09-16"
   },
   "upstream": {
-    "last_commit": "2026-09-16T02:58:45Z",
+    "last_commit": "2026-09-16T04:09:14Z",
     "default_branch": "master",
     "archived": false,
-    "open_issues": 1073,
+    "open_issues": 1072,
     "latest_release": "6.6.4",
     "checked": "2026-09-16"
   },
