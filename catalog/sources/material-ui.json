@@ -36,30 +36,38 @@
     {
       "type": "llms_txt",
       "url": "https://mui.com/material-ui/llms.txt",
-      "what": "Agent-oriented docs map for Material UI. Note the /material-ui/ path segment - the site root has no llms.txt.",
-      "verified": "2026-08-28"
+      "what": "Agent-oriented docs map for Material UI, linking a .md version of every component page. Note the /material-ui/ path segment; the site root has no llms.txt.",
+      "verified": "2026-09-16"
+    },
+    {
+      "type": "docs_url",
+      "url": "https://mui.com/material-ui/react-{component}.md",
+      "what": "Clean markdown for one component page, e.g. react-button.md, react-autocomplete.md. Prefer this over the HTML page - same content, far cheaper to read.",
+      "verified": "2026-09-16"
     },
     {
       "type": "docs_url",
       "url": "https://mui.com/material-ui/react-{component}/",
       "what": "Per-component documentation, e.g. react-button, react-autocomplete, react-data-grid.",
-      "verified": "2026-08-28"
+      "verified": "2026-09-16"
     },
     {
       "type": "docs_url",
       "url": "https://mui.com/material-ui/customization/theming/",
       "what": "The theming system. Read before overriding styles ad hoc - MUI's theme is the intended customization surface.",
-      "verified": "2026-08-28"
+      "verified": "2026-09-16"
     }
   ],
   "use_when": [
     "The project already uses Material UI, or the team explicitly wants Material Design.",
-    "You need heavy, complex components (data grid, date pickers, autocomplete) that would take weeks to build well.",
-    "The audience is enterprise or internal-tools and density plus familiarity beat novelty."
+    "You need a large, genuinely complete component set under one MIT license - the core @mui/material package covers autocomplete, tables, dialogs, forms and the rest.",
+    "The audience is enterprise or internal-tools and density plus familiarity beat novelty.",
+    "You want theming through a real API rather than overrides - createTheme is the supported customization surface."
   ],
   "avoid_when": [
     "The brief calls for a distinctive look - Material UI reads as Material unless you invest real effort in the theme.",
-    "The project is already on Tailwind plus a copy-in component set; mixing the two styling models causes more pain than it solves."
+    "The project is already on Tailwind plus a copy-in component set; mixing the two styling models causes more pain than it solves.",
+    "You are counting on advanced data-grid or date-picker features being free. Those live in MUI X, a separate product: its MIT versions are free forever, but the advanced features need a Pro or Premium commercial license. Check the tier before promising a feature."
   ],
   "metrics": {
     "stars": 99048,
@@ -74,7 +82,7 @@
     "checked": "2026-09-16"
   },
   "review": {
-    "date": "2026-08-28",
+    "date": "2026-09-16",
     "baseline": {
       "description": "Material UI: Comprehensive React component library that implements Google's Material Design. Free forever.",
       "homepage": "https://mui.com/material-ui/",
@@ -82,5 +90,6 @@
       "release_major": "9"
     }
   },
-  "added": "2026-08-28"
+  "added": "2026-08-28",
+  "notes": "The MIT license covers the core Material UI library. MUI X (Data Grid, Date and Time Pickers, Charts, Tree View) is a separate product with MIT, Pro and Premium tiers - the Pro and Premium features are commercially licensed. Verify which tier a feature needs before recommending it."
 }

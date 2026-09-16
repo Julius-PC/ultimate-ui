@@ -16,7 +16,8 @@
     "documentation",
     "visual-testing",
     "accessibility",
-    "prototyping"
+    "prototyping",
+    "agent-guidance"
   ],
   "stacks": [
     "react",
@@ -40,7 +41,25 @@
       "type": "llms_txt",
       "url": "https://storybook.js.org/llms.txt",
       "what": "Agent-oriented docs map: setup per framework, writing stories, testing, addons.",
-      "verified": "2026-08-28"
+      "verified": "2026-09-16"
+    },
+    {
+      "type": "docs_url",
+      "url": "https://storybook.js.org/docs/ai",
+      "what": "Storybook's own agent integration: skills, the MCP server, and agentic review. Read this before wiring an agent to a Storybook.",
+      "verified": "2026-09-16"
+    },
+    {
+      "type": "mcp",
+      "url": "https://storybook.js.org/docs/ai/mcp",
+      "what": "Storybook MCP server. Lets an agent list stories, read their args and run their tests, so it can see the components it built instead of guessing.",
+      "verified": "2026-09-16"
+    },
+    {
+      "type": "docs_url",
+      "url": "https://storybook.js.org/docs/{path}.md",
+      "what": "Append .md to any docs URL for clean markdown with code examples, e.g. /docs/writing-stories/decorators.md. Much cheaper than scraping the HTML page.",
+      "verified": "2026-09-16"
     },
     {
       "type": "cli",
@@ -59,11 +78,26 @@
     "You generated several components and the user needs to actually see and compare them.",
     "You want states (loading, empty, error, long text) to be reviewable without clicking through the whole app.",
     "You need a durable home for a design system's documentation.",
-    "You want visual or accessibility regressions caught automatically."
+    "You want visual or accessibility regressions caught automatically.",
+    "An agent needs to see the components it built, rather than assert they work - the MCP server exposes stories and their tests."
   ],
   "avoid_when": [
     "It is a one-off prototype that will be deleted this week - the setup cost will not pay back.",
     "The user asked for a static mockup with no build step."
+  ],
+  "provides": [
+    {
+      "name": "MCP server and agent skills",
+      "note": "Added in Storybook 10: CLI bindings for agent tools, an MCP server, and agentic review. React is stable; Angular-Vite and Vue support are experimental as of 10.6."
+    },
+    {
+      "name": "Vitest addon",
+      "note": "Runs stories as component tests, so every state you documented is also a test."
+    },
+    {
+      "name": "Accessibility addon",
+      "note": "Automated a11y checks per story - catches a real fraction of what a manual review would."
+    }
   ],
   "metrics": {
     "stars": 91067,
@@ -78,7 +112,7 @@
     "checked": "2026-09-16"
   },
   "review": {
-    "date": "2026-08-28",
+    "date": "2026-09-16",
     "baseline": {
       "description": "Storybook is the industry standard workshop for building, documenting, and testing UI components in isolation",
       "homepage": "https://storybook.js.org",

@@ -45,7 +45,7 @@ Indexed sources: **9**
 
 > The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface.
 
-**Note:** Category outlier. ComfyUI is indexed as a visual-asset generator that feeds interface work, not as a UI library. It is also the only GPL-3.0 source in the catalog - relevant if anyone considers embedding rather than calling it.
+**Note:** Category outlier. ComfyUI is indexed as a visual-asset generator that feeds interface work, not as a UI library. It is also the only GPL-3.0 source in the catalog - relevant if anyone considers embedding rather than calling it. Its partner nodes call closed-source models (Nano Banana, Seedance and others) that carry their own terms and per-use cost, unlike the open weights it runs locally.
 
 ## Design Resources For Developers
 
@@ -80,6 +80,8 @@ Indexed sources: **9**
 - **Catalog id:** `material-ui`
 
 > Material UI: Comprehensive React component library that implements Google's Material Design. Free forever.
+
+**Note:** The MIT license covers the core Material UI library. MUI X (Data Grid, Date and Time Pickers, Charts, Tree View) is a separate product with MIT, Pro and Premium tiers - the Pro and Premium features are commercially licensed. Verify which tier a feature needs before recommending it.
 
 ## shadcn/ui
 

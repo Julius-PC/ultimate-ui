@@ -39,7 +39,7 @@
       "type": "raw_path",
       "url": "https://raw.githubusercontent.com/bradtraversy/design-resources-for-developers/master/readme.md",
       "what": "The entire list in one markdown file (~150KB). Fetch it and grep the section you need rather than reading it all. Note the lowercase filename.",
-      "verified": "2026-08-28"
+      "verified": "2026-09-16"
     }
   ],
   "use_when": [
@@ -54,7 +54,7 @@
   "provides": [
     {
       "name": "Sections",
-      "note": "UI Graphics, Fonts, Colors, Icons, Logos, Favicons, Icon Fonts, Stock Photos, Stock Videos, Stock Music & Sound Effects, Vectors & Clip Art, Product & Image Mockups, HTML & CSS Templates, CSS Frameworks, CSS Methodologies, CSS Animations, Javascript Animation Libraries, Javascript Chart Libraries, UI Components & Kits, React/Vue/Angular/Svelte/React Native UI Libraries, Design Systems & Style Guides, Online Design Tools, Downloadable Design Software, Design Inspiration, Image Compression, Chrome Extensions, Firefox Extensions, AI Graphic Design Tools, Others."
+      "note": "34 sections and roughly 1,100 links as of 2026-09-16. UI Graphics, Fonts, Colors, Icons, Logos, Favicons, Icon Fonts, Stock Photos, Stock Videos, Stock Music & Sound Effects, Vectors & Clip Art, Product & Image Mockups, HTML & CSS Templates, CSS Frameworks, CSS Methodologies, CSS Animations, Javascript Animation Libraries, Javascript Chart Libraries, UI Components & Kits, React/Vue/Angular/Svelte/React Native UI Libraries, Design Systems & Style Guides, Online Design Tools, Downloadable Design Software, Design Inspiration, Image Compression, Chrome Extensions, Firefox Extensions, AI Graphic Design Tools, Others."
     }
   ],
   "metrics": {
@@ -78,7 +78,7 @@
     ]
   },
   "review": {
-    "date": "2026-08-28",
+    "date": "2026-09-16",
     "baseline": {
       "description": "Curated list of design and UI resources from stock photos, web templates, CSS frameworks, UI libraries, tools and much more",
       "homepage": null,

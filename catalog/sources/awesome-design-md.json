@@ -39,25 +39,25 @@
       "type": "raw_path",
       "url": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/{brand}/DESIGN.md",
       "what": "The full design-language document for one brand: palette, type scale, spacing, component rules. This is the payload - read it before writing any UI.",
-      "verified": "2026-08-28"
+      "verified": "2026-09-16"
     },
     {
       "type": "raw_path",
       "url": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/{brand}/README.md",
       "what": "Short human summary of that brand's design language.",
-      "verified": "2026-08-28"
+      "verified": "2026-09-16"
     },
     {
       "type": "raw_path",
       "url": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/README.md",
       "what": "The categorised index of every available brand. Read it to resolve a vague style request to a concrete brand slug.",
-      "verified": "2026-08-28"
+      "verified": "2026-09-16"
     },
     {
       "type": "api",
       "url": "https://api.github.com/repos/VoltAgent/awesome-design-md/git/trees/main?recursive=1",
       "what": "Authoritative list of brand slugs currently in the repo - more reliable than the README when it lags.",
-      "verified": "2026-08-28"
+      "verified": "2026-09-16"
     }
   ],
   "use_when": [
@@ -72,7 +72,7 @@
   "provides": [
     {
       "name": "74 brand DESIGN.md profiles",
-      "note": "Slugs observed 2026-08-28: airbnb, airtable, apple, binance, bmw, bmw-m, bugatti, cal, claude, clay, clickhouse, cohere, coinbase, composio, cursor, dell-1996, elevenlabs, expo, ferrari, figma, framer, hashicorp, hp, ibm, intercom, kraken, lamborghini, linear.app, lovable, mastercard, meta, minimax, mintlify, miro, mistral.ai, mongodb, nike, nintendo-2001, notion, nvidia, ollama, opencode.ai, pinterest, playstation, posthog, raycast, renault, replicate, resend, revolut, runwayml, sanity, sentry, shopify, slack, spacex, spotify, starbucks, stripe, supabase, superhuman, tesla, theverge, together.ai, uber, vercel, vodafone, voltagent, warp, webflow, wired, wise, x.ai, zapier. Re-read the tree rather than trusting this list."
+      "note": "Slugs observed 2026-09-16: airbnb, airtable, apple, binance, bmw, bmw-m, bugatti, cal, claude, clay, clickhouse, cohere, coinbase, composio, cursor, dell-1996, elevenlabs, expo, ferrari, figma, framer, hashicorp, hp, ibm, intercom, kraken, lamborghini, linear.app, lovable, mastercard, meta, minimax, mintlify, miro, mistral.ai, mongodb, nike, nintendo-2001, notion, nvidia, ollama, opencode.ai, pinterest, playstation, posthog, raycast, renault, replicate, resend, revolut, runwayml, sanity, sentry, shopify, slack, spacex, spotify, starbucks, stripe, supabase, superhuman, tesla, theverge, together.ai, uber, vercel, vodafone, voltagent, warp, webflow, wired, wise, x.ai, zapier. Re-read the tree rather than trusting this list."
     }
   ],
   "metrics": {
@@ -93,7 +93,7 @@
     ]
   },
   "review": {
-    "date": "2026-08-28",
+    "date": "2026-09-16",
     "baseline": {
       "description": "A collection of DESIGN.md files analysis by popular brand design systems. Drop one into your project and let coding agents generate a matching UI.",
       "homepage": "https://getdesign.md/",

@@ -36,8 +36,20 @@
     {
       "type": "llms_txt",
       "url": "https://ant.design/llms.txt",
-      "what": "Agent-oriented docs map covering components, the design language, and the token system.",
-      "verified": "2026-08-28"
+      "what": "Agent-oriented docs map covering components, the design language, and the token system. It links a full dump (llms-full.txt) that is ~2MB - reach for the semantic docs below instead of pulling it whole.",
+      "verified": "2026-09-16"
+    },
+    {
+      "type": "docs_url",
+      "url": "https://ant.design/design.md",
+      "what": "Ant Design's own design-language document: palette, tokens and values in the same shape as a DESIGN.md, written by the maintainers. Use it to theme an app to Ant Design rather than reverse-engineering the look.",
+      "verified": "2026-09-16"
+    },
+    {
+      "type": "docs_url",
+      "url": "https://ant.design/llms-semantic.md",
+      "what": "Semantic component documentation (~750KB) covering component APIs precisely. Fetch it for API questions; too large to read whole.",
+      "verified": "2026-09-16"
     },
     {
       "type": "docs_url",
@@ -53,7 +65,8 @@
   "use_when": [
     "You are building an admin panel, console, or data-heavy internal tool.",
     "You need forms and tables with serious built-in behaviour rather than primitives to assemble.",
-    "The product has a Chinese-market or enterprise audience where Ant Design is the familiar idiom."
+    "The product has a Chinese-market or enterprise audience where Ant Design is the familiar idiom.",
+    "You want Ant Design's own tokens and palette as a starting point - ant.design/design.md is a ready-made design-language document."
   ],
   "avoid_when": [
     "The surface is a marketing or consumer page - Ant Design is tuned for application chrome, not expressive layouts.",
@@ -72,7 +85,7 @@
     "checked": "2026-09-16"
   },
   "review": {
-    "date": "2026-08-28",
+    "date": "2026-09-16",
     "baseline": {
       "description": "An enterprise-class UI design language and React UI library",
       "homepage": "https://ant.design",

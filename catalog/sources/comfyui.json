@@ -27,7 +27,14 @@
     {
       "type": "docs_url",
       "url": "https://docs.comfy.org/",
-      "what": "Installation, node reference, and the workflow model."
+      "what": "Installation, node reference, and the workflow model.",
+      "verified": "2026-09-16"
+    },
+    {
+      "type": "docs_url",
+      "url": "https://docs.comfy.org/development/comfyui-server/comms_routes",
+      "what": "The local server's HTTP and WebSocket routes - what to POST to /prompt, and how to follow progress. Read before driving an instance programmatically.",
+      "verified": "2026-09-16"
     },
     {
       "type": "api",
@@ -39,7 +46,7 @@
       "type": "raw_path",
       "url": "https://raw.githubusercontent.com/Comfy-Org/ComfyUI/master/README.md",
       "what": "Install matrix, hardware requirements, supported model families.",
-      "verified": "2026-08-28"
+      "verified": "2026-09-16"
     }
   ],
   "use_when": [
@@ -49,8 +56,8 @@
   ],
   "avoid_when": [
     "You need UI components or design guidance. This is an image-generation backend, not a UI toolkit - it is indexed for the asset half of building an interface.",
-    "The user has no GPU and no hosted instance; setup cost is real.",
-    "The output would ship in a context where the GPL-3.0 license or the licenses of individual models are a problem. Model weights carry their own terms, separate from ComfyUI's."
+    "You want a zero-setup image API. Running it locally needs a GPU; the official desktop app and hosted cloud remove that, but both are their own setup and, for the cloud, their own cost.",
+    "The output would ship where the GPL-3.0 license or an individual model’s terms are a problem. Model weights carry their own licenses, separate from ComfyUI’s."
   ],
   "metrics": {
     "stars": 133427,
@@ -65,7 +72,7 @@
     "checked": "2026-09-16"
   },
   "review": {
-    "date": "2026-08-28",
+    "date": "2026-09-16",
     "baseline": {
       "description": "The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface.",
       "homepage": "https://www.comfy.org/",
@@ -74,5 +81,5 @@
     }
   },
   "added": "2026-08-28",
-  "notes": "Category outlier. ComfyUI is indexed as a visual-asset generator that feeds interface work, not as a UI library. It is also the only GPL-3.0 source in the catalog - relevant if anyone considers embedding rather than calling it."
+  "notes": "Category outlier. ComfyUI is indexed as a visual-asset generator that feeds interface work, not as a UI library. It is also the only GPL-3.0 source in the catalog - relevant if anyone considers embedding rather than calling it. Its partner nodes call closed-source models (Nano Banana, Seedance and others) that carry their own terms and per-use cost, unlike the open weights it runs locally."
 }

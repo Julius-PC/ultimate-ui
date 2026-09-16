@@ -81,6 +81,7 @@
     "agent-guidance": [
       "awesome-design-md",
       "emilkowalski-skills",
+      "storybook",
       "ui-ux-pro-max"
     ],
     "asset-sourcing": [
@@ -381,8 +382,20 @@
         {
           "type": "llms_txt",
           "url": "https://ant.design/llms.txt",
-          "what": "Agent-oriented docs map covering components, the design language, and the token system.",
-          "verified": "2026-08-28"
+          "what": "Agent-oriented docs map covering components, the design language, and the token system. It links a full dump (llms-full.txt) that is ~2MB - reach for the semantic docs below instead of pulling it whole.",
+          "verified": "2026-09-16"
+        },
+        {
+          "type": "docs_url",
+          "url": "https://ant.design/design.md",
+          "what": "Ant Design's own design-language document: palette, tokens and values in the same shape as a DESIGN.md, written by the maintainers. Use it to theme an app to Ant Design rather than reverse-engineering the look.",
+          "verified": "2026-09-16"
+        },
+        {
+          "type": "docs_url",
+          "url": "https://ant.design/llms-semantic.md",
+          "what": "Semantic component documentation (~750KB) covering component APIs precisely. Fetch it for API questions; too large to read whole.",
+          "verified": "2026-09-16"
         },
         {
           "type": "docs_url",
@@ -398,7 +411,8 @@
       "use_when": [
         "You are building an admin panel, console, or data-heavy internal tool.",
         "You need forms and tables with serious built-in behaviour rather than primitives to assemble.",
-        "The product has a Chinese-market or enterprise audience where Ant Design is the familiar idiom."
+        "The product has a Chinese-market or enterprise audience where Ant Design is the familiar idiom.",
+        "You want Ant Design's own tokens and palette as a starting point - ant.design/design.md is a ready-made design-language document."
       ],
       "avoid_when": [
         "The surface is a marketing or consumer page - Ant Design is tuned for application chrome, not expressive layouts.",
@@ -417,7 +431,7 @@
         "checked": "2026-09-16"
       },
       "review": {
-        "date": "2026-08-28",
+        "date": "2026-09-16",
         "baseline": {
           "description": "An enterprise-class UI design language and React UI library",
           "homepage": "https://ant.design",
@@ -468,25 +482,25 @@
           "type": "raw_path",
           "url": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/{brand}/DESIGN.md",
           "what": "The full design-language document for one brand: palette, type scale, spacing, component rules. This is the payload - read it before writing any UI.",
-          "verified": "2026-08-28"
+          "verified": "2026-09-16"
         },
         {
           "type": "raw_path",
           "url": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/design-md/{brand}/README.md",
           "what": "Short human summary of that brand's design language.",
-          "verified": "2026-08-28"
+          "verified": "2026-09-16"
         },
         {
           "type": "raw_path",
           "url": "https://raw.githubusercontent.com/VoltAgent/awesome-design-md/main/README.md",
           "what": "The categorised index of every available brand. Read it to resolve a vague style request to a concrete brand slug.",
-          "verified": "2026-08-28"
+          "verified": "2026-09-16"
         },
         {
           "type": "api",
           "url": "https://api.github.com/repos/VoltAgent/awesome-design-md/git/trees/main?recursive=1",
           "what": "Authoritative list of brand slugs currently in the repo - more reliable than the README when it lags.",
-          "verified": "2026-08-28"
+          "verified": "2026-09-16"
         }
       ],
       "use_when": [
@@ -501,7 +515,7 @@
       "provides": [
         {
           "name": "74 brand DESIGN.md profiles",
-          "note": "Slugs observed 2026-08-28: airbnb, airtable, apple, binance, bmw, bmw-m, bugatti, cal, claude, clay, clickhouse, cohere, coinbase, composio, cursor, dell-1996, elevenlabs, expo, ferrari, figma, framer, hashicorp, hp, ibm, intercom, kraken, lamborghini, linear.app, lovable, mastercard, meta, minimax, mintlify, miro, mistral.ai, mongodb, nike, nintendo-2001, notion, nvidia, ollama, opencode.ai, pinterest, playstation, posthog, raycast, renault, replicate, resend, revolut, runwayml, sanity, sentry, shopify, slack, spacex, spotify, starbucks, stripe, supabase, superhuman, tesla, theverge, together.ai, uber, vercel, vodafone, voltagent, warp, webflow, wired, wise, x.ai, zapier. Re-read the tree rather than trusting this list."
+          "note": "Slugs observed 2026-09-16: airbnb, airtable, apple, binance, bmw, bmw-m, bugatti, cal, claude, clay, clickhouse, cohere, coinbase, composio, cursor, dell-1996, elevenlabs, expo, ferrari, figma, framer, hashicorp, hp, ibm, intercom, kraken, lamborghini, linear.app, lovable, mastercard, meta, minimax, mintlify, miro, mistral.ai, mongodb, nike, nintendo-2001, notion, nvidia, ollama, opencode.ai, pinterest, playstation, posthog, raycast, renault, replicate, resend, revolut, runwayml, sanity, sentry, shopify, slack, spacex, spotify, starbucks, stripe, supabase, superhuman, tesla, theverge, together.ai, uber, vercel, vodafone, voltagent, warp, webflow, wired, wise, x.ai, zapier. Re-read the tree rather than trusting this list."
         }
       ],
       "metrics": {
@@ -522,7 +536,7 @@
         ]
       },
       "review": {
-        "date": "2026-08-28",
+        "date": "2026-09-16",
         "baseline": {
           "description": "A collection of DESIGN.md files analysis by popular brand design systems. Drop one into your project and let coding agents generate a matching UI.",
           "homepage": "https://getdesign.md/",
@@ -639,7 +653,14 @@
         {
           "type": "docs_url",
           "url": "https://docs.comfy.org/",
-          "what": "Installation, node reference, and the workflow model."
+          "what": "Installation, node reference, and the workflow model.",
+          "verified": "2026-09-16"
+        },
+        {
+          "type": "docs_url",
+          "url": "https://docs.comfy.org/development/comfyui-server/comms_routes",
+          "what": "The local server's HTTP and WebSocket routes - what to POST to /prompt, and how to follow progress. Read before driving an instance programmatically.",
+          "verified": "2026-09-16"
         },
         {
           "type": "api",
@@ -651,7 +672,7 @@
           "type": "raw_path",
           "url": "https://raw.githubusercontent.com/Comfy-Org/ComfyUI/master/README.md",
           "what": "Install matrix, hardware requirements, supported model families.",
-          "verified": "2026-08-28"
+          "verified": "2026-09-16"
         }
       ],
       "use_when": [
@@ -661,8 +682,8 @@
       ],
       "avoid_when": [
         "You need UI components or design guidance. This is an image-generation backend, not a UI toolkit - it is indexed for the asset half of building an interface.",
-        "The user has no GPU and no hosted instance; setup cost is real.",
-        "The output would ship in a context where the GPL-3.0 license or the licenses of individual models are a problem. Model weights carry their own terms, separate from ComfyUI's."
+        "You want a zero-setup image API. Running it locally needs a GPU; the official desktop app and hosted cloud remove that, but both are their own setup and, for the cloud, their own cost.",
+        "The output would ship where the GPL-3.0 license or an individual model’s terms are a problem. Model weights carry their own licenses, separate from ComfyUI’s."
       ],
       "metrics": {
         "stars": 133427,
@@ -677,7 +698,7 @@
         "checked": "2026-09-16"
       },
       "review": {
-        "date": "2026-08-28",
+        "date": "2026-09-16",
         "baseline": {
           "description": "The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface.",
           "homepage": "https://www.comfy.org/",
@@ -686,7 +707,7 @@
         }
       },
       "added": "2026-08-28",
-      "notes": "Category outlier. ComfyUI is indexed as a visual-asset generator that feeds interface work, not as a UI library. It is also the only GPL-3.0 source in the catalog - relevant if anyone considers embedding rather than calling it."
+      "notes": "Category outlier. ComfyUI is indexed as a visual-asset generator that feeds interface work, not as a UI library. It is also the only GPL-3.0 source in the catalog - relevant if anyone considers embedding rather than calling it. Its partner nodes call closed-source models (Nano Banana, Seedance and others) that carry their own terms and per-use cost, unlike the open weights it runs locally."
     },
     {
       "id": "design-resources-for-developers",
@@ -729,7 +750,7 @@
           "type": "raw_path",
           "url": "https://raw.githubusercontent.com/bradtraversy/design-resources-for-developers/master/readme.md",
           "what": "The entire list in one markdown file (~150KB). Fetch it and grep the section you need rather than reading it all. Note the lowercase filename.",
-          "verified": "2026-08-28"
+          "verified": "2026-09-16"
         }
       ],
       "use_when": [
@@ -744,7 +765,7 @@
       "provides": [
         {
           "name": "Sections",
-          "note": "UI Graphics, Fonts, Colors, Icons, Logos, Favicons, Icon Fonts, Stock Photos, Stock Videos, Stock Music & Sound Effects, Vectors & Clip Art, Product & Image Mockups, HTML & CSS Templates, CSS Frameworks, CSS Methodologies, CSS Animations, Javascript Animation Libraries, Javascript Chart Libraries, UI Components & Kits, React/Vue/Angular/Svelte/React Native UI Libraries, Design Systems & Style Guides, Online Design Tools, Downloadable Design Software, Design Inspiration, Image Compression, Chrome Extensions, Firefox Extensions, AI Graphic Design Tools, Others."
+          "note": "34 sections and roughly 1,100 links as of 2026-09-16. UI Graphics, Fonts, Colors, Icons, Logos, Favicons, Icon Fonts, Stock Photos, Stock Videos, Stock Music & Sound Effects, Vectors & Clip Art, Product & Image Mockups, HTML & CSS Templates, CSS Frameworks, CSS Methodologies, CSS Animations, Javascript Animation Libraries, Javascript Chart Libraries, UI Components & Kits, React/Vue/Angular/Svelte/React Native UI Libraries, Design Systems & Style Guides, Online Design Tools, Downloadable Design Software, Design Inspiration, Image Compression, Chrome Extensions, Firefox Extensions, AI Graphic Design Tools, Others."
         }
       ],
       "metrics": {
@@ -768,7 +789,7 @@
         ]
       },
       "review": {
-        "date": "2026-08-28",
+        "date": "2026-09-16",
         "baseline": {
           "description": "Curated list of design and UI resources from stock photos, web templates, CSS frameworks, UI libraries, tools and much more",
           "homepage": null,
@@ -1008,30 +1029,38 @@
         {
           "type": "llms_txt",
           "url": "https://mui.com/material-ui/llms.txt",
-          "what": "Agent-oriented docs map for Material UI. Note the /material-ui/ path segment - the site root has no llms.txt.",
-          "verified": "2026-08-28"
+          "what": "Agent-oriented docs map for Material UI, linking a .md version of every component page. Note the /material-ui/ path segment; the site root has no llms.txt.",
+          "verified": "2026-09-16"
+        },
+        {
+          "type": "docs_url",
+          "url": "https://mui.com/material-ui/react-{component}.md",
+          "what": "Clean markdown for one component page, e.g. react-button.md, react-autocomplete.md. Prefer this over the HTML page - same content, far cheaper to read.",
+          "verified": "2026-09-16"
         },
         {
           "type": "docs_url",
           "url": "https://mui.com/material-ui/react-{component}/",
           "what": "Per-component documentation, e.g. react-button, react-autocomplete, react-data-grid.",
-          "verified": "2026-08-28"
+          "verified": "2026-09-16"
         },
         {
           "type": "docs_url",
           "url": "https://mui.com/material-ui/customization/theming/",
           "what": "The theming system. Read before overriding styles ad hoc - MUI's theme is the intended customization surface.",
-          "verified": "2026-08-28"
+          "verified": "2026-09-16"
         }
       ],
       "use_when": [
         "The project already uses Material UI, or the team explicitly wants Material Design.",
-        "You need heavy, complex components (data grid, date pickers, autocomplete) that would take weeks to build well.",
-        "The audience is enterprise or internal-tools and density plus familiarity beat novelty."
+        "You need a large, genuinely complete component set under one MIT license - the core @mui/material package covers autocomplete, tables, dialogs, forms and the rest.",
+        "The audience is enterprise or internal-tools and density plus familiarity beat novelty.",
+        "You want theming through a real API rather than overrides - createTheme is the supported customization surface."
       ],
       "avoid_when": [
         "The brief calls for a distinctive look - Material UI reads as Material unless you invest real effort in the theme.",
-        "The project is already on Tailwind plus a copy-in component set; mixing the two styling models causes more pain than it solves."
+        "The project is already on Tailwind plus a copy-in component set; mixing the two styling models causes more pain than it solves.",
+        "You are counting on advanced data-grid or date-picker features being free. Those live in MUI X, a separate product: its MIT versions are free forever, but the advanced features need a Pro or Premium commercial license. Check the tier before promising a feature."
       ],
       "metrics": {
         "stars": 99048,
@@ -1046,7 +1075,7 @@
         "checked": "2026-09-16"
       },
       "review": {
-        "date": "2026-08-28",
+        "date": "2026-09-16",
         "baseline": {
           "description": "Material UI: Comprehensive React component library that implements Google's Material Design. Free forever.",
           "homepage": "https://mui.com/material-ui/",
@@ -1054,7 +1083,8 @@
           "release_major": "9"
         }
       },
-      "added": "2026-08-28"
+      "added": "2026-08-28",
+      "notes": "The MIT license covers the core Material UI library. MUI X (Data Grid, Date and Time Pickers, Charts, Tree View) is a separate product with MIT, Pro and Premium tiers - the Pro and Premium features are commercially licensed. Verify which tier a feature needs before recommending it."
     },
     {
       "id": "shadcn-ui",
@@ -1189,7 +1219,8 @@
         "documentation",
         "visual-testing",
         "accessibility",
-        "prototyping"
+        "prototyping",
+        "agent-guidance"
       ],
       "stacks": [
         "react",
@@ -1213,7 +1244,25 @@
           "type": "llms_txt",
           "url": "https://storybook.js.org/llms.txt",
           "what": "Agent-oriented docs map: setup per framework, writing stories, testing, addons.",
-          "verified": "2026-08-28"
+          "verified": "2026-09-16"
+        },
+        {
+          "type": "docs_url",
+          "url": "https://storybook.js.org/docs/ai",
+          "what": "Storybook's own agent integration: skills, the MCP server, and agentic review. Read this before wiring an agent to a Storybook.",
+          "verified": "2026-09-16"
+        },
+        {
+          "type": "mcp",
+          "url": "https://storybook.js.org/docs/ai/mcp",
+          "what": "Storybook MCP server. Lets an agent list stories, read their args and run their tests, so it can see the components it built instead of guessing.",
+          "verified": "2026-09-16"
+        },
+        {
+          "type": "docs_url",
+          "url": "https://storybook.js.org/docs/{path}.md",
+          "what": "Append .md to any docs URL for clean markdown with code examples, e.g. /docs/writing-stories/decorators.md. Much cheaper than scraping the HTML page.",
+          "verified": "2026-09-16"
         },
         {
           "type": "cli",
@@ -1232,11 +1281,26 @@
         "You generated several components and the user needs to actually see and compare them.",
         "You want states (loading, empty, error, long text) to be reviewable without clicking through the whole app.",
         "You need a durable home for a design system's documentation.",
-        "You want visual or accessibility regressions caught automatically."
+        "You want visual or accessibility regressions caught automatically.",
+        "An agent needs to see the components it built, rather than assert they work - the MCP server exposes stories and their tests."
       ],
       "avoid_when": [
         "It is a one-off prototype that will be deleted this week - the setup cost will not pay back.",
         "The user asked for a static mockup with no build step."
+      ],
+      "provides": [
+        {
+          "name": "MCP server and agent skills",
+          "note": "Added in Storybook 10: CLI bindings for agent tools, an MCP server, and agentic review. React is stable; Angular-Vite and Vue support are experimental as of 10.6."
+        },
+        {
+          "name": "Vitest addon",
+          "note": "Runs stories as component tests, so every state you documented is also a test."
+        },
+        {
+          "name": "Accessibility addon",
+          "note": "Automated a11y checks per story - catches a real fraction of what a manual review would."
+        }
       ],
       "metrics": {
         "stars": 91067,
@@ -1251,7 +1315,7 @@
         "checked": "2026-09-16"
       },
       "review": {
-        "date": "2026-08-28",
+        "date": "2026-09-16",
         "baseline": {
           "description": "Storybook is the industry standard workshop for building, documenting, and testing UI components in isolation",
           "homepage": "https://storybook.js.org",
