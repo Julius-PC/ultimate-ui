@@ -70,16 +70,16 @@
     "You are counting on advanced data-grid or date-picker features being free. Those live in MUI X, a separate product: its MIT versions are free forever, but the advanced features need a Pro or Premium commercial license. Check the tier before promising a feature."
   ],
   "metrics": {
-    "stars": 99048,
-    "checked": "2026-09-16"
+    "stars": 99068,
+    "checked": "2026-09-21"
   },
   "upstream": {
-    "last_commit": "2026-09-15T22:21:06Z",
+    "last_commit": "2026-09-21T10:24:50Z",
     "default_branch": "master",
     "archived": false,
-    "open_issues": 1475,
+    "open_issues": 1473,
     "latest_release": "v9.4.0",
-    "checked": "2026-09-16"
+    "checked": "2026-09-21"
   },
   "review": {
     "date": "2026-09-16",
