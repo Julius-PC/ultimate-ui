@@ -419,16 +419,16 @@
         "Bundle size on a small public site is a hard constraint."
       ],
       "metrics": {
-        "stars": 99633,
-        "checked": "2026-09-28"
+        "stars": 99684,
+        "checked": "2026-10-05"
       },
       "upstream": {
-        "last_commit": "2026-09-28T08:56:16Z",
+        "last_commit": "2026-10-05T07:17:17Z",
         "default_branch": "master",
         "archived": false,
-        "open_issues": 1086,
+        "open_issues": 1102,
         "latest_release": "6.6.5",
-        "checked": "2026-09-28"
+        "checked": "2026-10-05"
       },
       "review": {
         "date": "2026-09-16",
@@ -519,16 +519,16 @@
         }
       ],
       "metrics": {
-        "stars": 118506,
-        "checked": "2026-09-28"
+        "stars": 119622,
+        "checked": "2026-10-05"
       },
       "upstream": {
-        "last_commit": "2026-09-21T08:23:38Z",
+        "last_commit": "2026-10-05T07:34:34Z",
         "default_branch": "main",
         "archived": false,
-        "open_issues": 312,
+        "open_issues": 313,
         "latest_release": null,
-        "checked": "2026-09-28"
+        "checked": "2026-10-05"
       },
       "watch": {
         "paths": [
@@ -686,16 +686,16 @@
         "The output would ship where the GPL-3.0 license or an individual model’s terms are a problem. Model weights carry their own licenses, separate from ComfyUI’s."
       ],
       "metrics": {
-        "stars": 135318,
-        "checked": "2026-09-28"
+        "stars": 136147,
+        "checked": "2026-10-05"
       },
       "upstream": {
-        "last_commit": "2026-09-28T06:28:24Z",
+        "last_commit": "2026-10-05T13:14:25Z",
         "default_branch": "master",
         "archived": false,
-        "open_issues": 4991,
-        "latest_release": "v0.37.0",
-        "checked": "2026-09-28"
+        "open_issues": 5060,
+        "latest_release": "v0.38.0",
+        "checked": "2026-10-05"
       },
       "review": {
         "date": "2026-09-16",
@@ -769,16 +769,16 @@
         }
       ],
       "metrics": {
-        "stars": 67041,
-        "checked": "2026-09-28"
+        "stars": 67083,
+        "checked": "2026-10-05"
       },
       "upstream": {
-        "last_commit": "2026-05-24T10:07:48Z",
+        "last_commit": "2026-10-05T13:06:07Z",
         "default_branch": "master",
         "archived": false,
-        "open_issues": 151,
+        "open_issues": 10,
         "latest_release": null,
-        "checked": "2026-09-28"
+        "checked": "2026-10-05"
       },
       "watch": {
         "headings": [
@@ -948,16 +948,16 @@
         }
       ],
       "metrics": {
-        "stars": 41592,
-        "checked": "2026-09-28"
+        "stars": 43532,
+        "checked": "2026-10-05"
       },
       "upstream": {
-        "last_commit": "2026-09-23T23:18:27Z",
+        "last_commit": "2026-10-02T10:43:36Z",
         "default_branch": "main",
         "archived": false,
         "open_issues": 0,
         "latest_release": null,
-        "checked": "2026-09-28"
+        "checked": "2026-10-05"
       },
       "watch": {
         "paths": [
@@ -1063,16 +1063,16 @@
         "You are counting on advanced data-grid or date-picker features being free. Those live in MUI X, a separate product: its MIT versions are free forever, but the advanced features need a Pro or Premium commercial license. Check the tier before promising a feature."
       ],
       "metrics": {
-        "stars": 99108,
-        "checked": "2026-09-28"
+        "stars": 99130,
+        "checked": "2026-10-05"
       },
       "upstream": {
-        "last_commit": "2026-09-28T12:49:43Z",
+        "last_commit": "2026-10-05T12:30:34Z",
         "default_branch": "master",
         "archived": false,
-        "open_issues": 1463,
+        "open_issues": 1473,
         "latest_release": "v9.4.0",
-        "checked": "2026-09-28"
+        "checked": "2026-10-05"
       },
       "review": {
         "date": "2026-09-16",
@@ -1179,16 +1179,16 @@
         "The team wants a batteries-included library it never has to maintain; here the code becomes yours."
       ],
       "metrics": {
-        "stars": 124754,
-        "checked": "2026-09-28"
+        "stars": 125137,
+        "checked": "2026-10-05"
       },
       "upstream": {
-        "last_commit": "2026-09-28T12:13:08Z",
+        "last_commit": "2026-10-05T13:34:18Z",
         "default_branch": "main",
         "archived": false,
-        "open_issues": 1835,
-        "latest_release": "shadcn@4.21.0",
-        "checked": "2026-09-28"
+        "open_issues": 1803,
+        "latest_release": "shadcn@4.21.1",
+        "checked": "2026-10-05"
       },
       "review": {
         "date": "2026-09-16",
@@ -1303,16 +1303,16 @@
         }
       ],
       "metrics": {
-        "stars": 91166,
-        "checked": "2026-09-28"
+        "stars": 91200,
+        "checked": "2026-10-05"
       },
       "upstream": {
-        "last_commit": "2026-09-28T12:51:40Z",
+        "last_commit": "2026-10-05T13:41:09Z",
         "default_branch": "next",
         "archived": false,
-        "open_issues": 1872,
-        "latest_release": "v10.6.0",
-        "checked": "2026-09-28"
+        "open_issues": 1879,
+        "latest_release": "v10.6.1",
+        "checked": "2026-10-05"
       },
       "review": {
         "date": "2026-09-16",
@@ -1433,16 +1433,16 @@
         }
       ],
       "metrics": {
-        "stars": 131159,
-        "checked": "2026-09-28"
+        "stars": 133172,
+        "checked": "2026-10-05"
       },
       "upstream": {
-        "last_commit": "2026-09-27T11:30:41Z",
+        "last_commit": "2026-10-03T16:05:26Z",
         "default_branch": "main",
         "archived": false,
         "open_issues": 82,
         "latest_release": "v2.15.0",
-        "checked": "2026-09-28"
+        "checked": "2026-10-05"
       },
       "watch": {
         "paths": [
