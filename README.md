@@ -140,19 +140,19 @@ tracks both halves: how recently each project was committed to, and when a
 person last checked that the entry still describes it accurately.
 
 <!-- freshness-table:start -->
-Last checked 2026-10-12. ⚠️ marks an upstream with no commits in a year, or an entry not reviewed in 180 days.
+Last checked 2026-10-19. ⚠️ marks an upstream with no commits in a year, or an entry not reviewed in 180 days.
 
 | Source | Last upstream commit | Age when checked | Latest release | Last reviewed | Stars |
 | --- | --- | --- | --- | --- | --- |
-| [Material UI](https://github.com/mui/material-ui) | 2026-10-12 | same day | `v9.5.0` | 2026-09-16 | 99,194 |
-| [Storybook](https://github.com/storybookjs/storybook) | 2026-10-12 | same day | `v10.6.1` | 2026-09-16 | 91,248 |
-| [Awesome DESIGN.md](https://github.com/voltagent/awesome-design-md) | 2026-10-12 | same day | — | 2026-09-16 | 120,493 |
-| [ComfyUI](https://github.com/Comfy-Org/ComfyUI) | 2026-10-12 | same day | `v0.39.0` | 2026-09-16 | 137,090 |
-| [Ant Design](https://github.com/ant-design/ant-design) | 2026-10-12 | same day | `6.6.6` | 2026-09-16 | 99,743 |
-| [UI UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) | 2026-10-12 | same day | `v2.15.0` | 2026-09-16 | 135,057 |
-| [shadcn/ui](https://github.com/shadcn-ui/ui) | 2026-10-12 | same day | `shadcn@4.21.4` | 2026-09-16 | 125,407 |
-| [Design Resources For Developers](https://github.com/bradtraversy/design-resources-for-developers) | 2026-10-12 | same day | — | 2026-09-16 | 67,143 |
-| [Skills For Designers and Engineers](https://github.com/emilkowalski/skills) | 2026-10-11 | same day | — | 2026-09-16 | 45,591 |
+| [Storybook](https://github.com/storybookjs/storybook) | 2026-10-19 | same day | `v10.6.2` | 2026-09-16 | 91,336 |
+| [Material UI](https://github.com/mui/material-ui) | 2026-10-19 | same day | `v9.5.0` | 2026-09-16 | 99,242 |
+| [ComfyUI](https://github.com/Comfy-Org/ComfyUI) | 2026-10-19 | same day | `v0.42.1` | 2026-09-16 | 139,162 |
+| [shadcn/ui](https://github.com/shadcn-ui/ui) | 2026-10-19 | same day | `shadcn@4.22.1` | 2026-09-16 | 125,933 |
+| [Ant Design](https://github.com/ant-design/ant-design) | 2026-10-19 | same day | `6.6.6` | 2026-09-16 | 99,805 |
+| [Design Resources For Developers](https://github.com/bradtraversy/design-resources-for-developers) | 2026-10-18 | same day | — | 2026-09-16 | 67,213 |
+| [UI UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) | 2026-10-15 | 4 days | `v2.15.0` | 2026-09-16 | 137,457 |
+| [Awesome DESIGN.md](https://github.com/voltagent/awesome-design-md) | 2026-10-14 | 5 days | — | 2026-09-16 | 122,220 |
+| [Skills For Designers and Engineers](https://github.com/emilkowalski/skills) | 2026-10-11 | 7 days | — | 2026-09-16 | 47,522 |
 <!-- freshness-table:end -->
 
 Refresh it yourself — this rewrites the `upstream` block in every source file:
