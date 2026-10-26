@@ -76,16 +76,16 @@
     }
   ],
   "metrics": {
-    "stars": 122220,
-    "checked": "2026-10-19"
+    "stars": 123608,
+    "checked": "2026-10-26"
   },
   "upstream": {
     "last_commit": "2026-10-14T05:46:48Z",
     "default_branch": "main",
     "archived": false,
-    "open_issues": 312,
+    "open_issues": 311,
     "latest_release": null,
-    "checked": "2026-10-19"
+    "checked": "2026-10-26"
   },
   "watch": {
     "paths": [

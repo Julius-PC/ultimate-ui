@@ -100,16 +100,16 @@
     }
   ],
   "metrics": {
-    "stars": 91336,
-    "checked": "2026-10-19"
+    "stars": 91380,
+    "checked": "2026-10-26"
   },
   "upstream": {
-    "last_commit": "2026-10-19T12:15:38Z",
+    "last_commit": "2026-10-26T12:00:32Z",
     "default_branch": "next",
     "archived": false,
-    "open_issues": 1889,
-    "latest_release": "v10.6.2",
-    "checked": "2026-10-19"
+    "open_issues": 1838,
+    "latest_release": "v10.6.4",
+    "checked": "2026-10-26"
   },
   "review": {
     "date": "2026-09-16",
