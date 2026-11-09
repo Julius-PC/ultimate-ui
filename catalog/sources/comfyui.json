@@ -60,16 +60,16 @@
     "The output would ship where the GPL-3.0 license or an individual model’s terms are a problem. Model weights carry their own licenses, separate from ComfyUI’s."
   ],
   "metrics": {
-    "stars": 144604,
-    "checked": "2026-11-02"
+    "stars": 145928,
+    "checked": "2026-11-09"
   },
   "upstream": {
-    "last_commit": "2026-11-02T14:02:09Z",
+    "last_commit": "2026-11-09T12:01:54Z",
     "default_branch": "master",
     "archived": false,
-    "open_issues": 5414,
-    "latest_release": "v0.43.0",
-    "checked": "2026-11-02"
+    "open_issues": 5479,
+    "latest_release": "v0.44.0",
+    "checked": "2026-11-09"
   },
   "review": {
     "date": "2026-09-16",
