@@ -91,16 +91,16 @@
     "The team wants a batteries-included library it never has to maintain; here the code becomes yours."
   ],
   "metrics": {
-    "stars": 127705,
-    "checked": "2026-11-09"
+    "stars": 128312,
+    "checked": "2026-11-16"
   },
   "upstream": {
-    "last_commit": "2026-11-09T10:36:48Z",
+    "last_commit": "2026-11-13T10:58:16Z",
     "default_branch": "main",
     "archived": false,
-    "open_issues": 1774,
+    "open_issues": 1771,
     "latest_release": "shadcn@4.23.0",
-    "checked": "2026-11-09"
+    "checked": "2026-11-16"
   },
   "review": {
     "date": "2026-09-16",
