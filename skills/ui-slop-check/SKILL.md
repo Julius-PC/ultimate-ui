@@ -189,8 +189,5 @@ Change nothing before this answer.
 - **[Playwright CLI](https://github.com/microsoft/playwright-cli)** by
   [Microsoft](https://github.com/microsoft) (Apache-2.0) — one way to take the step 1
   and step 6 screenshots from an agent.
-- The list of tells and missing patterns was gathered from short design videos by
-  creators on TikTok (@charles.unemployed and @haydenschmitty), restated and
-  extended here.
 
 Full attribution: [`CREDITS.md`](../../CREDITS.md).

@@ -7,7 +7,7 @@ This repository indexes and links to them. It does not vendor, fork, or re-licen
 
 If you maintain one of these projects and want the entry changed or removed, open an issue and we will act on it.
 
-Indexed sources: **13**
+Indexed sources: **12**
 
 ## Ant Design
 
@@ -69,19 +69,6 @@ Indexed sources: **13**
 - **Catalog id:** `emilkowalski-skills`
 
 > Skills for designers and engineers to help them build better user interfaces, focused on animation and interface craft, drawn from the author's experience at companies like Vercel and Linear.
-
-## HyperFrames
-
-- **Author:** [HeyGen](https://github.com/heygen-com)
-- **Repository:** https://github.com/heygen-com/hyperframes
-- **Homepage:** https://hyperframes.heygen.com
-- **License:** Apache-2.0 — https://github.com/heygen-com/hyperframes/blob/main/LICENSE
-- **Kind:** Generative tool
-- **Catalog id:** `hyperframes`
-
-> A framework for turning HTML, CSS, media and seekable animations into deterministic MP4 videos, built for agents: a CLI to preview and render, skills that teach an agent to compose videos, and a catalog of blocks such as transitions, overlays and animated charts.
-
-**Note:** Category outlier, like ComfyUI: indexed for the media that ships alongside an interface. The CLI sends anonymous usage data to PostHog by default; set HYPERFRAMES_NO_TELEMETRY=1 or DO_NOT_TRACK=1. The framework is Apache-2.0 with no per-render fees; the separate Studio app has a paid Pro plan.
 
 ## Impeccable
 

@@ -111,7 +111,6 @@ Fifteen more proposed skills, each with a real design sketch, in
 | [ComfyUI](https://github.com/Comfy-Org/ComfyUI) | [Comfy Org](https://github.com/Comfy-Org) | Generative tool | image-generation, asset-sourcing, prototyping | GPL-3.0 |
 | [Design Resources For Developers](https://github.com/bradtraversy/design-resources-for-developers) | [Brad Traversy](https://github.com/bradtraversy) | Curated list | asset-sourcing, inspiration, iconography | MIT |
 | [Skills For Designers and Engineers](https://github.com/emilkowalski/skills) | [Emil Kowalski](https://github.com/emilkowalski) | Agent skills | motion, agent-guidance, code-review | MIT |
-| [HyperFrames](https://github.com/heygen-com/hyperframes) | [HeyGen](https://github.com/heygen-com) | Generative tool | video-generation, motion, agent-guidance | Apache-2.0 |
 | [Impeccable](https://github.com/pbakaus/impeccable) | [Paul Bakaus](https://github.com/pbakaus) | Agent skills | code-review, agent-guidance, accessibility | Apache-2.0 |
 | [Material UI](https://github.com/mui/material-ui) | [MUI](https://github.com/mui) | Component library | components, theming, design-tokens | MIT |
 | [Playwright CLI](https://github.com/microsoft/playwright-cli) | [Microsoft](https://github.com/microsoft) | Workshop tool | visual-testing, code-review, accessibility | Apache-2.0 |
@@ -149,7 +148,6 @@ Last checked 2026-11-20. ⚠️ marks an upstream with no commits in a year, or 
 
 | Source | Last upstream commit | Age when checked | Latest release | Last reviewed | Stars |
 | --- | --- | --- | --- | --- | --- |
-| [HyperFrames](https://github.com/heygen-com/hyperframes) | 2026-11-20 | same day | `v0.9.72` | 2026-11-20 | 87,114 |
 | [UI SDK](https://github.com/vercel-labs/ui) | 2026-11-20 | same day | — | 2026-11-20 | 6,164 |
 | [Impeccable](https://github.com/pbakaus/impeccable) | 2026-11-19 | same day | `engine-v0.1.28` | 2026-11-20 | 113,572 |
 | [Playwright CLI](https://github.com/microsoft/playwright-cli) | 2026-11-18 | 1 day | `v0.1.25` | 2026-11-20 | 15,320 |
@@ -284,7 +282,6 @@ vendor, fork, or re-license their content.
 | [ComfyUI](https://github.com/Comfy-Org/ComfyUI) | [Comfy Org](https://github.com/Comfy-Org) <sub>Created by comfyanonymous.</sub> | GPL-3.0 |
 | [Design Resources For Developers](https://github.com/bradtraversy/design-resources-for-developers) | [Brad Traversy](https://github.com/bradtraversy) | MIT |
 | [Skills For Designers and Engineers](https://github.com/emilkowalski/skills) | [Emil Kowalski](https://github.com/emilkowalski) | MIT |
-| [HyperFrames](https://github.com/heygen-com/hyperframes) | [HeyGen](https://github.com/heygen-com) | Apache-2.0 |
 | [Impeccable](https://github.com/pbakaus/impeccable) | [Paul Bakaus](https://github.com/pbakaus) | Apache-2.0 |
 | [Material UI](https://github.com/mui/material-ui) | [MUI](https://github.com/mui) | MIT |
 | [Playwright CLI](https://github.com/microsoft/playwright-cli) | [Microsoft](https://github.com/microsoft) | Apache-2.0 |
