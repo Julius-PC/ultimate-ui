@@ -155,5 +155,5 @@ routes to. The skills are glue; the substance belongs to the people who wrote it
 | A generated artefact | Extend `scripts/build.mjs`; CI's `--check` covers it automatically |
 | A new entrypoint type | Extend the enum in `catalog/schema.json` and document it above |
 
-Nothing here is coupled to the current nine sources or eight skills. Both lists
+Nothing here is coupled to the current twelve sources or nine skills. Both lists
 are meant to grow.

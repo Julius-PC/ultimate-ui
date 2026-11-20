@@ -74,6 +74,7 @@ pre-built lookups by capability, stack, and style.
 | [`motion-pass`](skills/motion-pass/SKILL.md) | Add, fix, or remove animation in an interface - choosing curve, duration, and animated properties deliberately, and deciding what should not move at all. |
 | [`style-scout`](skills/style-scout/SKILL.md) | Turn a loose description of a desired look ("clean and technical", "like Linear but warmer", "premium, dark, not corporate") into a concrete, written style brief plus the specific catalog sources, brand design languages, component libraries and guides that fit it. |
 | [`ui-review`](skills/ui-review/SKILL.md) | Audit UI that already exists against its own design language, accessibility requirements, responsive behaviour, and the states real products hit - producing a prioritised, fixable list rather than a vague impression. |
+| [`ui-slop-check`](skills/ui-slop-check/SKILL.md) | Review screens for the tells of AI-made design, clutter, missing UI patterns such as skeleton loaders and semantic colours, then fix only what the user approves. |
 <!-- skills-table:end -->
 
 Browse them from the command line:
@@ -110,9 +111,12 @@ Fifteen more proposed skills, each with a real design sketch, in
 | [ComfyUI](https://github.com/Comfy-Org/ComfyUI) | [Comfy Org](https://github.com/Comfy-Org) | Generative tool | image-generation, asset-sourcing, prototyping | GPL-3.0 |
 | [Design Resources For Developers](https://github.com/bradtraversy/design-resources-for-developers) | [Brad Traversy](https://github.com/bradtraversy) | Curated list | asset-sourcing, inspiration, iconography | MIT |
 | [Skills For Designers and Engineers](https://github.com/emilkowalski/skills) | [Emil Kowalski](https://github.com/emilkowalski) | Agent skills | motion, agent-guidance, code-review | MIT |
+| [Impeccable](https://github.com/pbakaus/impeccable) | [Paul Bakaus](https://github.com/pbakaus) | Agent skills | code-review, agent-guidance, accessibility | Apache-2.0 |
 | [Material UI](https://github.com/mui/material-ui) | [MUI](https://github.com/mui) | Component library | components, theming, design-tokens | MIT |
+| [Playwright CLI](https://github.com/microsoft/playwright-cli) | [Microsoft](https://github.com/microsoft) | Workshop tool | visual-testing, accessibility, agent-guidance | Apache-2.0 |
 | [shadcn/ui](https://github.com/shadcn-ui/ui) | [shadcn-ui](https://github.com/shadcn-ui) | Component library | components, primitives, theming | MIT |
 | [Storybook](https://github.com/storybookjs/storybook) | [Storybook](https://github.com/storybookjs) | Workshop tool | component-workshop, documentation, visual-testing | MIT |
+| [UI SDK](https://github.com/vercel-labs/ui) | [Vercel Labs](https://github.com/vercel-labs) | Component library | primitives, components, accessibility | Apache-2.0 |
 | [UI UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) | [nextlevelbuilder](https://github.com/nextlevelbuilder) | Agent skills | design-language, design-tokens, theming | MIT |
 <!-- catalog-table:end -->
 
@@ -140,16 +144,19 @@ tracks both halves: how recently each project was committed to, and when a
 person last checked that the entry still describes it accurately.
 
 <!-- freshness-table:start -->
-Last checked 2026-11-16. ⚠️ marks an upstream with no commits in a year, or an entry not reviewed in 180 days.
+Last checked 2026-11-20. ⚠️ marks an upstream with no commits in a year, or an entry not reviewed in 180 days.
 
 | Source | Last upstream commit | Age when checked | Latest release | Last reviewed | Stars |
 | --- | --- | --- | --- | --- | --- |
+| [UI SDK](https://github.com/vercel-labs/ui) | 2026-11-20 | same day | — | 2026-11-20 | 6,164 |
+| [Impeccable](https://github.com/pbakaus/impeccable) | 2026-11-19 | same day | `engine-v0.1.28` | 2026-11-20 | 113,572 |
+| [Playwright CLI](https://github.com/microsoft/playwright-cli) | 2026-11-18 | 1 day | `v0.1.25` | 2026-11-20 | 15,320 |
 | [Storybook](https://github.com/storybookjs/storybook) | 2026-11-16 | same day | `v10.6.7` | 2026-09-16 | 91,583 |
 | [Material UI](https://github.com/mui/material-ui) | 2026-11-16 | same day | `v9.5.0` | 2026-09-16 | 99,344 |
 | [Ant Design](https://github.com/ant-design/ant-design) | 2026-11-16 | same day | `6.7.1` | 2026-09-16 | 100,230 |
 | [ComfyUI](https://github.com/Comfy-Org/ComfyUI) | 2026-11-16 | same day | `v0.45.0` | 2026-09-16 | 147,151 |
 | [UI UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) | 2026-11-16 | same day | `v2.15.0` | 2026-09-16 | 150,260 |
-| [Skills For Designers and Engineers](https://github.com/emilkowalski/skills) | 2026-11-15 | same day | — | 2026-09-16 | 57,363 |
+| [Skills For Designers and Engineers](https://github.com/emilkowalski/skills) | 2026-11-15 | 4 days | — | 2026-11-20 | 58,229 |
 | [shadcn/ui](https://github.com/shadcn-ui/ui) | 2026-11-13 | 3 days | `shadcn@4.23.0` | 2026-09-16 | 128,312 |
 | [Awesome DESIGN.md](https://github.com/voltagent/awesome-design-md) | 2026-10-28 | 18 days | — | 2026-09-16 | 127,782 |
 | [Design Resources For Developers](https://github.com/bradtraversy/design-resources-for-developers) | 2026-10-18 | 28 days | — | 2026-09-16 | 67,412 |
@@ -275,9 +282,12 @@ vendor, fork, or re-license their content.
 | [ComfyUI](https://github.com/Comfy-Org/ComfyUI) | [Comfy Org](https://github.com/Comfy-Org) <sub>Created by comfyanonymous.</sub> | GPL-3.0 |
 | [Design Resources For Developers](https://github.com/bradtraversy/design-resources-for-developers) | [Brad Traversy](https://github.com/bradtraversy) | MIT |
 | [Skills For Designers and Engineers](https://github.com/emilkowalski/skills) | [Emil Kowalski](https://github.com/emilkowalski) | MIT |
+| [Impeccable](https://github.com/pbakaus/impeccable) | [Paul Bakaus](https://github.com/pbakaus) | Apache-2.0 |
 | [Material UI](https://github.com/mui/material-ui) | [MUI](https://github.com/mui) | MIT |
+| [Playwright CLI](https://github.com/microsoft/playwright-cli) | [Microsoft](https://github.com/microsoft) | Apache-2.0 |
 | [shadcn/ui](https://github.com/shadcn-ui/ui) | [shadcn-ui](https://github.com/shadcn-ui) <sub>Created by shadcn.</sub> | MIT |
 | [Storybook](https://github.com/storybookjs/storybook) | [Storybook](https://github.com/storybookjs) | MIT |
+| [UI SDK](https://github.com/vercel-labs/ui) | [Vercel Labs](https://github.com/vercel-labs) <sub>Most of the work is by shadcn, creator of shadcn/ui.</sub> | Apache-2.0 |
 | [UI UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) | [nextlevelbuilder](https://github.com/nextlevelbuilder) | MIT |
 <!-- credits-table:end -->
 

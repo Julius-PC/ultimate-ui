@@ -1,6 +1,6 @@
 # Skill backlog
 
-Eight skills ship today. These are the ones that look worth building next,
+Nine skills ship today. These are the ones that look worth building next,
 roughly ordered by how much they would earn their keep. Each is a real proposal,
 not a placeholder — pick one up and open a pull request.
 

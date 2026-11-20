@@ -7,7 +7,7 @@ This repository indexes and links to them. It does not vendor, fork, or re-licen
 
 If you maintain one of these projects and want the entry changed or removed, open an issue and we will act on it.
 
-Indexed sources: **9**
+Indexed sources: **12**
 
 ## Ant Design
 
@@ -63,12 +63,25 @@ Indexed sources: **9**
 
 - **Author:** [Emil Kowalski](https://github.com/emilkowalski)
 - **Repository:** https://github.com/emilkowalski/skills
-- **Homepage:** https://emilkowal.ski/skill
+- **Homepage:** https://aiforui.dev/skills
 - **License:** MIT — https://github.com/emilkowalski/skills/blob/main/LICENSE
 - **Kind:** Agent skills
 - **Catalog id:** `emilkowalski-skills`
 
 > Skills for designers and engineers to help them build better user interfaces, focused on animation and interface craft, drawn from the author's experience at companies like Vercel and Linear.
+
+## Impeccable
+
+- **Author:** [Paul Bakaus](https://github.com/pbakaus)
+- **Repository:** https://github.com/pbakaus/impeccable
+- **Homepage:** https://impeccable.style
+- **License:** Apache-2.0 — https://github.com/pbakaus/impeccable/blob/main/LICENSE
+- **Kind:** Agent skills
+- **Catalog id:** `impeccable`
+
+> The design vocabulary for a coding agent: commands to steer a design (bolder, quieter, distill, typeset), review it (critique, audit) and finish it (polish, harden), plus a deterministic detector of 62 rules that flags the tells of AI-made UI. Started from Anthropic's frontend-design skill.
+
+**Note:** Telemetry is on by default: it records which visual directions were shown and picked (not code or files). Turn it off with `npx impeccable telemetry off` or DO_NOT_TRACK=1; the request that fetches directions still happens. The skill, CLI, hook and detector are free; a paid Pro plan adds extra detector rules and pull-request reviews. Ships builds for many agents from one repository, so the repo root is mostly per-tool folders.
 
 ## Material UI
 
@@ -82,6 +95,17 @@ Indexed sources: **9**
 > Material UI: Comprehensive React component library that implements Google's Material Design. Free forever.
 
 **Note:** The MIT license covers the core Material UI library. MUI X (Data Grid, Date and Time Pickers, Charts, Tree View) is a separate product with MIT, Pro and Premium tiers - the Pro and Premium features are commercially licensed. Verify which tier a feature needs before recommending it.
+
+## Playwright CLI
+
+- **Author:** [Microsoft](https://github.com/microsoft)
+- **Repository:** https://github.com/microsoft/playwright-cli
+- **Homepage:** https://playwright.dev
+- **License:** Apache-2.0 — https://github.com/microsoft/playwright-cli/blob/main/LICENSE
+- **Kind:** Workshop tool
+- **Catalog id:** `playwright-cli`
+
+> A command-line interface into Playwright built for coding agents, with a skill: open a page, click, type, take screenshots and accessibility snapshots, emulate devices and inspect the network, without loading large tool schemas or page trees into the model's context.
 
 ## shadcn/ui
 
@@ -105,6 +129,20 @@ Indexed sources: **9**
 - **Catalog id:** `storybook`
 
 > Storybook is the industry standard workshop for building, documenting, and testing UI components in isolation.
+
+## UI SDK
+
+- **Author:** [Vercel Labs](https://github.com/vercel-labs)
+- **Also credit:** Most of the work is by shadcn (https://github.com/shadcn), creator of shadcn/ui.
+- **Repository:** https://github.com/vercel-labs/ui
+- **Homepage:** https://ui-sdk.dev
+- **License:** Apache-2.0 — https://github.com/vercel-labs/ui/blob/main/LICENSE
+- **Kind:** Component library
+- **Catalog id:** `ui-sdk`
+
+> A library of behaviours for agents to build interfaces with: keyboard navigation, focus, selection, dismissal, popups, drag and drop and their ARIA, in a framework-free core with adapters for React, Vue, Svelte, Solid and Web Components, plus unstyled components and an agent skill for building missing ones from the same parts.
+
+**Note:** Beta. Repository created 2026-10-26; recheck the API and the beta label at each review. Docs ship inside each npm package (node_modules/@ui-sdk/<framework>/docs/llms.txt), which matches the installed version better than the website.
 
 ## UI UX Pro Max
 

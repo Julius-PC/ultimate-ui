@@ -1,0 +1,75 @@
+{
+  "id": "playwright-cli",
+  "name": "Playwright CLI",
+  "repo": "https://github.com/microsoft/playwright-cli",
+  "homepage": "https://playwright.dev",
+  "author": {
+    "name": "Microsoft",
+    "url": "https://github.com/microsoft"
+  },
+  "license": "Apache-2.0",
+  "license_url": "https://github.com/microsoft/playwright-cli/blob/main/LICENSE",
+  "summary": "A command-line interface into Playwright built for coding agents, with a skill: open a page, click, type, take screenshots and accessibility snapshots, emulate devices and inspect the network, without loading large tool schemas or page trees into the model's context.",
+  "kind": "workshop-tool",
+  "capabilities": [
+    "visual-testing",
+    "accessibility",
+    "agent-guidance"
+  ],
+  "stacks": [
+    "stack-agnostic"
+  ],
+  "style_tags": [],
+  "agent_entrypoints": [
+    {
+      "type": "raw_path",
+      "url": "https://raw.githubusercontent.com/microsoft/playwright-cli/main/skills/playwright-cli/SKILL.md",
+      "what": "The skill an agent follows to drive the CLI. Read it before scripting a check of a running UI.",
+      "verified": "2026-11-20"
+    },
+    {
+      "type": "cli",
+      "url": "playwright-cli --help",
+      "what": "Every command, written so an agent can learn the tool from it with no skill installed. Install first with `npm install -g @playwright/cli@latest` (a global install - ask the user before running it); `playwright-cli install --skills` adds the skill locally.",
+      "verified": "2026-11-20"
+    },
+    {
+      "type": "docs_url",
+      "url": "https://playwright.dev/docs/getting-started-cli",
+      "what": "The human-facing guide to the CLI on the Playwright site.",
+      "verified": "2026-11-20"
+    }
+  ],
+  "use_when": [
+    "An agent has built or changed a screen and must see it: screenshots at phone and desktop sizes, the empty and error states, keyboard flow.",
+    "You need an accessibility snapshot of a page to check labels, roles and heading order.",
+    "Browser checks have to fit in a long agent session where an MCP server's schemas and page trees would eat the context."
+  ],
+  "avoid_when": [
+    "You need a long-lived browser the agent reasons over step by step (exploratory or self-healing tests) - Playwright's own docs point to Playwright MCP for that.",
+    "The project already has a Playwright test suite or a browser tool wired into its agent; use what is there.",
+    "You need pixel-diff visual regression across commits. This takes screenshots; it does not compare them for you."
+  ],
+  "metrics": {
+    "stars": 15320,
+    "checked": "2026-11-20"
+  },
+  "upstream": {
+    "last_commit": "2026-11-18T18:50:52Z",
+    "default_branch": "main",
+    "archived": false,
+    "open_issues": 1,
+    "latest_release": "v0.1.25",
+    "checked": "2026-11-20"
+  },
+  "review": {
+    "date": "2026-11-20",
+    "baseline": {
+      "description": "CLI for common Playwright actions. Record and generate Playwright code, inspect selectors and take screenshots.",
+      "homepage": "https://playwright.dev",
+      "watched": {},
+      "release_major": "0"
+    }
+  },
+  "added": "2026-11-20"
+}
