@@ -1,0 +1,103 @@
+{
+  "id": "ui-sdk",
+  "name": "UI SDK",
+  "repo": "https://github.com/vercel-labs/ui",
+  "homepage": "https://ui-sdk.dev",
+  "author": {
+    "name": "Vercel Labs",
+    "url": "https://github.com/vercel-labs",
+    "credit_note": "Most of the work is by shadcn (https://github.com/shadcn), creator of shadcn/ui."
+  },
+  "license": "Apache-2.0",
+  "license_url": "https://github.com/vercel-labs/ui/blob/main/LICENSE",
+  "summary": "A library of behaviours for agents to build interfaces with: keyboard navigation, focus, selection, dismissal, popups, drag and drop and their ARIA, in a framework-free core with adapters for React, Vue, Svelte, Solid and Web Components, plus unstyled components and an agent skill for building missing ones from the same parts.",
+  "kind": "component-library",
+  "capabilities": [
+    "primitives",
+    "components",
+    "accessibility",
+    "agent-guidance"
+  ],
+  "stacks": [
+    "react",
+    "next",
+    "vue",
+    "nuxt",
+    "svelte",
+    "solid",
+    "web-components",
+    "html"
+  ],
+  "style_tags": [
+    "neutral"
+  ],
+  "agent_entrypoints": [
+    {
+      "type": "llms_txt",
+      "url": "https://ui-sdk.dev/llms.txt",
+      "what": "Index of the docs. From here, read your framework's llms.txt (e.g. https://ui-sdk.dev/docs/react/llms.txt) for every component's parts and props, or Core to build a component it does not ship.",
+      "verified": "2026-11-20"
+    },
+    {
+      "type": "raw_path",
+      "url": "https://raw.githubusercontent.com/vercel-labs/ui/main/packages/core/skills/ui-sdk/SKILL.md",
+      "what": "The agent skill: choosing and composing its components, building a missing one from core behaviours, making the page usable by agents, and testing keyboard, focus and ARIA.",
+      "verified": "2026-11-20"
+    },
+    {
+      "type": "docs_url",
+      "url": "https://ui-sdk.dev/web.md",
+      "what": "The Web Components docs in one file, for a page with no build step that loads web.js and web.css from the site.",
+      "verified": "2026-11-20"
+    },
+    {
+      "type": "cli",
+      "url": "npx skills@latest add vercel-labs/ui --skill ui-sdk",
+      "what": "Installs the skill into the user's agent setup. Prefix with DISABLE_TELEMETRY=1 - the skills CLI sends anonymous usage data by default.",
+      "verified": "2026-11-20"
+    }
+  ],
+  "use_when": [
+    "You need a component with real keyboard, focus and ARIA behaviour (select, combobox, menu, dialog) and want to bring your own styles.",
+    "The component you need does not exist in any library (a stepper, a splitter, a transfer list) and you want to build it from tested behaviours instead of by hand.",
+    "One behaviour layer has to serve several frameworks, or Web Components.",
+    "An in-app agent should operate the page: it exposes the page's controls to an agent without screenshots."
+  ],
+  "avoid_when": [
+    "You need a stable API: it is in beta (0.1.0 pre-releases, first published October 2026) under Vercel's beta terms, and the API may change before general availability.",
+    "You want a finished look out of the box. Components render no styles of their own beyond an optional default stylesheet.",
+    "The project already uses a mature headless library well - switching costs more than it buys while this is in beta."
+  ],
+  "metrics": {
+    "stars": 6164,
+    "checked": "2026-11-20"
+  },
+  "upstream": {
+    "last_commit": "2026-11-20T04:46:13Z",
+    "default_branch": "main",
+    "archived": false,
+    "open_issues": 64,
+    "latest_release": null,
+    "checked": "2026-11-20"
+  },
+  "watch": {
+    "paths": [
+      "packages/core/skills/*"
+    ]
+  },
+  "review": {
+    "date": "2026-11-20",
+    "baseline": {
+      "description": "A library of behaviors for agents to build the next generation of user interfaces.",
+      "homepage": "https://ui-sdk.dev",
+      "watched": {
+        "packages/core/skills/*": [
+          "ui-sdk"
+        ]
+      },
+      "release_major": null
+    }
+  },
+  "added": "2026-11-20",
+  "notes": "Beta. Repository created 2026-10-26; recheck the API and the beta label at each review. Docs ship inside each npm package (node_modules/@ui-sdk/<framework>/docs/llms.txt), which matches the installed version better than the website."
+}

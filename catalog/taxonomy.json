@@ -19,6 +19,7 @@
     "visual-testing": "Catching unintended visual change.",
     "documentation": "Generating or hosting docs for a UI system.",
     "image-generation": "Producing raster imagery from models or programmatic pipelines.",
+    "video-generation": "Producing video files - demos, launch clips, motion graphics - from code, HTML or models.",
     "agent-guidance": "Instructions written to be read by a coding agent rather than a human.",
     "prototyping": "Fast, throwaway exploration of several directions before committing.",
     "code-review": "Evaluating existing UI code or output against a standard."

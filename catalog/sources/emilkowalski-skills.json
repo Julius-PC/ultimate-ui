@@ -2,7 +2,7 @@
   "id": "emilkowalski-skills",
   "name": "Skills For Designers and Engineers",
   "repo": "https://github.com/emilkowalski/skills",
-  "homepage": "https://emilkowal.ski/skill",
+  "homepage": "https://aiforui.dev/skills",
   "author": {
     "name": "Emil Kowalski",
     "url": "https://github.com/emilkowalski"
@@ -35,24 +35,33 @@
     {
       "type": "raw_path",
       "url": "https://raw.githubusercontent.com/emilkowalski/skills/main/skills/{skill}/SKILL.md",
-      "what": "The full text of one skill. Read the whole thing before applying it - the value is in the specific rules, not the summary.",
-      "verified": "2026-08-28"
+      "what": "The full text of one skill, e.g. .../skills/review-animations/SKILL.md. Read the whole thing before applying it - the value is in the specific rules, not the summary. Not sure which? Read ask-emil, the router.",
+      "verified": "2026-11-20"
+    },
+    {
+      "type": "docs_url",
+      "url": "https://aiforui.dev/skills",
+      "what": "One page per skill with when to use it, an example result and prompts to try.",
+      "verified": "2026-11-20"
     },
     {
       "type": "cli",
-      "url": "npx skills@latest add emilkowalski/skills",
-      "what": "Installs the skill set into the user's own agent setup. Offer this when the user wants them permanently, rather than reading them ad hoc.",
-      "verified": "2026-08-28"
+      "url": "DISABLE_TELEMETRY=1 npx skills@latest add emilkowalski/skills",
+      "what": "Installs the skill set into the user's own agent setup. Offer this when the user wants them permanently, rather than reading them ad hoc. The skills CLI sends anonymous usage data unless DISABLE_TELEMETRY=1 or DO_NOT_TRACK=1 is set.",
+      "verified": "2026-11-20"
     }
   ],
   "use_when": [
     "Anything is going to move. Read the animation skills before writing a transition, not after.",
     "You need to choose between UI libraries and want a taste-informed answer instead of a download count.",
     "You are reviewing UI that technically works but feels wrong.",
-    "A web app is being built or reviewed on a phone and feels like a website rather than something installed."
+    "A web app is being built or reviewed on a phone and feels like a website rather than something installed.",
+    "Fake data hides layout bugs: break-ui feeds a component long names, huge counts and empty lists before users do.",
+    "A session has had many design corrections and the next agent should not repeat them: learn-taste turns them into rules in DESIGN.md."
   ],
   "avoid_when": [
-    "You need broad component coverage - this is craft guidance, not a component library."
+    "You need broad component coverage - this is craft guidance, not a component library.",
+    "You want a fixed set of checks run in CI. These are judgement skills for an agent to read; nothing here runs as a linter."
   ],
   "provides": [
     {
@@ -106,19 +115,47 @@
     {
       "name": "ask-sonner",
       "note": "Working with Sonner, the author's toast library: setup, styling, recipes, fixes."
+    },
+    {
+      "name": "remove-animations",
+      "note": "The opposite of finding opportunities: removes motion on keyboard actions, high-frequency surfaces and pure decoration."
+    },
+    {
+      "name": "choreograph",
+      "note": "Coordinates several elements that animate together: what leads, what follows, what stays still."
+    },
+    {
+      "name": "animation-performance",
+      "note": "Keeps animations inside the frame budget and finds the cause when one drops frames."
+    },
+    {
+      "name": "gestures",
+      "note": "Drag, swipe and sheet interactions that track the finger 1:1 and stay interruptible."
+    },
+    {
+      "name": "break-ui",
+      "note": "Feeds UI worst-case data - long names, missing fields, huge counts, zero items, non-Latin text - to find what breaks."
+    },
+    {
+      "name": "learn-taste",
+      "note": "Turns a session's design corrections into rules, with their reasons, in DESIGN.md, a project skill or a lint check."
+    },
+    {
+      "name": "ask-emil",
+      "note": "A router over the other skills: describe the situation and it names the skill or sequence to use."
     }
   ],
   "metrics": {
-    "stars": 38072,
-    "checked": "2026-09-16"
+    "stars": 58229,
+    "checked": "2026-11-20"
   },
   "upstream": {
-    "last_commit": "2026-09-15T15:52:14Z",
+    "last_commit": "2026-11-15T12:42:50Z",
     "default_branch": "main",
     "archived": false,
-    "open_issues": 1,
+    "open_issues": 2,
     "latest_release": null,
-    "checked": "2026-09-16"
+    "checked": "2026-11-20"
   },
   "watch": {
     "paths": [
@@ -126,23 +163,30 @@
     ]
   },
   "review": {
-    "date": "2026-09-16",
+    "date": "2026-11-20",
     "baseline": {
       "description": "Skills for Designers and Engineers.",
-      "homepage": "https://emilkowal.ski/skill",
+      "homepage": "https://aiforui.dev/skills",
       "watched": {
         "skills/*": [
           "animate",
           "animate-expo",
+          "animation-performance",
           "animation-vocabulary",
           "apple-design",
+          "ask-emil",
           "ask-sonner",
+          "break-ui",
+          "choreograph",
           "emil-design-eng",
           "find-animation-opportunities",
+          "gestures",
           "improve-animations",
+          "learn-taste",
           "mobile-native",
           "pick-ui-library",
           "prototype",
+          "remove-animations",
           "review-animations",
           "write-swift"
         ]

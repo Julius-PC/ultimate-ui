@@ -1,0 +1,141 @@
+{
+  "id": "impeccable",
+  "name": "Impeccable",
+  "repo": "https://github.com/pbakaus/impeccable",
+  "homepage": "https://impeccable.style",
+  "author": {
+    "name": "Paul Bakaus",
+    "url": "https://github.com/pbakaus"
+  },
+  "license": "Apache-2.0",
+  "license_url": "https://github.com/pbakaus/impeccable/blob/main/LICENSE",
+  "summary": "The design vocabulary for a coding agent: commands to steer a design (bolder, quieter, distill, typeset), review it (critique, audit) and finish it (polish, harden), plus a deterministic detector of 62 rules that flags the tells of AI-made UI. Started from Anthropic's frontend-design skill.",
+  "kind": "agent-skills",
+  "capabilities": [
+    "code-review",
+    "agent-guidance",
+    "accessibility",
+    "typography",
+    "color",
+    "layout",
+    "motion",
+    "design-language"
+  ],
+  "stacks": [
+    "stack-agnostic",
+    "html",
+    "react",
+    "next",
+    "vue",
+    "nuxt",
+    "svelte",
+    "astro",
+    "vite",
+    "swiftui",
+    "jetpack-compose",
+    "react-native",
+    "flutter"
+  ],
+  "style_tags": [],
+  "agent_entrypoints": [
+    {
+      "type": "llms_txt",
+      "url": "https://impeccable.style/llms.txt",
+      "what": "Index of the current docs: workflows, every command's page, the detector and configuration. Start here to find the page for one command before running it.",
+      "verified": "2026-11-20"
+    },
+    {
+      "type": "raw_path",
+      "url": "https://raw.githubusercontent.com/pbakaus/impeccable/main/.claude/skills/impeccable/SKILL.md",
+      "what": "The skill itself as built for Claude Code. Read it to see how a command is routed before installing anything.",
+      "verified": "2026-11-20"
+    },
+    {
+      "type": "docs_url",
+      "url": "https://impeccable.style/slop",
+      "what": "The catalog of AI-made UI anti-patterns the detector looks for, with examples. Reach for it when writing or justifying a \"this looks AI-made\" finding.",
+      "verified": "2026-11-20"
+    },
+    {
+      "type": "cli",
+      "url": "npx impeccable detect --json src/",
+      "what": "Runs the detector with no agent and no API key and prints findings as JSON. Point it at a dev-server URL instead of a folder to get the rules that need a rendered page, such as contrast and tiny text. `--list-rules` prints every rule.",
+      "verified": "2026-11-20"
+    },
+    {
+      "type": "cli",
+      "url": "npx impeccable install",
+      "what": "Installs the skill into the user's agent setup and offers the edit hook. Offer it only when the user wants it permanently, and say what the hook and telemetry do first (see notes).",
+      "verified": "2026-11-20"
+    }
+  ],
+  "use_when": [
+    "A screen works but looks generic or AI-made and you need named, rule-based findings rather than taste.",
+    "You want a deterministic slop check in CI: the detector emits JSON, GitHub annotations or SARIF and needs no model.",
+    "You need a word for the change you want (\"quieter\", \"distill\", \"typeset\") so the agent makes one targeted move instead of a redesign.",
+    "A UX critique or accessibility/performance audit is wanted with findings ranked by severity."
+  ],
+  "avoid_when": [
+    "You cannot accept install-time side effects: the optional edit hook runs on every UI file the agent edits, runs even when the model's own commands are denied, and downloads an engine binary into ~/.impeccable/bin/ on first use.",
+    "The run is unattended and live mode is on: when no chat session is polling, Apply launches the codex or claude CLI with approvals and sandboxing bypassed. Set IMPECCABLE_LIVE_COPY_AGENT=chat (or off) before starting live mode.",
+    "You only need one or two checks on a native app - the detector, live mode and the hook are web-only.",
+    "The project has a signed design direction the commands would argue with; it brings its own opinions about what good looks like."
+  ],
+  "provides": [
+    {
+      "name": "critique",
+      "note": "Scored UX review against usability heuristics, ranked by what to fix first."
+    },
+    {
+      "name": "audit",
+      "note": "Technical report on accessibility, performance, theming and responsive behaviour, ranked P0 to P3."
+    },
+    {
+      "name": "polish",
+      "note": "Final pass before shipping."
+    },
+    {
+      "name": "harden",
+      "note": "Errors, i18n, overflow and edge cases."
+    },
+    {
+      "name": "distill",
+      "note": "Removes what the page does not need."
+    },
+    {
+      "name": "onboard",
+      "note": "First-run flows and empty states."
+    },
+    {
+      "name": "detect",
+      "note": "The 62-rule deterministic slop detector, as a CLI, an edit hook and a Chrome extension."
+    },
+    {
+      "name": "live",
+      "note": "Pick an element in the running dev server and cycle through variants in place."
+    }
+  ],
+  "metrics": {
+    "stars": 113572,
+    "checked": "2026-11-20"
+  },
+  "upstream": {
+    "last_commit": "2026-11-19T17:42:37Z",
+    "default_branch": "main",
+    "archived": false,
+    "open_issues": 64,
+    "latest_release": "engine-v0.1.28",
+    "checked": "2026-11-20"
+  },
+  "review": {
+    "date": "2026-11-20",
+    "baseline": {
+      "description": "The design vocabulary for your coding agent. Steer with polish and bolder, review with critique and audit, catch AI slop before it ships.",
+      "homepage": "https://impeccable.style",
+      "watched": {},
+      "release_major": "0"
+    }
+  },
+  "added": "2026-11-20",
+  "notes": "Telemetry is on by default: it records which visual directions were shown and picked (not code or files). Turn it off with `npx impeccable telemetry off` or DO_NOT_TRACK=1; the request that fetches directions still happens. The skill, CLI, hook and detector are free; a paid Pro plan adds extra detector rules and pull-request reviews. Ships builds for many agents from one repository, so the repo root is mostly per-tool folders."
+}
