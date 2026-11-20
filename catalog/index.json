@@ -100,7 +100,6 @@
     "code-review": [
       "emilkowalski-skills",
       "impeccable",
-      "playwright-cli",
       "ui-ux-pro-max"
     ],
     "color": [
@@ -1134,13 +1133,13 @@
         },
         {
           "type": "cli",
-          "url": "npx impeccable detect --json src/",
-          "what": "Runs the detector with no agent and no API key and prints findings as JSON. Point it at a dev-server URL instead of a folder to get the rules that need a rendered page, such as contrast and tiny text. `--list-rules` prints every rule.",
+          "url": "DO_NOT_TRACK=1 npx impeccable detect --json src/",
+          "what": "Runs the detector with no agent and no API key and prints findings as JSON. Point it at a dev-server URL instead of a folder to get the rules that need a rendered page, such as contrast and tiny text. `--list-rules` prints every rule. `npx` downloads and runs the package from npm, and it may fetch the engine binary on first use; ask before the first run.",
           "verified": "2026-11-20"
         },
         {
           "type": "cli",
-          "url": "npx impeccable install",
+          "url": "DO_NOT_TRACK=1 npx impeccable install",
           "what": "Installs the skill into the user's agent setup and offers the edit hook. Offer it only when the user wants it permanently, and say what the hook and telemetry do first (see notes).",
           "verified": "2026-11-20"
         }
@@ -1325,7 +1324,6 @@
       "kind": "workshop-tool",
       "capabilities": [
         "visual-testing",
-        "code-review",
         "accessibility",
         "agent-guidance"
       ],
@@ -1343,7 +1341,7 @@
         {
           "type": "cli",
           "url": "playwright-cli --help",
-          "what": "Every command, written so an agent can learn the tool from it with no skill installed. Install first with `npm install -g @playwright/cli@latest`; `playwright-cli install --skills` adds the skill locally.",
+          "what": "Every command, written so an agent can learn the tool from it with no skill installed. Install first with `npm install -g @playwright/cli@latest` (a global install - ask the user before running it); `playwright-cli install --skills` adds the skill locally.",
           "verified": "2026-11-20"
         },
         {
@@ -1679,8 +1677,8 @@
         },
         {
           "type": "cli",
-          "url": "npx skills@latest add vercel-labs/ui --skill ui-sdk",
-          "what": "Installs the skill into the user's agent setup. Prefix with DISABLE_TELEMETRY=1 - the skills CLI sends anonymous usage data by default.",
+          "url": "DISABLE_TELEMETRY=1 npx skills@latest add vercel-labs/ui --skill ui-sdk",
+          "what": "Installs the skill into the user's agent setup. DISABLE_TELEMETRY=1 stops the skills CLI's anonymous usage data, which is on by default.",
           "verified": "2026-11-20"
         }
       ],

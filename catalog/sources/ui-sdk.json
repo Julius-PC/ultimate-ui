@@ -52,8 +52,8 @@
     },
     {
       "type": "cli",
-      "url": "npx skills@latest add vercel-labs/ui --skill ui-sdk",
-      "what": "Installs the skill into the user's agent setup. Prefix with DISABLE_TELEMETRY=1 - the skills CLI sends anonymous usage data by default.",
+      "url": "DISABLE_TELEMETRY=1 npx skills@latest add vercel-labs/ui --skill ui-sdk",
+      "what": "Installs the skill into the user's agent setup. DISABLE_TELEMETRY=1 stops the skills CLI's anonymous usage data, which is on by default.",
       "verified": "2026-11-20"
     }
   ],

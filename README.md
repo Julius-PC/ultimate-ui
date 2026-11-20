@@ -74,7 +74,7 @@ pre-built lookups by capability, stack, and style.
 | [`motion-pass`](skills/motion-pass/SKILL.md) | Add, fix, or remove animation in an interface - choosing curve, duration, and animated properties deliberately, and deciding what should not move at all. |
 | [`style-scout`](skills/style-scout/SKILL.md) | Turn a loose description of a desired look ("clean and technical", "like Linear but warmer", "premium, dark, not corporate") into a concrete, written style brief plus the specific catalog sources, brand design languages, component libraries and guides that fit it. |
 | [`ui-review`](skills/ui-review/SKILL.md) | Audit UI that already exists against its own design language, accessibility requirements, responsive behaviour, and the states real products hit - producing a prioritised, fixable list rather than a vague impression. |
-| [`ui-slop-check`](skills/ui-slop-check/SKILL.md) | Review screens for the tells of AI-made design, clutter, missing UI patterns (skeleton loaders, semantic colours, empty/error/loading states), motion mistakes and basic accessibility, then fix only what the user approves. |
+| [`ui-slop-check`](skills/ui-slop-check/SKILL.md) | Review screens for the tells of AI-made design, clutter, missing UI patterns such as skeleton loaders and semantic colours, then fix only what the user approves. |
 <!-- skills-table:end -->
 
 Browse them from the command line:
@@ -113,7 +113,7 @@ Fifteen more proposed skills, each with a real design sketch, in
 | [Skills For Designers and Engineers](https://github.com/emilkowalski/skills) | [Emil Kowalski](https://github.com/emilkowalski) | Agent skills | motion, agent-guidance, code-review | MIT |
 | [Impeccable](https://github.com/pbakaus/impeccable) | [Paul Bakaus](https://github.com/pbakaus) | Agent skills | code-review, agent-guidance, accessibility | Apache-2.0 |
 | [Material UI](https://github.com/mui/material-ui) | [MUI](https://github.com/mui) | Component library | components, theming, design-tokens | MIT |
-| [Playwright CLI](https://github.com/microsoft/playwright-cli) | [Microsoft](https://github.com/microsoft) | Workshop tool | visual-testing, code-review, accessibility | Apache-2.0 |
+| [Playwright CLI](https://github.com/microsoft/playwright-cli) | [Microsoft](https://github.com/microsoft) | Workshop tool | visual-testing, accessibility, agent-guidance | Apache-2.0 |
 | [shadcn/ui](https://github.com/shadcn-ui/ui) | [shadcn-ui](https://github.com/shadcn-ui) | Component library | components, primitives, theming | MIT |
 | [Storybook](https://github.com/storybookjs/storybook) | [Storybook](https://github.com/storybookjs) | Workshop tool | component-workshop, documentation, visual-testing | MIT |
 | [UI SDK](https://github.com/vercel-labs/ui) | [Vercel Labs](https://github.com/vercel-labs) | Component library | primitives, components, accessibility | Apache-2.0 |

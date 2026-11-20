@@ -13,7 +13,6 @@
   "kind": "workshop-tool",
   "capabilities": [
     "visual-testing",
-    "code-review",
     "accessibility",
     "agent-guidance"
   ],
@@ -31,7 +30,7 @@
     {
       "type": "cli",
       "url": "playwright-cli --help",
-      "what": "Every command, written so an agent can learn the tool from it with no skill installed. Install first with `npm install -g @playwright/cli@latest`; `playwright-cli install --skills` adds the skill locally.",
+      "what": "Every command, written so an agent can learn the tool from it with no skill installed. Install first with `npm install -g @playwright/cli@latest` (a global install - ask the user before running it); `playwright-cli install --skills` adds the skill locally.",
       "verified": "2026-11-20"
     },
     {

@@ -104,7 +104,7 @@
       "name": "ui-slop-check",
       "dir": "skills/ui-slop-check",
       "file": "skills/ui-slop-check/SKILL.md",
-      "description": "Review screens for the tells of AI-made design, clutter, missing UI patterns (skeleton loaders, semantic colours, empty/error/loading states), motion mistakes and basic accessibility, then fix only what the user approves. Use when screens users see have changed, when asked to \"make it look less AI\", \"less generic\", for a polish pass, or before a launch. Narrower than ui-review, which audits against the project's own design language; this one hunts a fixed list of tells and ends in approved fixes.",
+      "description": "Review screens for the tells of AI-made design, clutter, missing UI patterns such as skeleton loaders and semantic colours, then fix only what the user approves. Use with ui-review for states, accessibility and motion. Use when screens users see have changed, when asked to \"make it look less AI\", \"less generic\", for a polish pass, or before a launch. Narrower than ui-review, which audits against the project's own design language; this one hunts a fixed list of tells and ends in approved fixes.",
       "uses": [
         "emilkowalski-skills",
         "impeccable",
