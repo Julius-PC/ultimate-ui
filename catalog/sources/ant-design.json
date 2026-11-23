@@ -73,16 +73,16 @@
     "Bundle size on a small public site is a hard constraint."
   ],
   "metrics": {
-    "stars": 100230,
-    "checked": "2026-11-16"
+    "stars": 100358,
+    "checked": "2026-11-23"
   },
   "upstream": {
-    "last_commit": "2026-11-16T11:46:05Z",
+    "last_commit": "2026-11-23T09:17:17Z",
     "default_branch": "master",
     "archived": false,
-    "open_issues": 1151,
-    "latest_release": "6.7.1",
-    "checked": "2026-11-16"
+    "open_issues": 1153,
+    "latest_release": "6.7.2",
+    "checked": "2026-11-23"
   },
   "review": {
     "date": "2026-09-16",

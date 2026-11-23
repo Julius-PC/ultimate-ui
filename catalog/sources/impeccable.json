@@ -116,16 +116,16 @@
     }
   ],
   "metrics": {
-    "stars": 113572,
-    "checked": "2026-11-20"
+    "stars": 115481,
+    "checked": "2026-11-23"
   },
   "upstream": {
-    "last_commit": "2026-11-19T17:42:37Z",
+    "last_commit": "2026-11-23T17:09:28Z",
     "default_branch": "main",
     "archived": false,
-    "open_issues": 64,
-    "latest_release": "engine-v0.1.28",
-    "checked": "2026-11-20"
+    "open_issues": 71,
+    "latest_release": "loop-v0.2.2",
+    "checked": "2026-11-23"
   },
   "review": {
     "date": "2026-11-20",

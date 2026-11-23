@@ -69,16 +69,16 @@
     "The project already uses a mature headless library well - switching costs more than it buys while this is in beta."
   ],
   "metrics": {
-    "stars": 6164,
-    "checked": "2026-11-20"
+    "stars": 6702,
+    "checked": "2026-11-23"
   },
   "upstream": {
-    "last_commit": "2026-11-20T04:46:13Z",
+    "last_commit": "2026-11-23T15:51:56Z",
     "default_branch": "main",
     "archived": false,
-    "open_issues": 64,
+    "open_issues": 128,
     "latest_release": null,
-    "checked": "2026-11-20"
+    "checked": "2026-11-23"
   },
   "watch": {
     "paths": [

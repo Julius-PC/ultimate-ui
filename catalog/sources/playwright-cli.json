@@ -51,16 +51,16 @@
     "You need pixel-diff visual regression across commits. This takes screenshots; it does not compare them for you."
   ],
   "metrics": {
-    "stars": 15320,
-    "checked": "2026-11-20"
+    "stars": 15405,
+    "checked": "2026-11-23"
   },
   "upstream": {
     "last_commit": "2026-11-18T18:50:52Z",
     "default_branch": "main",
     "archived": false,
-    "open_issues": 1,
+    "open_issues": 3,
     "latest_release": "v0.1.25",
-    "checked": "2026-11-20"
+    "checked": "2026-11-23"
   },
   "review": {
     "date": "2026-11-20",
